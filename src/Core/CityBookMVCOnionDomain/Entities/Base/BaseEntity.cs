@@ -1,4 +1,4 @@
-﻿namespace CityBookMVCOnionDomain.Entities.Base
+﻿namespace CityBookMVCOnionDomain.Entities
 {
     public abstract class BaseEntity
     {
@@ -7,6 +7,13 @@
         public DateTime? CreateAt { get; set; }
 
         public string CreatedBy { get; set; } = null!;
+
+        public BaseEntity()
+        {
+            CreateAt=DateTime.Now;
+            CreatedBy = "zuzu";
+        }
+
 
     }
 }

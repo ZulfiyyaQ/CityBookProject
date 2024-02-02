@@ -1,7 +1,7 @@
-﻿namespace CityBookMVCOnionDomain.Entities.Base
+﻿namespace CityBookMVCOnionDomain.Entities
 {
     public abstract class BaseNameableEntity:BaseEntity
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
     }
 }

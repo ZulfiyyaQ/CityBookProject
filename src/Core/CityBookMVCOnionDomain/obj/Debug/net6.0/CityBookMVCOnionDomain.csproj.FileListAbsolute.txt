@@ -1,0 +1,11 @@
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionDomain\bin\Debug\net6.0\CityBookMVCOnionDomain.deps.json
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionDomain\bin\Debug\net6.0\CityBookMVCOnionDomain.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionDomain\bin\Debug\net6.0\CityBookMVCOnionDomain.pdb
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionDomain\obj\Debug\net6.0\CityBookMVCOnionDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionDomain\obj\Debug\net6.0\CityBookMVCOnionDomain.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionDomain\obj\Debug\net6.0\CityBookMVCOnionDomain.AssemblyInfo.cs
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionDomain\obj\Debug\net6.0\CityBookMVCOnionDomain.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionDomain\obj\Debug\net6.0\CityBookMVCOnionDomain.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionDomain\obj\Debug\net6.0\refint\CityBookMVCOnionDomain.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionDomain\obj\Debug\net6.0\CityBookMVCOnionDomain.pdb
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionDomain\obj\Debug\net6.0\ref\CityBookMVCOnionDomain.dll

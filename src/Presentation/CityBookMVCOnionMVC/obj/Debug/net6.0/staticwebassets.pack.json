@@ -1,0 +1,301 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CityBookMVCOnionMVC.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CityBookMVCOnionMVC.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\css\\color.css",
+      "PackagePath": "staticwebassets\\css\\color.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\css\\date-droop-color.css",
+      "PackagePath": "staticwebassets\\css\\date-droop-color.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\css\\plugins.css",
+      "PackagePath": "staticwebassets\\css\\plugins.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\css\\reset.css",
+      "PackagePath": "staticwebassets\\css\\reset.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\WeatherIcons-Regular.otf",
+      "PackagePath": "staticwebassets\\fonts\\WeatherIcons-Regular.otf"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\datedropper.eot",
+      "PackagePath": "staticwebassets\\fonts\\datedropper.eot"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\datedropper.svg",
+      "PackagePath": "staticwebassets\\fonts\\datedropper.svg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\datedropper.ttf",
+      "PackagePath": "staticwebassets\\fonts\\datedropper.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\datedropper.woff",
+      "PackagePath": "staticwebassets\\fonts\\datedropper.woff"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\lg.eot",
+      "PackagePath": "staticwebassets\\fonts\\lg.eot"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\lg.svg",
+      "PackagePath": "staticwebassets\\fonts\\lg.svg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\lg.ttf",
+      "PackagePath": "staticwebassets\\fonts\\lg.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\lg.woff",
+      "PackagePath": "staticwebassets\\fonts\\lg.woff"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\weathericons-regular-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\weathericons-regular-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\weathericons-regular-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\weathericons-regular-webfont.svg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\weathericons-regular-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\weathericons-regular-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\fonts\\weathericons-regular-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\weathericons-regular-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\all\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\all\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\all\\single\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\all\\single\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\avatar\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\avatar\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\avatar\\avatar-bg.png",
+      "PackagePath": "staticwebassets\\images\\avatar\\avatar-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\bg\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\bg\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\bg\\circle.png",
+      "PackagePath": "staticwebassets\\images\\bg\\circle.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\bg\\shapes-big.png",
+      "PackagePath": "staticwebassets\\images\\bg\\shapes-big.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\bg\\shapes-small.png",
+      "PackagePath": "staticwebassets\\images\\bg\\shapes-small.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\bg\\slider\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\bg\\slider\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\clients\\1.png",
+      "PackagePath": "staticwebassets\\images\\clients\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\clouds.png",
+      "PackagePath": "staticwebassets\\images\\clouds.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\favicon.ico",
+      "PackagePath": "staticwebassets\\images\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\instagram\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\instagram\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\logo2.png",
+      "PackagePath": "staticwebassets\\images\\logo2.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\marker.png",
+      "PackagePath": "staticwebassets\\images\\marker.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\team\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\team\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\01d.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\01d.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\01n.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\01n.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\02d.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\02d.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\02n.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\02n.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\03d.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\03d.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\03n.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\03n.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\04d.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\04d.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\04n.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\04n.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\09d.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\09d.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\09n.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\09n.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\10d.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\10d.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\10n.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\10n.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\11d.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\11d.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\11n.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\11n.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\13d.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\13d.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\13n.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\13n.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\50d.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\50d.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\wimg\\50n.png",
+      "PackagePath": "staticwebassets\\images\\wimg\\50n.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\js\\infobox.min.js",
+      "PackagePath": "staticwebassets\\js\\infobox.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\js\\map-add.js",
+      "PackagePath": "staticwebassets\\js\\map-add.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\js\\map_infobox.js",
+      "PackagePath": "staticwebassets\\js\\map_infobox.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\js\\maps.js",
+      "PackagePath": "staticwebassets\\js\\maps.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\js\\markerclusterer.js",
+      "PackagePath": "staticwebassets\\js\\markerclusterer.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\js\\plugins.js",
+      "PackagePath": "staticwebassets\\js\\plugins.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\js\\scripts.js"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\php\\contact.php",
+      "PackagePath": "staticwebassets\\php\\contact.php"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\video\\1.mp4",
+      "PackagePath": "staticwebassets\\video\\1.mp4"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.CityBookMVCOnionMVC.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.CityBookMVCOnionMVC.props",
+      "PackagePath": "build\\CityBookMVCOnionMVC.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.CityBookMVCOnionMVC.props",
+      "PackagePath": "buildMultiTargeting\\CityBookMVCOnionMVC.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.CityBookMVCOnionMVC.props",
+      "PackagePath": "buildTransitive\\CityBookMVCOnionMVC.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
