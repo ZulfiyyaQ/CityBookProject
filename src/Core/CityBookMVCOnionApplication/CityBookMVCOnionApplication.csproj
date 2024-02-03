@@ -7,23 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstractions\Repositories\" />
-    <Folder Include="Abstractions\Services\" />
     <Folder Include="MappingProfiles\" />
-    <Folder Include="Validators\" />
-    <Folder Include="ViewModels\Author\" />
-    <Folder Include="ViewModels\Account\" />
-    <Folder Include="ViewModels\Blog\" />
-    <Folder Include="ViewModels\Category\" />
-    <Folder Include="ViewModels\Employee\" />
-    <Folder Include="ViewModels\Feature\" />
-    <Folder Include="ViewModels\Place\" />
-    <Folder Include="ViewModels\Position\" />
-    <Folder Include="ViewModels\Reply\" />
-    <Folder Include="ViewModels\Reservation\" />
-    <Folder Include="ViewModels\Review\" />
-    <Folder Include="ViewModels\Tag\" />
-    <Folder Include="ViewModels\BTag\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
   </ItemGroup>
 
   <ItemGroup>

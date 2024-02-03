@@ -1,0 +1,17 @@
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\bin\Debug\net6.0\CityBookMVCOnionInfrastructure.deps.json
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\bin\Debug\net6.0\CityBookMVCOnionInfrastructure.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\bin\Debug\net6.0\CityBookMVCOnionInfrastructure.pdb
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\bin\Debug\net6.0\CityBookMVCOnionApplication.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\bin\Debug\net6.0\CityBookMVCOnionDomain.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\bin\Debug\net6.0\CityBookMVCOnionApplication.pdb
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\bin\Debug\net6.0\CityBookMVCOnionDomain.pdb
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\obj\Debug\net6.0\CityBookMVCOnionInfrastructure.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\obj\Debug\net6.0\CityBookMVCOnionInfrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\obj\Debug\net6.0\CityBookMVCOnionInfrastructure.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\obj\Debug\net6.0\CityBookMVCOnionInfrastructure.AssemblyInfo.cs
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\obj\Debug\net6.0\CityBookMVCOnionInfrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\obj\Debug\net6.0\CityBookMVCOnionInfrastructure.csproj.CopyComplete
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\obj\Debug\net6.0\CityBookMVCOnionInfrastructure.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\obj\Debug\net6.0\refint\CityBookMVCOnionInfrastructure.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\obj\Debug\net6.0\CityBookMVCOnionInfrastructure.pdb
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionInfrastructure\obj\Debug\net6.0\ref\CityBookMVCOnionInfrastructure.dll

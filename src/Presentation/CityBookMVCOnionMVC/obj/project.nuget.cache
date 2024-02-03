@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "iiWnZHmBu6gQfnnKMr79xt8gm76/lutIIftApCg3nSMGn1kMBcEEi7JW/AFDuAxKYde5O1ZzSUKWIQs5j7BTwA==",
+  "dgSpecHash": "uv2xL1Uq1ZBDMizJnwuiot2G4YIUfBuMKA7e8BWuXyG/dSKJam7MLYJB1y7qoFrBV9wiAjboqh1Ip8fXCrrzwA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\CityBookMVCOnionMVC.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.26\\microsoft.aspnetcore.cryptography.internal.6.0.26.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.26\\microsoft.aspnetcore.cryptography.keyderivation.6.0.26.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.26\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.26.nupkg.sha512",
-    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.26\\microsoft.entityframeworkcore.6.0.26.nupkg.sha512",

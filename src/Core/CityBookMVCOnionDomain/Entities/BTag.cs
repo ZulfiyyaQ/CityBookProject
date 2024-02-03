@@ -1,6 +1,7 @@
 ﻿namespace CityBookMVCOnionDomain.Entities
 {
-    internal class BTag : BaseNameableEntity
+    public class BTag : BaseNameableEntity
     {
+        public List<BlogTag> BlogTags { get; set; }
     }
 }

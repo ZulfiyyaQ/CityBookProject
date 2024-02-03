@@ -1,6 +1,7 @@
 ﻿namespace CityBookMVCOnionDomain.Entities
 {
-    internal class Position : BaseNameableEntity
-    {
+    public class Position : BaseNameableEntity
+    { //Relational props
+        public List<Employee>? Employees { get; set; }
     }
 }

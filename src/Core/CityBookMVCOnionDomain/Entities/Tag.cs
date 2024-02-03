@@ -1,6 +1,7 @@
 ﻿namespace CityBookMVCOnionDomain.Entities
 {
-    internal class Tag : BaseNameableEntity
-    {
+    public class Tag : BaseNameableEntity
+    {//Relational props
+        public List<PlaceTag> PlaceTags { get; set; }
     }
 }

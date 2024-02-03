@@ -1,0 +1,15 @@
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\bin\Debug\net6.0\CityBookMVCOnionApplication.deps.json
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\bin\Debug\net6.0\CityBookMVCOnionApplication.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\bin\Debug\net6.0\CityBookMVCOnionApplication.pdb
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\bin\Debug\net6.0\CityBookMVCOnionDomain.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\bin\Debug\net6.0\CityBookMVCOnionDomain.pdb
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\obj\Debug\net6.0\CityBookMVCOnionApplication.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\obj\Debug\net6.0\CityBookMVCOnionApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\obj\Debug\net6.0\CityBookMVCOnionApplication.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\obj\Debug\net6.0\CityBookMVCOnionApplication.AssemblyInfo.cs
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\obj\Debug\net6.0\CityBookMVCOnionApplication.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\obj\Debug\net6.0\CityBookMVCOnionApplication.csproj.CopyComplete
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\obj\Debug\net6.0\CityBookMVCOnionApplication.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\obj\Debug\net6.0\refint\CityBookMVCOnionApplication.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\obj\Debug\net6.0\CityBookMVCOnionApplication.pdb
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Core\CityBookMVCOnionApplication\obj\Debug\net6.0\ref\CityBookMVCOnionApplication.dll

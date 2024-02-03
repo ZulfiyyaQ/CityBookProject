@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "zNXgg1XNcLkpQfF1miglKC7fNgb6aUaphbORLTJdRQsxmQXRZRdp0S6pc39HQbb9JRNF1qtD6diWCczA6mPIJA==",
+  "dgSpecHash": "yTVkIYYZM1G4XFsUicxo5wLTYR1qh9oMq6Jj7PdjPK5RLjotb2kZN+CaIOqCMdcAS4GU8osEGra/DVltfocYiQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Core\\CityBookMVCOnionApplication\\CityBookMVCOnionApplication.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.26\\microsoft.aspnetcore.cryptography.internal.6.0.26.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.26\\microsoft.aspnetcore.cryptography.keyderivation.6.0.26.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.26\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.26.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.26\\microsoft.entityframeworkcore.6.0.26.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.26\\microsoft.entityframeworkcore.abstractions.6.0.26.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.26\\microsoft.entityframeworkcore.analyzers.6.0.26.nupkg.sha512",
