@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\CityBookMVCOnionApplication\CityBookMVCOnionApplication.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.26">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\CityBookMVCOnionInfrastructure\CityBookMVCOnionInfrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\CityBookMVCOnionPersistence\CityBookMVCOnionPersistence.csproj" />
   </ItemGroup>

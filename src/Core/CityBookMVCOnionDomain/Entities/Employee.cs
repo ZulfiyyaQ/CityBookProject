@@ -11,7 +11,6 @@
         //Relational props
         public int PositionId { get; set; }
         public Position Position { get; set; }
-        public int EmpReviewId { get; set; }
-        public  EmployeeReview EmpReview { get; set; }
+       
     }
 }

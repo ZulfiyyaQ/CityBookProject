@@ -3,7 +3,7 @@
     public class Comment : BaseNameableEntity
     {
         public string Text { get; set; }
-        public DateTime WritingDate { get; set; }
+        
         //Relational props
         public int UserId { get; set; }
         public User User { get; set; }

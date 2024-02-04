@@ -17,3 +17,5 @@ C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionPersis
 C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionPersistence\obj\Debug\net6.0\CityBookMVCOnionPersistence.pdb
 C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionPersistence\obj\Debug\net6.0\CityBookMVCOnionPersistence.genruntimeconfig.cache
 C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionPersistence\obj\Debug\net6.0\ref\CityBookMVCOnionPersistence.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionPersistence\bin\Debug\net6.0\CityBookMVCOnionInfrastructure.dll
+C:\Users\Asus\Desktop\CityBookMVCOnion\src\Infrastructure\CityBookMVCOnionPersistence\bin\Debug\net6.0\CityBookMVCOnionInfrastructure.pdb
