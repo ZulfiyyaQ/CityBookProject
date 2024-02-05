@@ -1,6 +1,6 @@
 ﻿namespace CityBookMVCOnionApplication.Abstractions.Services
 {
-    public interface IAccountProfile
+    public interface IAccountService
     {
     }
 }

@@ -469,6 +469,9 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
+
                     b.Property<int>("PlaceId")
                         .HasColumnType("int");
 

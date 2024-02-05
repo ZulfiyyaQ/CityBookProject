@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CityBookMVCOnionApplication.ViewModels.Service
+﻿namespace CityBookMVCOnionApplication.ViewModels.Service
 {
-    internal class GetServiceVM
+    public record GetServiceVM
     {
+        public int Id { get; init; }
+        public string Name { get; init; }
+        public string Icon { get; init; }
+        public string Description { get; init; }
     }
 }

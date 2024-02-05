@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CityBookMVCOnionApplication.ViewModels.Feature
+﻿namespace CityBookMVCOnionApplication.ViewModels.Feature
 {
-    internal class CreateFeatureVM
+    public record CreateFeatureVM
     {
+        public string Name { get; init; }
+        public string Icon { get; init; }
     }
 }

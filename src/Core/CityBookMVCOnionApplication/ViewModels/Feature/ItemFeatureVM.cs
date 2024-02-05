@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CityBookMVCOnionApplication.ViewModels.Place;
 
 namespace CityBookMVCOnionApplication.ViewModels.Feature
 {
-    internal class ItemFeatureVM
+    public record ItemFeatureVM
     {
+        public int Id { get; init; }
+        public string Name { get; init; }
+        public string Icon { get; init; }
+        public List<IncludePlaceVM> Places { get; init; }
     }
 }

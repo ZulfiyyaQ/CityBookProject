@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CityBookMVCOnionApplication.ViewModels.Employee
+﻿namespace CityBookMVCOnionApplication.ViewModels.Employee
 {
-    internal class IncludeEmployeeVM
+    public record IncludeEmployeeVM
     {
+        public string Surname { get; init; }
+        public string Name { get; init; }
+        public string ImageUrl { get; init; }
+        public string Description { get; init; }
+        public string Face { get; init; }
+        public string Tvit { get; init; }
+        public string Link { get; init; }
     }
 }

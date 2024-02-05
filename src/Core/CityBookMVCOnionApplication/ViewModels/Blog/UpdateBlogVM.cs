@@ -10,7 +10,7 @@ namespace CityBookMVCOnionApplication.ViewModels.Blog
         public int UserId { get; init; }
         public string Name { get; init; }
         public List<int> TagIds { get; init; }
-        public string Text { get; set; }
+        public string Text { get; init; }
         public List<a.BlogImage> Images { get; init; }
     }
 }

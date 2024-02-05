@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CityBookMVCOnionApplication.ViewModels.Review;
+using Microsoft.AspNetCore.Http;
 
 namespace CityBookMVCOnionApplication.ViewModels.Place
 {
-    internal class UpdatePlaceVM
+    public record UpdatePlaceVM
     {
+        public string Name { get; init; }
+        public string Address { get; init; }
+        public string Description { get; init; }
+        public string ImageUrl { get; init; }
+        public List<IFormFile>? Photos { get; init; }
+
+        public List<IncludeReviewVM>? Reviews { get; init; }
+        public int CategoryId { get; init; }
+        public int UserId { get; init; }
+        public List<int> TagIds { get; init; }
+        public List<int> FeatureIds { get; init; }
     }
 }

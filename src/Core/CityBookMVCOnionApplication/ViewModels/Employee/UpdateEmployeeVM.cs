@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
 
 namespace CityBookMVCOnionApplication.ViewModels.Employee
 {
-    internal class UpdateEmployeeVM
+    public record UpdateEmployeeVM
     {
+        public IFormFile? Photo { get; init; }
+        public string Surname { get; init; }
+        public string Name { get; init; }
+        public string ImageUrl { get; init; }
+        public string Description { get; init; }
+        public string Face { get; init; }
+        public string Tvit { get; init; }
+        public string Link { get; init; }
+
+        public int PositionId { get; init; }
     }
 }

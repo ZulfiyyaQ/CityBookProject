@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CityBookMVCOnionApplication.ViewModels.Place;
 
 namespace CityBookMVCOnionApplication.ViewModels.Tag
 {
-    internal class ItemTagVM
+    public record ItemTagVM
     {
+        public int Id { get; init; }
+        public string Name { get; init; }
+        public List<IncludePlaceVM> Places { get; init; }
     }
 }

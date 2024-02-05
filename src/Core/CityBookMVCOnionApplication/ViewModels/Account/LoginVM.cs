@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CityBookMVCOnionDomain.Enums;
 
 namespace CityBookMVCOnionApplication.ViewModels.Account
 {
-    internal class LoginVM
-    {
-    }
+    public record LoginVM( string UsernameOrEmail, string Password, bool IsRemembered);
+   
 }

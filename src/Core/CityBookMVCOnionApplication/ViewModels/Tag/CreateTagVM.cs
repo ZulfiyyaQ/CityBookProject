@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CityBookMVCOnionApplication.ViewModels.Tag
+﻿namespace CityBookMVCOnionApplication.ViewModels.Tag
 {
-    internal class CreateTagVM
+    public record CreateTagVM
     {
+        public string Name { get; init; }
     }
 }

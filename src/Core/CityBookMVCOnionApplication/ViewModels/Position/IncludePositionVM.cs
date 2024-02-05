@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CityBookMVCOnionApplication.ViewModels.Position
+﻿namespace CityBookMVCOnionApplication.ViewModels.Position
 {
-    internal class IncludePositionVM
+    public record IncludePositionVM
     {
+        public string Name { get; init; }
     }
 }

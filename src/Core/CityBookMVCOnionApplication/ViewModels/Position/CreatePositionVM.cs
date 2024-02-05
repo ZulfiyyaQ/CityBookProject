@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CityBookMVCOnionApplication.ViewModels.Employee;
 
 namespace CityBookMVCOnionApplication.ViewModels.Position
 {
-    internal class CreatePositionVM
+    public record CreatePositionVM
     {
+        public string Name { get; init; }
+        public List<IncludeEmployeeVM>? Employees { get; init; }
     }
 }

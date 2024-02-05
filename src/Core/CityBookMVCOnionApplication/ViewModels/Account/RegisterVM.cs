@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CityBookMVCOnionDomain.Enums;
 
 namespace CityBookMVCOnionApplication.ViewModels.Account
 {
-    internal class RegisterVM
-    {
-    }
+    public record RegisterVM(string Name,string Surname,string Username,string Email,string Password, string ConfirmPassword, UserRoles role,bool AllowTerms);
+    
 }

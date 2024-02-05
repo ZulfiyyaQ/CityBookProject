@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
 
 namespace CityBookMVCOnionApplication.ViewModels.Account
 {
-    internal class EditUserVM
-    {
-    }
+    public record EditUserVM(string UserName, string? Img, IFormFile? Photo);
+    
 }
