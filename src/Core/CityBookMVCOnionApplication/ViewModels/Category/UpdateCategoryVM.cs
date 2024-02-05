@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CityBookMVCOnionApplication.ViewModels.Place;
+using Microsoft.AspNetCore.Http;
 
 namespace CityBookMVCOnionApplication.ViewModels.Category
 {
-    internal class UpdateCategoryVM
+    public record UpdateCategoryVM
     {
+        public string Name { get; init; }
+        public string ImageUrl { get; init; }
+        public string Description { get; init; }
+        public IFormFile? Photo { get; init; }
+        public List<IncludePlaceVM> Places { get; init; }
     }
 }

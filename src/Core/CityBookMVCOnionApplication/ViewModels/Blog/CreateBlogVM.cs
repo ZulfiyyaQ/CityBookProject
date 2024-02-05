@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
 
 namespace CityBookMVCOnionApplication.ViewModels.Blog
 {
-    internal class CreateBlogVM
+    public record CreateBlogVM
     {
+        public List<IFormFile> Photos { get; init; }
+        public string Name { get; init; }
+        public List<int> TagIds { get; init; }
+        public string Text { get; init; }
+        public int UserId { get; init; }
     }
 }

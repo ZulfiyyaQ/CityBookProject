@@ -102,17 +102,6 @@ namespace CityBookMVCOnionPersistence.Implementations.Repositories.Generic
             return await query.FirstOrDefaultAsync();
         }
 
-        public async Task<T> GetByIdPaginatedAsync(int id, bool IsTracking = true, int take = 0, int skip = 0, params string[] includes)
-        {
-            var query = _dbSet.Where(x => x.Id == id).AsQueryable();
-
-            query = _addIncludesGetById(query, take, skip, includes);
-
-            if (!IsTracking) query = query.AsNoTracking();
-
-            return await query.FirstOrDefaultAsync();
-        }
-
         public void ReverseSoftDelete(T entity)
         {
             entity.IsDeleted = false;
@@ -140,18 +129,6 @@ namespace CityBookMVCOnionPersistence.Implementations.Repositories.Generic
                 for (int i = 0; i < includes.Length; i++)
                 {
                     query = query.Include(includes[i]);
-                }
-            }
-            return query;
-        }
-
-        private IQueryable<T> _addIncludesGetById(IQueryable<T> query, int take, int skip, params string[] includes)
-        {
-            if (includes != null)
-            {
-                for (int i = 0; i < includes.Length; i++)
-                {
-                    query = query.Include(includes[i]).Skip((skip - 1)).Take(take);
                 }
             }
             return query;

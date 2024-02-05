@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace CityBookMVCOnionPersistence.Context.Migrations
+namespace CityBookMVCOnionPersistence.Contexts.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -22,73 +22,6 @@ namespace CityBookMVCOnionPersistence.Context.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Author", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("CreateAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Inst")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Mail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Tvit")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("WebSite")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Wp")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Authors");
-                });
-
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Blog", b =>
                 {
                     b.Property<int>("Id")
@@ -96,9 +29,6 @@ namespace CityBookMVCOnionPersistence.Context.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime?>("CreateAt")
                         .HasColumnType("datetime2");
@@ -118,9 +48,15 @@ namespace CityBookMVCOnionPersistence.Context.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId1")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
+                    b.HasIndex("UserId1");
 
                     b.ToTable("Blogs");
                 });
@@ -446,9 +382,6 @@ namespace CityBookMVCOnionPersistence.Context.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -470,11 +403,17 @@ namespace CityBookMVCOnionPersistence.Context.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId1")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
-
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("UserId1");
 
                     b.ToTable("Places");
                 });
@@ -860,6 +799,10 @@ namespace CityBookMVCOnionPersistence.Context.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<string>("WebSite")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -1008,13 +951,11 @@ namespace CityBookMVCOnionPersistence.Context.Migrations
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Blog", b =>
                 {
-                    b.HasOne("CityBookMVCOnionDomain.Entities.Author", "Author")
+                    b.HasOne("CityBookMVCOnionDomain.Entities.User", "User")
                         .WithMany("Blogs")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId1");
 
-                    b.Navigation("Author");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.BlogImage", b =>
@@ -1084,21 +1025,19 @@ namespace CityBookMVCOnionPersistence.Context.Migrations
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Place", b =>
                 {
-                    b.HasOne("CityBookMVCOnionDomain.Entities.Author", "Author")
-                        .WithMany()
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("CityBookMVCOnionDomain.Entities.Category", "Category")
                         .WithMany("Places")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Author");
+                    b.HasOne("CityBookMVCOnionDomain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId1");
 
                     b.Navigation("Category");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.PlaceFeature", b =>
@@ -1231,11 +1170,6 @@ namespace CityBookMVCOnionPersistence.Context.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Author", b =>
-                {
-                    b.Navigation("Blogs");
-                });
-
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Blog", b =>
                 {
                     b.Navigation("BlogImages");
@@ -1288,6 +1222,8 @@ namespace CityBookMVCOnionPersistence.Context.Migrations
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.User", b =>
                 {
+                    b.Navigation("Blogs");
+
                     b.Navigation("EmpReviews");
 
                     b.Navigation("Replies");

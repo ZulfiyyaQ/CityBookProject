@@ -33,7 +33,7 @@ namespace CityBookMVCOnionPersistence.Contexts
 
         public async Task CreateUserRolesAsync()
         {
-            foreach (var role in Enum.GetValues(typeof(UserRoles)))
+            foreach (var role in Enum.GetValues(typeof(AdminRoles)))
             {
                 if (!await _roleManager.RoleExistsAsync(role.ToString()))
                     await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
@@ -49,7 +49,7 @@ namespace CityBookMVCOnionPersistence.Contexts
             };
 
             await _userManager.CreateAsync(admin, _configuration["AdminSettings:Password"]);
-            await _userManager.AddToRoleAsync(admin, UserRoles.Admin.ToString());
+            await _userManager.AddToRoleAsync(admin, AdminRoles.Admin.ToString());
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(admin);
             await _userManager.ConfirmEmailAsync(admin, token);
         }

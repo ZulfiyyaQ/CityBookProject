@@ -26,11 +26,6 @@ namespace CityBookMVCOnionApplication.Abstractions.Repositories.Generic
             bool IsTracking = true,
             params string[] includes);
 
-        Task<T> GetByIdPaginatedAsync(int id,
-            bool IsTracking = true,
-            int take = 0, int skip = 0,
-            params string[] includes);
-
         Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression,
             bool IsTracking = true,
             params string[] includes);
