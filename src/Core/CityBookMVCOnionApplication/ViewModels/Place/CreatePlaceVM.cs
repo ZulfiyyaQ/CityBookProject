@@ -12,7 +12,7 @@ namespace CityBookMVCOnionApplication.ViewModels.Place
 
         public List<IncludeReviewVM>? Reviews { get; init; }
         public int CategoryId { get; init; }
-        public int UserId { get; init; }
+        public string UserId { get; init; }
         public List<int> TagIds { get; init; }
         public List<int> FeatureIds { get; init; }
 

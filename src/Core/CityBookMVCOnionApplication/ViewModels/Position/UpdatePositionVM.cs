@@ -5,6 +5,5 @@ namespace CityBookMVCOnionApplication.ViewModels.Position
     public record UpdatePositionVM
     {
         public string Name { get; init; }
-        public List<IncludeEmployeeVM>? Employees { get; init; }
     }
 }
