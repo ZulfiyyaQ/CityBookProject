@@ -1,6 +1,6 @@
 ﻿namespace CityBookMVCOnionDomain.Enums
 {
-    public enum UserRoles
+    public enum UserRole
     {
         Member,
         BiznesOwner

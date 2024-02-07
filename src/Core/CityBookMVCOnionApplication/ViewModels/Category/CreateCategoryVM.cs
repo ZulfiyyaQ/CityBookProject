@@ -10,6 +10,7 @@ namespace CityBookMVCOnionApplication.ViewModels.Category
         public string Description { get; init; }
         public IFormFile Photo { get; init; }
         public List<IncludePlaceVM> Places { get; init; }
+        public List<int> PlaceIds { get; set; }
 
     }
 }

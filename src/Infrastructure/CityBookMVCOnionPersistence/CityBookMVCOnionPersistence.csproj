@@ -20,8 +20,4 @@
     <ProjectReference Include="..\CityBookMVCOnionInfrastructure\CityBookMVCOnionInfrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configurations\" />
-  </ItemGroup>
-
 </Project>

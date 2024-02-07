@@ -1,14 +1,8 @@
 ﻿using CityBookMVCOnionDomain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CityBookMVCOnionPersistence.Contexts
 {

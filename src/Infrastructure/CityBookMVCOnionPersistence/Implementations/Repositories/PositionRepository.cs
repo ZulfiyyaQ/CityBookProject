@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CityBookMVCOnionApplication.Abstractions.Repositories;
+using CityBookMVCOnionDomain.Entities;
+using CityBookMVCOnionPersistence.Contexts;
+using CityBookMVCOnionPersistence.Implementations.Repositories.Generic;
 
 namespace CityBookMVCOnionPersistence.Implementations.Repositories
 {
-    internal class PositionRepository
+    public class PositionRepository : Repository<Position>, IPositionRepository
     {
+        public PositionRepository(AppDbContext context) : base(context) { }
     }
+    
 }

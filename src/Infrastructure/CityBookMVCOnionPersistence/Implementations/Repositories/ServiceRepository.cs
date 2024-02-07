@@ -1,6 +1,13 @@
-﻿namespace CityBookMVCOnionPersistence.Implementations.Repositories
+﻿using CityBookMVCOnionApplication.Abstractions.Repositories;
+using CityBookMVCOnionDomain.Entities;
+using CityBookMVCOnionPersistence.Contexts;
+using CityBookMVCOnionPersistence.Implementations.Repositories.Generic;
+
+namespace CityBookMVCOnionPersistence.Implementations.Repositories
 {
-    internal class ServiceRepository
+    public class ServiceRepository : Repository<Service>, IServiceRepository
     {
+        public ServiceRepository(AppDbContext context) : base(context) { }
     }
+    
 }

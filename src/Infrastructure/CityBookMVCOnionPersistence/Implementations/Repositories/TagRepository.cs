@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CityBookMVCOnionApplication.Abstractions.Repositories;
+using CityBookMVCOnionDomain.Entities;
+using CityBookMVCOnionPersistence.Contexts;
+using CityBookMVCOnionPersistence.Implementations.Repositories.Generic;
 
 namespace CityBookMVCOnionPersistence.Implementations.Repositories
 {
-    internal class TagRepository
+    public class TagRepository : Repository<Tag>, ITagRepository
     {
+        public TagRepository(AppDbContext context) : base(context) { }
     }
+    
 }

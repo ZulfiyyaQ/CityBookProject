@@ -12,7 +12,7 @@ namespace CityBookMVCOnionApplication.ViewModels.Blog
         public string Name { get; init; }
         public List<int> TagIds { get; init; }
         public string Text { get; init; }
-        public ICollection<IncludePlaceImageVM>? Images { get; set; }
+        public ICollection<IncludePlaceImageVM>? Images { get; init; }
         public List<int>? ImageIds { get; set; }
     }
 }

@@ -18,7 +18,8 @@ namespace CityBookMVCOnionPersistence.Contexts
         private readonly IConfiguration _configuration;
         private readonly UserManager<User> _userManager;
 
-        public AppDbContextInitializer(AppDbContext context, RoleManager<IdentityRole> roleManager, IConfiguration configuration, UserManager<User> userManager)
+        public AppDbContextInitializer(AppDbContext context, RoleManager<IdentityRole> roleManager,
+            IConfiguration configuration, UserManager<User> userManager)
         {
             _context = context;
             _roleManager = roleManager;
@@ -33,10 +34,10 @@ namespace CityBookMVCOnionPersistence.Contexts
 
         public async Task CreateUserRolesAsync()
         {
-            foreach (var role in Enum.GetValues(typeof(AdminRoles)))
+            foreach (var role in Enum.GetNames(typeof(AdminRoles)))
             {
-                if (!await _roleManager.RoleExistsAsync(role.ToString()))
-                    await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
+                if (!await _roleManager.RoleExistsAsync(role))
+                    await _roleManager.CreateAsync(new IdentityRole { Name = role });
             }
         }
 
@@ -44,8 +45,17 @@ namespace CityBookMVCOnionPersistence.Contexts
         {
             User admin = new User
             {
+                Name = "admin",
+                Surname = "admin",
                 Email = _configuration["AdminSettings:Email"],
-                UserName = _configuration["AdminSettings:UserName"]
+                UserName = _configuration["AdminSettings:UserName"],
+                About = "zuzu",
+                Address = "isNull",
+                Face = "isNull",
+                Inst= "isNull",
+                Link = "link",
+                Tvit = "isNull",
+                WebSite= "isNull",
             };
 
             await _userManager.CreateAsync(admin, _configuration["AdminSettings:Password"]);

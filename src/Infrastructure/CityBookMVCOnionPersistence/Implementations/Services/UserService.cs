@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CityBookMVCOnionPersistence.Implementations.Repositories
+namespace CityBookMVCOnionPersistence.Implementations.Services
 {
-    internal class AuthorRepository
+    internal class UserService
     {
     }
 }

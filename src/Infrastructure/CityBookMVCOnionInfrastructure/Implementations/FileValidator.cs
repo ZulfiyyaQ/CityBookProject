@@ -46,7 +46,10 @@ namespace CityBookMVCOnionInfrastructure.Implementations
                 path = Path.Combine(path, folders[i]);
             }
             path = Path.Combine(path, fileName);
-            if (File.Exists(path)) File.Delete(path);
+            if (!fileName.Contains("default-profile.png"))
+            {
+                if (File.Exists(path)) File.Delete(path);
+            }
         }
         public static string ExtractGuidFileName(string fullFileName)
         {

@@ -1,4 +1,5 @@
-﻿using CityBookMVCOnionApplication.ViewModels.User;
+﻿using CityBookMVCOnionApplication.ViewModels.Place;
+using CityBookMVCOnionApplication.ViewModels.User;
 
 namespace CityBookMVCOnionApplication.ViewModels.Review
 {
@@ -6,9 +7,12 @@ namespace CityBookMVCOnionApplication.ViewModels.Review
     {
         public int Id { get; init; }
         public string? Text { get; init; }
+        public string Name { get; init; }
         public float RatingStar { get; init; }
 
         public int UserId { get; init; }
         public IncludeUserVM User { get; init; }
+        public int PlaceId { get; init; }
+        public IncludePlaceVM Place { get; init; }
     }
 }

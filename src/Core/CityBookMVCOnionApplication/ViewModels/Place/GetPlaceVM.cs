@@ -1,5 +1,6 @@
 ﻿using CityBookMVCOnionApplication.ViewModels.Feature;
 using CityBookMVCOnionApplication.ViewModels.PlaceImage;
+using CityBookMVCOnionApplication.ViewModels.Review;
 using CityBookMVCOnionApplication.ViewModels.Tag;
 using CityBookMVCOnionApplication.ViewModels.User;
 
@@ -17,5 +18,6 @@ namespace CityBookMVCOnionApplication.ViewModels.Place
         public List<IncludePlaceImageVM> PlaceImages { get; init; }
         public List<IncludeTagVM> Tags { get; init; }
         public List<IncludeFeatureVM> Features { get; init; }
+        public IncludeReviewVM Review { get; init; }
     }
 }
