@@ -1,5 +1,5 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Blog;
-using CityBookMVCOnionApplication.ViewModels;
+﻿using CityBookMVCOnionApplication.ViewModels;
+using CityBookMVCOnionApplication.ViewModels.Blog;
 using CityBookMVCOnionDomain.Entities;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
@@ -20,5 +20,7 @@ namespace CityBookMVCOnionApplication.Abstractions.Services
         Task DeleteAsync(int id);
         Task SoftDeleteAsync(int id);
         Task ReverseSoftDeleteAsync(int id);
+        Task CreatePopulateDropdowns(CreateBlogVM create);
+        Task UpdatePopulateDropdowns(UpdateBlogVM update);
     }
 }

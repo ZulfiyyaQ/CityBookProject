@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CityBookMVCOnionApplication.ViewModels.Blog;
+using CityBookMVCOnionApplication.ViewModels.Employee;
+using CityBookMVCOnionDomain.Entities;
 
 namespace CityBookMVCOnionApplication.MappingProfiles
 {
@@ -11,7 +9,16 @@ namespace CityBookMVCOnionApplication.MappingProfiles
     {
         public EmployeeProfile()
         {
+            CreateMap<CreateEmployeeVM, Employee>().ReverseMap();
+            CreateMap<GetEmployeeVM, Employee>().ReverseMap()
+                .ForMember(x => x.Position, opt => opt.MapFrom(src => src.Position));
 
+            CreateMap<UpdateEmployeeVM, Employee>().ReverseMap();
+                
+            CreateMap<ItemEmployeeVM, Employee>().ReverseMap()
+                .ForMember(x => x.Position, opt => opt.MapFrom(src => src.Position));
+            CreateMap<IncludeEmployeeVM, Employee>().ReverseMap();
+                
         }
     }
 }

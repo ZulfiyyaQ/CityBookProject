@@ -59,8 +59,8 @@ namespace CityBookMVCOnionPersistence.Implementations.Repositories.Generic
 
             return IsTracking ? query : query.AsNoTracking();
         }
-
-        public IQueryable<T> GetAllWhereByOrder(Expression<Func<T, bool>>? expression = null, Expression<Func<T, object>>? orderException = null, bool IsDescending = false, int skip = 0, int take = 0, bool IsTracking = true, params string[] includes)
+        public IQueryable<T> GetAllWhereByOrder(Expression<Func<T, bool>>? expression = null, Expression<Func<T, object>>? orderException = null,
+            bool IsDescending = false, bool IsDeleted = false, int skip = 0, int take = 0, bool IsTracking = true, params string[] includes)
         {
             var query = _dbSet.AsQueryable();
             if (expression != null) query = query.Where(expression);
@@ -69,6 +69,14 @@ namespace CityBookMVCOnionPersistence.Implementations.Repositories.Generic
             {
                 if (IsDescending) query = query.OrderByDescending(orderException);
                 else query = query.OrderBy(orderException);
+            }
+            if (IsDeleted)
+            {
+                query = query.Where(x => x.IsDeleted == true);
+            }
+            else
+            {
+                query = query.Where(x => x.IsDeleted == false);
             }
 
             if (skip != 0) query = query.Skip(skip);

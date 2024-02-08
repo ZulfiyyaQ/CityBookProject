@@ -1,10 +1,8 @@
-﻿using CityBookMVCOnionApplication.ViewModels.BTag;
-using CityBookMVCOnionApplication.ViewModels;
+﻿using CityBookMVCOnionApplication.ViewModels;
+using CityBookMVCOnionApplication.ViewModels.Category;
 using CityBookMVCOnionDomain.Entities;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using System.Linq.Expressions;
-using CityBookMVCOnionApplication.ViewModels.Category;
 
 namespace CityBookMVCOnionApplication.Abstractions.Services
 {
@@ -21,5 +19,7 @@ namespace CityBookMVCOnionApplication.Abstractions.Services
         Task DeleteAsync(int id);
         Task SoftDeleteAsync(int id);
         Task ReverseSoftDeleteAsync(int id);
+        Task CreatePopulateDropdowns(CreateCategoryVM create);
+        Task UpdatePopulateDropdowns(UpdateCategoryVM update);
     }
 }

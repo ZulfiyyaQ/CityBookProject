@@ -2,11 +2,6 @@
 using CityBookMVCOnionDomain.Entities;
 using CityBookMVCOnionPersistence.Contexts;
 using CityBookMVCOnionPersistence.Implementations.Repositories.Generic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CityBookMVCOnionPersistence.Implementations.Repositories
 {

@@ -1,4 +1,5 @@
 ﻿using CityBookMVCOnionDomain.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -8,9 +9,13 @@ namespace CityBookMVCOnionPersistence.Contexts
 {
     public class AppDbContext : IdentityDbContext<User>
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+        private readonly IHttpContextAccessor _http;
+        public AppDbContext(DbContextOptions<AppDbContext> options, IHttpContextAccessor http) : base(options)
+        {
+            _http = http;
+        }
 
-        
+
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<BlogTag> BlogTags { get; set; }
         public DbSet<BTag> BTags { get; set; }
@@ -51,8 +56,8 @@ namespace CityBookMVCOnionPersistence.Contexts
                 {
                     case EntityState.Added:
                         data.Entity.CreateAt = DateTime.Now;
+                        data.Entity.CreatedBy = _http.HttpContext.User.Identity.Name;
                         break;
-                   
                 }
             }
 

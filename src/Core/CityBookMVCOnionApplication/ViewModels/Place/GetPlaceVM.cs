@@ -1,4 +1,5 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Feature;
+﻿using CityBookMVCOnionApplication.ViewModels.Category;
+using CityBookMVCOnionApplication.ViewModels.Feature;
 using CityBookMVCOnionApplication.ViewModels.PlaceImage;
 using CityBookMVCOnionApplication.ViewModels.Review;
 using CityBookMVCOnionApplication.ViewModels.Tag;
@@ -15,6 +16,8 @@ namespace CityBookMVCOnionApplication.ViewModels.Place
         public string ImageUrl { get; init; }
         public int UserId { get; init; }
         public IncludeUserVM User { get; init; }
+        public int CategoryId { get; init; }
+        public IncludeCategoryVM Category { get; init; }
         public List<IncludePlaceImageVM> PlaceImages { get; init; }
         public List<IncludeTagVM> Tags { get; init; }
         public List<IncludeFeatureVM> Features { get; init; }
