@@ -79,7 +79,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (page <= 0) throw new WrongRequestException("The request sent does not exist");
             if (order <= 0) throw new WrongRequestException("The request sent does not exist");
 
-            string[] includes = { $"{nameof(Feature.PlaceFeature)}" };
+            string[] includes = { $"{nameof(Feature.PlaceFeature)}.{nameof(PlaceFeature.Place)}" };
             double count = await _repository.CountAsync();
 
             ICollection<Feature> items = new List<Feature>();
@@ -127,7 +127,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (page <= 0) throw new WrongRequestException("The request sent does not exist");
             if (order <= 0) throw new WrongRequestException("The request sent does not exist");
 
-            string[] includes = { $"{nameof(Feature.PlaceFeature)}" };
+            string[] includes = { $"{nameof(Feature.PlaceFeature)}.{nameof(PlaceFeature.Place)}" };
             double count = await _repository.CountAsync();
 
             ICollection<Feature> items = new List<Feature>();
@@ -173,7 +173,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         public async Task<GetFeatureVM> GetByIdAsync(int id)
         {
             if (id <= 0) throw new WrongRequestException("The request sent does not exist");
-            string[] includes = { $"{nameof(Feature.PlaceFeature)}" };
+            string[] includes = { $"{nameof(Feature.PlaceFeature)}.{nameof(PlaceFeature.Place)}" };
             Feature item = await _repository.GetByIdAsync(id, IsTracking: false, includes: includes);
             if (item == null) throw new NotFoundException("Your request was not found");
 

@@ -4,6 +4,6 @@
     {
         public string Icon { get; set; }
         //Relational props
-        public List<PlaceFeature> PlaceFeature { get; set; }
+        public List<PlaceFeature>? PlaceFeature { get; set; }
     }
 }

@@ -369,12 +369,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("EmployeeReviews");
                 });
@@ -412,17 +407,15 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Places");
                 });
@@ -1054,13 +1047,6 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                     b.Navigation("Position");
                 });
 
-            modelBuilder.Entity("CityBookMVCOnionDomain.Entities.HomeReview", b =>
-                {
-                    b.HasOne("CityBookMVCOnionDomain.Entities.User", null)
-                        .WithMany("EmpReviews")
-                        .HasForeignKey("UserId");
-                });
-
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Place", b =>
                 {
                     b.HasOne("CityBookMVCOnionDomain.Entities.Category", "Category")
@@ -1070,8 +1056,10 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                         .IsRequired();
 
                     b.HasOne("CityBookMVCOnionDomain.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId1");
+                        .WithMany("Places")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Category");
 
@@ -1266,7 +1254,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                 {
                     b.Navigation("Blogs");
 
-                    b.Navigation("EmpReviews");
+                    b.Navigation("Places");
 
                     b.Navigation("Replies");
 
