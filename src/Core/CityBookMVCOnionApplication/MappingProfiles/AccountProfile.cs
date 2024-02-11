@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CityBookMVCOnionApplication.ViewModels;
 using CityBookMVCOnionApplication.ViewModels.Account;
 using CityBookMVCOnionDomain.Entities;
 
@@ -13,7 +14,7 @@ namespace CityBookMVCOnionApplication.MappingProfiles
             CreateMap<IncludeUserVM, User>().ReverseMap();
             CreateMap<LoginVM, User>().ReverseMap();
             CreateMap<RegisterVM, User>().ReverseMap();
-
+            CreateMap<BeEmployeeVM, User>().ReverseMap();
         }
     }
 }

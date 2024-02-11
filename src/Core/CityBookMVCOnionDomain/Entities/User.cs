@@ -16,6 +16,8 @@ namespace CityBookMVCOnionDomain.Entities
         public string? About { get; set; } 
         public bool IsActivate { get; set; }
         //Relational props
+        public int? PositionId { get; set; }
+        public Position Position { get; set; }
         public List<Blog>? Blogs { get; set; }
         public List<Place>? Places { get; set; }
 

@@ -34,14 +34,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             _http = http;
             _env = env;
         }
-        public async Task CreatePopulateDropdowns(CreateCategoryVM create)
-        {
-            create.Places = _mapper.Map<List<IncludePlaceVM>>(await _placeRepository.GetAll().ToListAsync());
-        }
-        public async Task UpdatePopulateDropdowns(UpdateCategoryVM update)
-        {
-            update.Places = _mapper.Map<List<IncludePlaceVM>>(await _placeRepository.GetAll().ToListAsync());
-        }
+       
         public async Task<bool> CreateAsync(CreateCategoryVM create, ModelStateDictionary model)
         {
             if (!model.IsValid) return false;
@@ -50,14 +43,6 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             {
                 model.AddModelError("Name", "Name is exists");
                 return false;
-            }
-            foreach (int placeId in create.PlaceIds)
-            {
-                if (!await _placeRepository.CheckUniqueAsync(x => x.Id == placeId))
-                {
-                    await CreatePopulateDropdowns(create);
-                    return false;
-                }
             }
             if (!create.Photo.ValidateType())
             {
@@ -253,12 +238,10 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         {
             if (!model.IsValid)
             {
-                await UpdatePopulateDropdowns(update);
                 return false;
             }
             if (await _repository.CheckUniqueAsync(x => x.Name.ToLower().Trim() == update.Name.ToLower().Trim() && x.Id != id))
             {
-                await UpdatePopulateDropdowns(update);
                 model.AddModelError("Name", "Name is exists");
                 return false;
             }
@@ -267,33 +250,16 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             Category item = await _repository.GetByIdAsync(id, includes: includes);
             if (item == null) throw new NotFoundException("Your request was not found");
-            ICollection<Place> placeToRemove = item.Places
-                .Where(ps => !update.PlaceIds.Contains(ps.Id)).ToList();
-            foreach (var placeRemove in placeToRemove)
-            {
-                item.Places.Remove(placeRemove);
-                //_repository.DeleteFeatures(featureRemove);
-            }
 
-            ICollection<Place> placeToAdd = update.PlaceIds
-                .Except(item.Places.Select(ps => ps.Id))
-                .Select(placeId => new Place { Id = placeId })
-                .ToList();
-            foreach (var placeAdd in placeToAdd)
-            {
-                item.Places.Add(placeAdd);
-            }
             if (update.Photo != null)
             {
                 if (!update.Photo.ValidateType())
                 {
-                    await UpdatePopulateDropdowns(update);
                     model.AddModelError("Photo", "File Not supported");
                     return false;
                 }
                 if (!update.Photo.ValidataSize())
                 {
-                    await UpdatePopulateDropdowns(update);
                     model.AddModelError("Photo", "Image should not be larger than 10 mb");
                     return false;
                 }
@@ -323,7 +289,6 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             UpdateCategoryVM update = _mapper.Map<UpdateCategoryVM>(item);
 
-            await UpdatePopulateDropdowns(update);
 
             return update;
         }

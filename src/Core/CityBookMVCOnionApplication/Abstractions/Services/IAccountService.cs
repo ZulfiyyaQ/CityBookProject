@@ -10,5 +10,8 @@ namespace CityBookMVCOnionApplication.Abstractions.Services
         Task<bool> LogInAsync(LoginVM login, ModelStateDictionary model);
         Task LogOutAsync();
         Task<bool> ConfirmEmail(string token, string email);
+        
+        Task<bool> ForgotPassword(FindAccountVM account, ModelStateDictionary model, IUrlHelper url);
+        Task<bool> ChangePassword(string userNameOrEmail, string token, ForgotPasswordVM fogotPassword, ModelStateDictionary model);
     }
 }

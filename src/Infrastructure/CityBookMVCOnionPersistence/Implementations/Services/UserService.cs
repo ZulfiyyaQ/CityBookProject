@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
+using CityBookMVCOnionApplication.Abstractions.Repositories;
 using CityBookMVCOnionApplication.Abstractions.Services;
 using CityBookMVCOnionApplication.ViewModels;
 using CityBookMVCOnionApplication.ViewModels.Account;
+using CityBookMVCOnionApplication.ViewModels.Position;
 using CityBookMVCOnionDomain.Entities;
 using CityBookMVCOnionDomain.Enums;
 using CityBookMVCOnionInfrastructure.Exceptions;
 using CityBookMVCOnionInfrastructure.Implementations;
+using CityBookMVCOnionPersistence.Implementations.Repositories;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -13,6 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace CityBookMVCOnionPersistence.Implementations.Services
 {
@@ -22,22 +26,23 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         private readonly SignInManager<User> _signInManager;
         private readonly IMapper _mapper;
         private readonly IEmailService _emailService;
+        private readonly IPositionRepository _positionRepository;
         private readonly IWebHostEnvironment _env;
         private readonly IHttpContextAccessor _http;
         private readonly IConfiguration _configuration;
 
-
-        public UserService(UserManager<User> userManager, IMapper mapper, SignInManager<User> signInManager,
-             IEmailService emailService, IHttpContextAccessor http, IConfiguration configuration, IWebHostEnvironment env)
+        public UserService(UserManager<User> userManager, SignInManager<User> signInManager, IMapper mapper, 
+            IEmailService emailService, IPositionRepository positionRepository, IWebHostEnvironment env,
+            IHttpContextAccessor http, IConfiguration configuration)
         {
             _userManager = userManager;
-            _mapper = mapper;
             _signInManager = signInManager;
-
+            _mapper = mapper;
             _emailService = emailService;
+            _positionRepository = positionRepository;
+            _env = env;
             _http = http;
             _configuration = configuration;
-            _env = env;
         }
 
         public async Task<PaginationVM<ItemUserVM>> GetFilteredAsync(string? search, int take, int page, int order)
@@ -257,6 +262,39 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (user == null) throw new NotFoundException("Your request was not found");
 
             await _userManager.DeleteAsync(user);
+        }
+
+        public async Task<BeEmployeeVM> BeEmployee(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id)) throw new WrongRequestException("The request sent does not exist");
+            User user = await _userManager.FindByIdAsync(id);
+            if (user == null) throw new NotFoundException("Your request was not found");
+
+            BeEmployeeVM vm = _mapper.Map<BeEmployeeVM>(user);
+
+            vm.Positions = _mapper.Map<List<IncludePositionVM>>(await _positionRepository.GetAll().ToListAsync());
+
+            return vm;
+        }
+
+        public async Task<bool> BeEmployeePost(string id, BeEmployeeVM vm, ModelStateDictionary model)
+        {
+            if (string.IsNullOrWhiteSpace(id)) throw new WrongRequestException("The request sent does not exist");
+            User user = await _userManager.FindByIdAsync(id);
+            if (user == null) throw new NotFoundException("Your request was not found");
+            if (!model.IsValid)
+            {
+                vm.Positions = _mapper.Map<List<IncludePositionVM>>(await _positionRepository.GetAll().ToListAsync());
+                return false;
+            }
+            if (!await _positionRepository.CheckUniqueAsync(x => x.Id == vm.PositionId))
+            {
+                vm.Positions = _mapper.Map<List<IncludePositionVM>>(await _positionRepository.GetAll().ToListAsync());
+                return false;
+            }
+            user.PositionId = vm.PositionId;
+
+            return true;
         }
 
         public async Task<EditUserVM> EditUser(string id)

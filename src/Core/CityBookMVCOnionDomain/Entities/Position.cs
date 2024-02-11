@@ -2,6 +2,6 @@
 {
     public class Position : BaseNameableEntity
     { //Relational props
-        public List<Employee>? Employees { get; set; }
+        public List<User>? Users { get; set; }
     }
 }

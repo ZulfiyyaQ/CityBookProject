@@ -21,7 +21,7 @@ namespace CityBookMVCOnionPersistence.Contexts
         public DbSet<BTag> BTags { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<Employee> Employees { get; set; }
+       
         public DbSet<HomeReview> EmployeeReviews { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<Place> Places { get; set; }

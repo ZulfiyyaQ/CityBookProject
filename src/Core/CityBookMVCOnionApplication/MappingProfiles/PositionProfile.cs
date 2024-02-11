@@ -11,10 +11,10 @@ namespace CityBookMVCOnionApplication.MappingProfiles
             CreateMap<CreatePositionVM, Position>().ReverseMap();
             CreateMap<UpdatePositionVM, Position>().ReverseMap();
             CreateMap<GetPositionVM, Position>().ReverseMap()
-                .ForMember(x => x.Employees, opt => opt.MapFrom(src => src.Employees.ToList()));
+                .ForMember(x => x.User, opt => opt.MapFrom(src => src.Users.ToList()));
             CreateMap<IncludePositionVM, Position>().ReverseMap();
             CreateMap<ItemPositionVM, Position>().ReverseMap()
-                .ForMember(x => x.Employees, opt => opt.MapFrom(src => src.Employees.ToList()));
+                .ForMember(x => x.User, opt => opt.MapFrom(src => src.Users.ToList()));
         }
     }
 }

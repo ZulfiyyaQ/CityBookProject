@@ -19,7 +19,6 @@ namespace CityBookMVCOnionApplication.Abstractions.Services
         Task DeleteAsync(int id);
         Task SoftDeleteAsync(int id);
         Task ReverseSoftDeleteAsync(int id);
-        Task CreatePopulateDropdowns(CreateCategoryVM create);
-        Task UpdatePopulateDropdowns(UpdateCategoryVM update);
+       
     }
 }

@@ -1,4 +1,5 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Employee;
+﻿
+using CityBookMVCOnionApplication.ViewModels.User;
 
 namespace CityBookMVCOnionApplication.ViewModels.Position
 {
@@ -6,6 +7,6 @@ namespace CityBookMVCOnionApplication.ViewModels.Position
     {
         public int Id { get; init; }
         public string Name { get; init; }
-        public List<IncludeEmployeeVM>? Employees { get; init; }
+        public List<IncludeUserVM>? User { get; init; }
     }
 }

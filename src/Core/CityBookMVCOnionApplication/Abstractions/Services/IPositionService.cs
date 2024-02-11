@@ -1,4 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Employee;
+﻿
 using CityBookMVCOnionApplication.ViewModels;
 using CityBookMVCOnionDomain.Entities;
 using Microsoft.AspNetCore.Mvc.ModelBinding;

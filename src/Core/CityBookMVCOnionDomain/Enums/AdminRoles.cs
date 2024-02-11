@@ -3,6 +3,7 @@
     public enum AdminRoles
     {
         Admin,
-        Member
+        Member,
+        Employee
     }
 }
