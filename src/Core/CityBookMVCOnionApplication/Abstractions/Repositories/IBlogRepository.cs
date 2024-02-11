@@ -5,5 +5,7 @@ namespace CityBookMVCOnionApplication.Abstractions.Repositories
 {
     public interface IBlogRepository : IRepository<Blog>
     {
+        Task AddComment(Comment item);
+        Task AddReply(Reply item);
     }
 }

@@ -22,5 +22,7 @@ namespace CityBookMVCOnionApplication.Abstractions.Services
         Task ReverseSoftDeleteAsync(int id);
         Task CreatePopulateDropdowns(CreateBlogVM create);
         Task UpdatePopulateDropdowns(UpdateBlogVM update);
+        Task<bool> CommentAsync(int blogId, string comment, ModelStateDictionary model);
+        Task<bool> ReplyAsync(int blogCommnetId, string comment, ModelStateDictionary model);
     }
 }
