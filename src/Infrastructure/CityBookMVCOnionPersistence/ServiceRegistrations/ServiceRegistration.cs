@@ -33,32 +33,26 @@ namespace CityBookMVCOnionPersistence.ServiceRegistrations
                 options.SignIn.RequireConfirmedEmail = true;
             }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
-            
+            services.AddScoped<IBlogRepository, BlogRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IBTagRepository, BTagRepository>();
+            services.AddScoped<ITagRepository, TagRepository>();
+            services.AddScoped<IPositionRepository, PositionRepository>();
+            services.AddScoped<IPlaceRepository, PlaceRepository>();
+            services.AddScoped<IFeatureRepository, FeatureRepository>();
+            services.AddScoped<IServiceRepository, ServiceRepository>();
+            services.AddScoped<ISettingRepository, SettingRepository>();
 
-            //services.AddScoped<IAuthorRepository, AuthorRepository>();
-            //services.AddScoped<IBlogRepository, BlogRepository>();
-            //services.AddScoped<ICategoryRepository, CategoryRepository>();
-            //services.AddScoped<IBTagRepository, BTagRepository>();
-            //services.AddScoped<ITagRepository, TagRepository>();
-            //services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-            //services.AddScoped<IPositionRepository, PositionRepository>();
-            //services.AddScoped<IPlaceRepository, PlaceRepository>();
-            //services.AddScoped<IFeatureRepository, FeatureRepository>();
-            //services.AddScoped<IServiceRepository, ServiceRepository>();
-            //services.AddScoped<ISettingRepository, SettingRepository>();
-
-            //services.AddScoped<IAccountService, AccountService>();
-            //services.AddScoped<IAuthorService, AuthorService>();
-            //services.AddScoped<IBlogService, BlogService>();
-            //services.AddScoped<ICategoryService, CategoryService>();
-            //services.AddScoped<IBTagService, BTagService>();
-            //services.AddScoped<IFeatureService, FeatureService>();
-            //services.AddScoped<IEmployeeService, EmployeeService>();
-            //services.AddScoped<IPlaceService, PlaceService>();
-            //services.AddScoped<ITagService, TagService>();
-            //services.AddScoped<IPositionService, PositionService>();
-            //services.AddScoped<IServiceService, ServiceService>();
-            //services.AddScoped<ISettingService, SettingService>();
+            services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IBlogService, BlogService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IBTagService, BTagService>();
+            services.AddScoped<IFeatureService, FeatureService>();
+            services.AddScoped<IPlaceService, PlaceService>();
+            services.AddScoped<ITagService, TagService>();
+            services.AddScoped<IPositionService, PositionService>();
+            services.AddScoped<IServiceService, ServiceService>();
+            services.AddScoped<ISettingService, SettingService>();
 
             services.AddScoped<AppDbContextInitializer>();
 

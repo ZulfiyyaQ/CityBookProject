@@ -222,17 +222,15 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                         .HasMaxLength(1500)
                         .HasColumnType("nvarchar(1500)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("BlogId");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Comments");
                 });
@@ -516,19 +514,67 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                         .HasMaxLength(1500)
                         .HasColumnType("nvarchar(1500)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CommentId");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Replies");
+                });
+
+            modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Reservation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("About")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsApproved")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Persons")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PlaceId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ReservationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ReservationDateTo")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PlaceId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Review", b =>
@@ -975,7 +1021,9 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasOne("CityBookMVCOnionDomain.Entities.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Blog");
 
@@ -1060,9 +1108,30 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasOne("CityBookMVCOnionDomain.Entities.User", "User")
                         .WithMany("Replies")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Comment");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Reservation", b =>
+                {
+                    b.HasOne("CityBookMVCOnionDomain.Entities.Place", "Place")
+                        .WithMany("Reservations")
+                        .HasForeignKey("PlaceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CityBookMVCOnionDomain.Entities.User", "User")
+                        .WithMany("Reservations")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Place");
 
                     b.Navigation("User");
                 });
@@ -1181,6 +1250,8 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.Navigation("PlaceTags");
 
+                    b.Navigation("Reservations");
+
                     b.Navigation("Reviews");
                 });
 
@@ -1201,6 +1272,8 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                     b.Navigation("Places");
 
                     b.Navigation("Replies");
+
+                    b.Navigation("Reservations");
 
                     b.Navigation("Reviews");
                 });

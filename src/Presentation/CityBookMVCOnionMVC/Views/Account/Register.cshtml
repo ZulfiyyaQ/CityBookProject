@@ -1,5 +1,85 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model RegisterVM
+
+<!--register form -->
+<div class="bg-light">
+    <div class="container col-6 ">
+        <div id="tabs-container" style="margin-top:200px;">
+            <ul>
+ 
+                <li style="font-size:25px"> Register</li>
+            </ul>
+            <div class="tab">
+                <div id="tab-1" class="tab-content" style="padding:0 0 100px">
+                    <div asp-validation-summary="All"></div>
+                    <div>
+
+                        <form class="pt-3 " style="max-width:700px; margin: 0 auto;">
+                            <div>
+                                
+                                <input asp-for="Name" class="form-control form-control-lg" placeholder=" Name" />
+                                <span class="text-danger" asp-validation-for="Name"></span>
+                            </div>
+                            <div>
+                                
+                                <input asp-for="Surname" class="form-control form-control-lg mt-3" placeholder=" Surname" />
+                                <span class="text-danger" asp-validation-for="Surname"></span>
+                            </div>
+                            <div>
+                                
+                                <input asp-for="Email" class="form-control form-control-lg mt-3" placeholder=" Email" />
+                                <span class="text-danger" asp-validation-for="Email"></span>
+                            </div>
+                            <div>
+                                
+                                <input asp-for="Username" class="form-control form-control-lg mt-3" placeholder=" Username" />
+                                <span class="text-danger" asp-validation-for="Username"></span>
+                            </div>
+                            <div>
+                                
+                                <input asp-for="Password" type="password" class="form-control form-control-lg mt-3" placeholder=" Password" />
+                                <span class="text-danger" asp-validation-for="Password"></span>
+                                
+                            </div>
+                            <div>
+                                
+                                <input asp-for="ConfirmPassword" type="password" class="form-control form-control-lg mt-3" placeholder=" Confirm Password" />
+                                <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+
+                            </div>
+                            <div class="mt-3">
+                                <div style="text-align: start;">
+                                   
+
+                                    <button style="border: none; background: #4DB7FE; font-size: small; color: white; font-weight: bold; padding: 14px 40px; border-radius: 6px;">REGISTER</button>
+
+
+                                </div>
+                            </div>
+                            <div>
+
+
+                                <div style="display: flex; justify-content: space-between; margin-top:32px;" class=" ">
+
+                                   
+
+                                    <div>
+                                        Already have an account? <a asp-action="login" asp-controller="Account" class="text-primary">Login</a>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--register form end -->
+<!--register form end -->

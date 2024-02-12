@@ -30,6 +30,7 @@ namespace CityBookMVCOnionPersistence.Contexts
         public DbSet<Position> Positions { get; set; }
         public DbSet<Reply> Replies { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Tag> Tags { get; set; }

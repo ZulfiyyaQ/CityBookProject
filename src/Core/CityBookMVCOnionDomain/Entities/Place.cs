@@ -16,6 +16,8 @@
         public List<PlaceTag> PlaceTags { get; set; }
         public List<PlaceFeature> PlaceFeatures { get; set; }
         public List<PlaceImage> PlaceImages { get; set; }
+        public List<Reservation>? Reservations { get; set; }
+
 
     }
 }

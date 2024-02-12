@@ -24,5 +24,7 @@ namespace CityBookMVCOnionDomain.Entities
         public List<Review>? Reviews { get; set; }
         
         public List<Reply>? Replies { get; set; }
+        public List<Reservation>? Reservations { get; set; }
+
     }
 }

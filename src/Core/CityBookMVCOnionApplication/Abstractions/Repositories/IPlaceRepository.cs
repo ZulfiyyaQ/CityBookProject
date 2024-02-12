@@ -5,5 +5,7 @@ namespace CityBookMVCOnionApplication.Abstractions.Repositories
 {
     public interface IPlaceRepository : IRepository<Place>
     {
+        Task AddReservasion(Reservation item);
+        void RemoveReservasion(Reservation item);
     }
 }
