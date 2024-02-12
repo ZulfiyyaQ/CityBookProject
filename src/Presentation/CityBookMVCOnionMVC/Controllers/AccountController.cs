@@ -20,7 +20,7 @@ namespace CityBookMVCOnionMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM login, string? returnUrl)
         {
-            bool result = await _service.LogInAsync(login, ModelState);
+            bool result = await _service.LogInAsync(login, ModelState); 
             if (!result)
             {
                 return View(login);

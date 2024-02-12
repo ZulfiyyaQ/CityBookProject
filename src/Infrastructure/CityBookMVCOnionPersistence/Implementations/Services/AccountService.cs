@@ -75,7 +75,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             User user = _mapper.Map<User>(register);
             user.Name = user.Name.Capitalize();
             user.Surname = user.Surname.Capitalize();
-
+            user.About = "";
             var result = await _userManager.CreateAsync(user, register.Password);
             if (!result.Succeeded)
             {
