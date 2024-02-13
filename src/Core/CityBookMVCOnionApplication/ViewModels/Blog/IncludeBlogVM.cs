@@ -6,6 +6,7 @@
         public string Name { get; init; }
         public List<IncludeBlogImageVM> Images { get; set; }
         public List<string> ImageIds { get; init; }
+        
 
 
     }

@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Asus\Desktop\CityBookMVCOnion\src\Presentation\CityBookMVCOnionMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Blog/DeletedItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xEZWxldGVkSXRlbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Blog/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Blog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/BTag/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQlRhZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -98,6 +110,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Place/DeletedItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGxhY2VcRGVsZXRlZEl0ZW1zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Place/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGxhY2VcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Place/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGxhY2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Position/Create.cshtml]

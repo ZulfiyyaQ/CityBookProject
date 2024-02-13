@@ -1,0 +1,58 @@
+﻿@model GetBlogVM
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-3 m-1 w-50">
+        <div class="col">
+            <div class="card">
+                <p class="card-text fw-bold m-2">Images</p>
+                @foreach (var item in Model.BlogImage)
+                {
+                    
+                        <img src="@item.Url" alt="@item.BlogId">
+                   
+                   
+                }
+            </div>
+        </div>
+        
+    </div>
+    <div class="card-body m-2">
+        <h5 class="card-title">Name: @Model.Name</h5>
+        <p class="card-text">Create By: @Model.User.Name</p>
+        <p class="card-text">Create Date: @Model.CreateAt.ToString("dd,MMMM,yyyy")</p>
+        <p class="card-text">Facebook: <a href="@(Model.User.Face!= null ? Model.User.Face : "")">@(Model.User.Face != null ? Model.User.Face : "N/A")</a> </p>
+        <p class="card-text">LinkedIn: <a href="@(Model.User.Link!= null ? Model.User.Link : "")">@(Model.User.Link != null ? Model.User.Link : "N/A")</a> </p>
+        <p class="card-text">Twitter: <a href="@(Model.User.Tvit != null ? Model.User.Tvit : "")">@(Model.User.Tvit != null ? Model.User.Tvit : "N/A")</a> </p>
+        <p class="card-text">Instagram: <a href="@(Model.User.Inst != null ? Model.User.Inst : "")">@(Model.User.Inst != null ? Model.User.Inst : "N/A")</a> </p>
+        <p class="card-text">WebSite: <a href="@(Model.User.WebSite != null ? Model.User.WebSite : "")">@(Model.User.WebSite != null ? Model.User.WebSite : "N/A")</a> </p>
+        <p class="card-text fw-bold m-2"> Comments</p>
+        <p>
+            @foreach (var item in Model.Comments)
+            {
+                <p>
+                    <img src="@item.User.Img" alt="@item.User.UserName">
+                </p>
+                <p>
+                    @item.User.UserName
+                </p>
+                <p>
+                    @item.Text
+                </p>
+                <p>
+                    @item.CreateAt.ToString("dd,MMMM,yyyy")
+                </p>
+            }
+        </p>
+        <p>
+            @foreach (var item in Model.Tags)
+            {
+                @item.Name
+            }
+        </p>
+       
+       
+    </div>
+   
+</div>
+
+<a class="btn btn-light fw-bold fs-4" asp-action="Index" asp-controller="Blog">Back</a>

@@ -12,15 +12,7 @@
             <input type="text" class="form-control" placeholder="Search now" name="search" value="@(Model.Search == null? "":Model.Search)">
         </form>
     </div>
-    <form asp-action="Index" asp-controller="Settings"
-          asp-route-order="@Model.Search" class="my-2 ">
-        <select class="form-control form-control-sm rounded-1" onchange="this.form.submit()" name="Order">
-            <option value="1">Name</option>
-            <option value="2">Created at</option>
-            <option value="3">Name by Descending</option>
-            <option value="4">Created at by Descending</option>
-        </select>
-    </form>
+   
 </div>
 
 <div class="col-lg-12 grid-margin stretch-card">
