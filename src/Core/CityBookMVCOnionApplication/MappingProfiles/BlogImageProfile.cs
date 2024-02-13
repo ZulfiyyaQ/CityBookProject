@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CityBookMVCOnionApplication.ViewModels.BlogImage;
+using CityBookMVCOnionApplication.ViewModels;
 using CityBookMVCOnionDomain.Entities;
 
 namespace CityBookMVCOnionApplication.MappingProfiles

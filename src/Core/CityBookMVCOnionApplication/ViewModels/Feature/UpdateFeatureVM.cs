@@ -1,4 +1,4 @@
-﻿namespace CityBookMVCOnionApplication.ViewModels.Feature
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record UpdateFeatureVM
     {

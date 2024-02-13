@@ -1,10 +1,6 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Account;
-using CityBookMVCOnionApplication.ViewModels.BlogImage;
-using CityBookMVCOnionApplication.ViewModels.BTag;
-
-namespace CityBookMVCOnionApplication.ViewModels.Blog
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
-    
+
     public record ItemBlogVM
     {
         public int Id { get; init; }

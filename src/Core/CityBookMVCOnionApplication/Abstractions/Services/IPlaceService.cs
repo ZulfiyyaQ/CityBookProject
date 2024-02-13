@@ -1,10 +1,8 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Feature;
-using CityBookMVCOnionApplication.ViewModels;
+﻿using CityBookMVCOnionApplication.ViewModels;
 using CityBookMVCOnionDomain.Entities;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using System.Linq.Expressions;
-using CityBookMVCOnionApplication.ViewModels.Place;
 
 namespace CityBookMVCOnionApplication.Abstractions.Services
 {

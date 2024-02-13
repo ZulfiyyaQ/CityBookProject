@@ -1,4 +1,4 @@
-﻿namespace CityBookMVCOnionApplication.ViewModels.Reply
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record CreateReplyVM
     {

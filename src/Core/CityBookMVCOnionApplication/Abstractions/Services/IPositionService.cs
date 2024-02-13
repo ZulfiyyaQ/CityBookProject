@@ -3,7 +3,6 @@ using CityBookMVCOnionApplication.ViewModels;
 using CityBookMVCOnionDomain.Entities;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Linq.Expressions;
-using CityBookMVCOnionApplication.ViewModels.Position;
 
 namespace CityBookMVCOnionApplication.Abstractions.Services
 {

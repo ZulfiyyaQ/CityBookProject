@@ -1,13 +1,6 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Account;
-using CityBookMVCOnionApplication.ViewModels;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
+﻿using CityBookMVCOnionApplication.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace CityBookMVCOnionApplication.Abstractions.Services
 {

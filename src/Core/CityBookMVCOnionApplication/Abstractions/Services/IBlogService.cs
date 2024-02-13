@@ -1,5 +1,4 @@
 ﻿using CityBookMVCOnionApplication.ViewModels;
-using CityBookMVCOnionApplication.ViewModels.Blog;
 using CityBookMVCOnionDomain.Entities;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;

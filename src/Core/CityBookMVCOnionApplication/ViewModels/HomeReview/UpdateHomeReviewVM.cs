@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace CityBookMVCOnionApplication.ViewModels.HomeReview
+namespace CityBookMVCOnionApplication.ViewModels
 {
     public record UpdateHomeReviewVM
     {

@@ -1,4 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Tag;
+﻿using CityBookMVCOnionApplication.ViewModels;
 using FluentValidation;
 
 namespace CityBookMVCOnionApplication.Validators.Tag

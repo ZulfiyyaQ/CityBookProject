@@ -1,4 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Account;
+﻿using CityBookMVCOnionApplication.ViewModels;
 using FluentValidation;
 
 namespace CityBookMVCOnionApplication.Validators.Account

@@ -1,6 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Place;
-
-namespace CityBookMVCOnionApplication.ViewModels.Category
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record ItemCategoryVM
     {

@@ -1,6 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.BlogImage;
-
-namespace CityBookMVCOnionApplication.ViewModels.Blog
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record IncludeBlogVM
     {

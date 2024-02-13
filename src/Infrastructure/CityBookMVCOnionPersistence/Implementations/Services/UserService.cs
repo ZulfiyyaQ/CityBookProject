@@ -2,13 +2,10 @@
 using CityBookMVCOnionApplication.Abstractions.Repositories;
 using CityBookMVCOnionApplication.Abstractions.Services;
 using CityBookMVCOnionApplication.ViewModels;
-using CityBookMVCOnionApplication.ViewModels.Account;
-using CityBookMVCOnionApplication.ViewModels.Position;
 using CityBookMVCOnionDomain.Entities;
 using CityBookMVCOnionDomain.Enums;
 using CityBookMVCOnionInfrastructure.Exceptions;
 using CityBookMVCOnionInfrastructure.Implementations;
-using CityBookMVCOnionPersistence.Implementations.Repositories;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -16,7 +13,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace CityBookMVCOnionPersistence.Implementations.Services
 {

@@ -1,5 +1,5 @@
 ﻿using CityBookMVCOnionApplication.Abstractions.Services;
-using CityBookMVCOnionApplication.ViewModels.Account;
+using CityBookMVCOnionApplication.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityBookMVCOnionMVC.Controllers

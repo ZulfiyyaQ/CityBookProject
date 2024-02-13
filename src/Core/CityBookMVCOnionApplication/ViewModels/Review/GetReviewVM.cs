@@ -1,7 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Place;
-using CityBookMVCOnionApplication.ViewModels.User;
-
-namespace CityBookMVCOnionApplication.ViewModels.Review
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record GetReviewVM
     {

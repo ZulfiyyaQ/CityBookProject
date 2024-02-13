@@ -1,4 +1,4 @@
-﻿namespace CityBookMVCOnionApplication.ViewModels.Service
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record CreateServiceVM
     {

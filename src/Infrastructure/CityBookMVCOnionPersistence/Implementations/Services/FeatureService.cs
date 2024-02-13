@@ -1,16 +1,15 @@
 ﻿
 using AutoMapper;
+using CityBookMVCOnionApplication.Abstractions.Repositories;
 using CityBookMVCOnionApplication.Abstractions.Services;
-using CityBookMVCOnionApplication.ViewModels.Feature;
 using CityBookMVCOnionApplication.ViewModels;
+using CityBookMVCOnionDomain.Entities;
 using CityBookMVCOnionInfrastructure.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System.Linq.Expressions;
-using CityBookMVCOnionApplication.Abstractions.Repositories;
-using CityBookMVCOnionDomain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace CityBookMVCOnionPersistence.Implementations.Services
 {

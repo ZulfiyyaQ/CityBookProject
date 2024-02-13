@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace CityBookMVCOnionApplication.ViewModels.Account
+namespace CityBookMVCOnionApplication.ViewModels
 {
     public record EditUserVM(string UserName, string? Img)
     {

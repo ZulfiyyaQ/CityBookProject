@@ -1,4 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Reply;
+﻿using CityBookMVCOnionApplication.ViewModels;
 using FluentValidation;
 
 namespace CityBookMVCOnionApplication.Validators.Reply

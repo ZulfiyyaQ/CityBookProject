@@ -1,6 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Blog;
-
-namespace CityBookMVCOnionApplication.ViewModels.BTag
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record GetBTagVM
     {

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
-using CityBookMVCOnionApplication.ViewModels.Feature;
-using CityBookMVCOnionApplication.ViewModels.Tag;
+using CityBookMVCOnionApplication.ViewModels;
 using CityBookMVCOnionDomain.Entities;
 
 namespace CityBookMVCOnionApplication.MappingProfiles

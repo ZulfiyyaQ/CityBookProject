@@ -1,9 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.BlogImage;
-using CityBookMVCOnionApplication.ViewModels.BTag;
-using CityBookMVCOnionApplication.ViewModels.Comment;
-using CityBookMVCOnionApplication.ViewModels.User;
-
-namespace CityBookMVCOnionApplication.ViewModels.Blog
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
 
     public record GetBlogVM

@@ -1,5 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Blog;
-using CityBookMVCOnionApplication.ViewModels.Review;
+﻿using CityBookMVCOnionApplication.ViewModels;
 using FluentValidation;
 
 namespace CityBookMVCOnionApplication.Validators.Review

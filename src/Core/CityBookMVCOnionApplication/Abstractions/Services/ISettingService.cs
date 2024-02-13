@@ -1,5 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Setting;
-using CityBookMVCOnionApplication.ViewModels;
+﻿using CityBookMVCOnionApplication.ViewModels;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace CityBookMVCOnionApplication.Abstractions.Services

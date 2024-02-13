@@ -1,8 +1,6 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Blog;
-using CityBookMVCOnionApplication.ViewModels.Place;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 
-namespace CityBookMVCOnionApplication.ViewModels.Category
+namespace CityBookMVCOnionApplication.ViewModels
 {
     public record CreateCategoryVM
     {

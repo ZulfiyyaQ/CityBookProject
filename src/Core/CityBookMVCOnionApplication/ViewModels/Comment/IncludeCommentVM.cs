@@ -1,6 +1,6 @@
 ﻿
 
-namespace CityBookMVCOnionApplication.ViewModels.Comment
+namespace CityBookMVCOnionApplication.ViewModels
 {
     public record IncludeCommentVM
     {

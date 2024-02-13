@@ -2,9 +2,7 @@
 using CityBookMVCOnionApplication.ViewModels;
 using CityBookMVCOnionDomain.Entities;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using System.Linq.Expressions;
-using CityBookMVCOnionApplication.ViewModels.Feature;
 
 namespace CityBookMVCOnionApplication.Abstractions.Services
 {

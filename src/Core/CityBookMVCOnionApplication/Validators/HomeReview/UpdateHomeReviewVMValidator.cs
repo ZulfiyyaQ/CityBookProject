@@ -1,4 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.HomeReview;
+﻿using CityBookMVCOnionApplication.ViewModels;
 using FluentValidation;
 
 namespace CityBookMVCOnionApplication.Validators.HomeReview

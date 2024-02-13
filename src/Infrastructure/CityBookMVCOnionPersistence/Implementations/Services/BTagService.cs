@@ -2,7 +2,6 @@
 using CityBookMVCOnionApplication.Abstractions.Repositories;
 using CityBookMVCOnionApplication.Abstractions.Services;
 using CityBookMVCOnionApplication.ViewModels;
-using CityBookMVCOnionApplication.ViewModels.BTag;
 using CityBookMVCOnionDomain.Entities;
 using CityBookMVCOnionInfrastructure.Exceptions;
 using Microsoft.AspNetCore.Hosting;

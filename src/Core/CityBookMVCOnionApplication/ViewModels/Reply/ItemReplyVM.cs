@@ -1,7 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Comment;
-using CityBookMVCOnionApplication.ViewModels.User;
-
-namespace CityBookMVCOnionApplication.ViewModels.Reply
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record ItemReplyVM
     {

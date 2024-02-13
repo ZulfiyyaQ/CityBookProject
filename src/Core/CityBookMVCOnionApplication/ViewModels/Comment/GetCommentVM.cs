@@ -1,8 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Blog;
-using CityBookMVCOnionApplication.ViewModels.Reply;
-using CityBookMVCOnionApplication.ViewModels.User;
-
-namespace CityBookMVCOnionApplication.ViewModels.Comment
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record GetCommentVM
     {

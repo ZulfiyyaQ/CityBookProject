@@ -1,6 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Place;
-
-namespace CityBookMVCOnionApplication.ViewModels.Feature
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record GetFeatureVM
     {

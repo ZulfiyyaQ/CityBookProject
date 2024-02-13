@@ -1,10 +1,6 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Account;
-using CityBookMVCOnionApplication.ViewModels.PlaceImage;
-using CityBookMVCOnionApplication.ViewModels.Tag;
-using Microsoft.AspNetCore.Http;
-using a = CityBookMVCOnionDomain.Entities;
+﻿using Microsoft.AspNetCore.Http;
 
-namespace CityBookMVCOnionApplication.ViewModels.Blog
+namespace CityBookMVCOnionApplication.ViewModels
 {
 
     public record UpdateBlogVM

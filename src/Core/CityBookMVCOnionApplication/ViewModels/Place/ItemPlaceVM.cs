@@ -1,11 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Category;
-using CityBookMVCOnionApplication.ViewModels.Feature;
-using CityBookMVCOnionApplication.ViewModels.PlaceImage;
-using CityBookMVCOnionApplication.ViewModels.Review;
-using CityBookMVCOnionApplication.ViewModels.Tag;
-using CityBookMVCOnionApplication.ViewModels.User;
-
-namespace CityBookMVCOnionApplication.ViewModels.Place
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record ItemPlaceVM
     {

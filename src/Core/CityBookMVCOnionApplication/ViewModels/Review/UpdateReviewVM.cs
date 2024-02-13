@@ -1,4 +1,4 @@
-﻿namespace CityBookMVCOnionApplication.ViewModels.Review
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record UpdateReviewVM
     {

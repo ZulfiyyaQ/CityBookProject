@@ -1,9 +1,4 @@
-﻿
-
-
-using CityBookMVCOnionApplication.ViewModels.User;
-
-namespace CityBookMVCOnionApplication.ViewModels.Position
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record GetPositionVM
     {
@@ -12,3 +7,4 @@ namespace CityBookMVCOnionApplication.ViewModels.Position
         public List<IncludeUserVM>? User { get; init; }
     }
 }
+ 

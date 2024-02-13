@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using CityBookMVCOnionApplication.Abstractions.Services;
-using CityBookMVCOnionApplication.ViewModels.Account;
+using CityBookMVCOnionApplication.ViewModels;
 using CityBookMVCOnionDomain.Entities;
 using CityBookMVCOnionDomain.Enums;
 using CityBookMVCOnionInfrastructure.Exceptions;

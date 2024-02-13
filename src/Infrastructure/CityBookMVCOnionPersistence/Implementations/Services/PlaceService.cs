@@ -2,11 +2,6 @@
 using CityBookMVCOnionApplication.Abstractions.Repositories;
 using CityBookMVCOnionApplication.Abstractions.Services;
 using CityBookMVCOnionApplication.ViewModels;
-using CityBookMVCOnionApplication.ViewModels.Category;
-using CityBookMVCOnionApplication.ViewModels.Feature;
-using CityBookMVCOnionApplication.ViewModels.Place;
-using CityBookMVCOnionApplication.ViewModels.PlaceImage;
-using CityBookMVCOnionApplication.ViewModels.Tag;
 using CityBookMVCOnionDomain.Entities;
 using CityBookMVCOnionInfrastructure.Exceptions;
 using CityBookMVCOnionInfrastructure.Implementations;

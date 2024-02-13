@@ -1,5 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Category;
-using CityBookMVCOnionApplication.ViewModels.Comment;
+﻿using CityBookMVCOnionApplication.ViewModels;
 using FluentValidation;
 using System;
 using System.Collections.Generic;

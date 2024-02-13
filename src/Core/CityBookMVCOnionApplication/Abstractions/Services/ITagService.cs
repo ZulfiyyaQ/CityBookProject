@@ -1,9 +1,7 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Service;
-using CityBookMVCOnionApplication.ViewModels;
+﻿using CityBookMVCOnionApplication.ViewModels;
 using CityBookMVCOnionDomain.Entities;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Linq.Expressions;
-using CityBookMVCOnionApplication.ViewModels.Tag;
 
 namespace CityBookMVCOnionApplication.Abstractions.Services
 {

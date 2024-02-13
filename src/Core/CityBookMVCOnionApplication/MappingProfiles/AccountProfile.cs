@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using CityBookMVCOnionApplication.ViewModels;
-using CityBookMVCOnionApplication.ViewModels.Account;
 using CityBookMVCOnionDomain.Entities;
 
 namespace CityBookMVCOnionApplication.MappingProfiles

@@ -1,4 +1,4 @@
-﻿namespace CityBookMVCOnionApplication.ViewModels.BTag
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record CreateBTagVM
     {

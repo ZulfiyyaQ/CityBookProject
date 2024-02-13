@@ -1,6 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Reply;
-
-namespace CityBookMVCOnionApplication.ViewModels.Comment
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record UpdateCommentVM
     {

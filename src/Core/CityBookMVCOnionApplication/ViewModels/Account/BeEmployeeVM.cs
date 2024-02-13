@@ -1,6 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Position;
-
-namespace CityBookMVCOnionApplication.ViewModels
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record BeEmployeeVM
     {

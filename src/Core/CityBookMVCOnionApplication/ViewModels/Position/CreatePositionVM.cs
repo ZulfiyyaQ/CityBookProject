@@ -1,7 +1,7 @@
 ﻿
-using CityBookMVCOnionApplication.ViewModels.Place;
+using CityBookMVCOnionApplication.ViewModels;
 
-namespace CityBookMVCOnionApplication.ViewModels.Position
+namespace CityBookMVCOnionApplication.ViewModels
 {
     public record CreatePositionVM
     {

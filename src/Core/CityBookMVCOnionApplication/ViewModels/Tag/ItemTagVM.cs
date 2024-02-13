@@ -1,6 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Place;
-
-namespace CityBookMVCOnionApplication.ViewModels.Tag
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record ItemTagVM
     {

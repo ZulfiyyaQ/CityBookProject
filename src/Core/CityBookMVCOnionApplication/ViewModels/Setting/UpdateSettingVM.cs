@@ -1,4 +1,4 @@
-﻿namespace CityBookMVCOnionApplication.ViewModels.Setting
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record UpdateSettingVM
     {

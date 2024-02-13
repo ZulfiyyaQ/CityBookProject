@@ -1,7 +1,6 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Tag;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 
-namespace CityBookMVCOnionApplication.ViewModels.Blog
+namespace CityBookMVCOnionApplication.ViewModels
 {
     public record CreateBlogVM
     {

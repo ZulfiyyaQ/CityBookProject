@@ -1,90 +1,88 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Service;
-using CityBookMVCOnionDomain.Entities;
-using CityBookMVCOnionPersistence.Contexts;
+﻿using CityBookMVCOnionApplication.Abstractions.Services;
+using CityBookMVCOnionApplication.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace CityBookMVCOnionMVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
+    [AutoValidateAntiforgeryToken]
     public class ServiceController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IServiceService _service;
 
-        public ServiceController(AppDbContext context)
+        public ServiceController(IServiceService service)
         {
-            _context = context;
+            _service = service;
         }
-        public async Task<IActionResult> Index()
+
+        public async Task<IActionResult> Index(string? search, int order = 1, int page = 1)
         {
-            List<Service> service = await _context.Services.ToListAsync();
-            return View(service);
+            return View(model: await _service.GetFilteredAsync(search, 10, page, order));
         }
+
+        public async Task<IActionResult> DeletedItems(string? search, int order = 1, int page = 1)
+        {
+            return View(model: await _service.GetDeleteFilteredAsync(search, 10, page, order));
+        }
+
         public IActionResult Create()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(CreateServiceVM servicevm)
+        public async Task<IActionResult> Create(CreateServiceVM create)
         {
-            if (!ModelState.IsValid) return View();
-            bool result = _context.Services.Any(p => p.Name.ToLower().Trim() == servicevm.Name.ToLower().Trim());
-            if (result)
+            bool result = await _service.CreateAsync(create, ModelState);
+            if (!result)
             {
-                ModelState.AddModelError("Name", "Bele Service artiq movcutdur");
-                return View(servicevm);
+                return View(create);
             }
-            Service service = new Service
-            {
-                Name = servicevm.Name,
-                Description = servicevm.Description,
-                Icon = servicevm.Icon
-            };
-            await _context.Services.AddAsync(service);
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Update(int id)
         {
-            Service existed = await _context.Services.FirstOrDefaultAsync(c => c.Id == id);
-            if (existed == null) return NotFound();
-            UpdateServiceVM vm = new UpdateServiceVM { Name = existed.Name, Description = existed.Description, Icon = existed.Icon };
-
-            return View(vm);
+            return View(await _service.UpdateAsync(id));
         }
         [HttpPost]
-        public async Task<IActionResult> Update(int id, UpdateServiceVM ServiceVM)
+        public async Task<IActionResult> Update(int id, UpdateServiceVM update)
         {
-            if (!ModelState.IsValid) return View();
-            Service existed = await _context.Services.FirstOrDefaultAsync(c => c.Id == id);
-            if (existed == null) return NotFound();
-            bool result = _context.Services.Any(c => c.Name.ToLower().Trim() == ServiceVM.Name.ToLower().Trim() && c.Id != id);
-            if (result)
+            bool result = await _service.UpdatePostAsync(id, update, ModelState);
+            if (!result)
             {
-                ModelState.AddModelError("Name", "Bele Service artiq movcutdur");
-                return View();
+                return View(update);
             }
-            existed.Name = ServiceVM.Name;
-            existed.Description = ServiceVM.Description;
-            existed.Icon = ServiceVM.Icon;
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> SoftDelete(int id)
         {
-            if (id <= 0) return BadRequest();
-            Service existed = await _context.Services.FirstOrDefaultAsync(c => c.Id == id);
-            if (existed == null) return NotFound();
-            _context.Services.Remove(existed);
-            await _context.SaveChangesAsync();
+            await _service.SoftDeleteAsync(id);
 
             return RedirectToAction(nameof(Index));
         }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ReverseSoftDelete(int id)
+        {
+            await _service.ReverseSoftDeleteAsync(id);
+
+            return RedirectToAction(nameof(DeletedItems));
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _service.DeleteAsync(id);
+
+            return RedirectToAction(nameof(DeletedItems));
+        }
+
         public async Task<IActionResult> Detail(int id)
         {
-            var Service = await _context.Services.FirstOrDefaultAsync(c => c.Id == id);
-            if (Service == null) return NotFound();
-            return View(Service);
+            GetServiceVM get = await _service.GetByIdAsync(id);
+
+            return View(get);
         }
     }
 }

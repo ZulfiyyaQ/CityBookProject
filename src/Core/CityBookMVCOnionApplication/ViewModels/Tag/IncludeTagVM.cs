@@ -1,4 +1,4 @@
-﻿namespace CityBookMVCOnionApplication.ViewModels.Tag
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record IncludeTagVM
     {

@@ -1,4 +1,4 @@
-﻿namespace CityBookMVCOnionApplication.ViewModels.Position
+﻿namespace CityBookMVCOnionApplication.ViewModels
 {
     public record IncludePositionVM
     {

@@ -1,4 +1,4 @@
-﻿using CityBookMVCOnionApplication.ViewModels.Account;
+﻿using CityBookMVCOnionApplication.ViewModels;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc;
 
