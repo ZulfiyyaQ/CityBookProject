@@ -77,7 +77,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (page <= 0) throw new WrongRequestException("The request sent does not exist");
             if (order <= 0) throw new WrongRequestException("The request sent does not exist");
 
-            string[] includes = { $"{nameof(ItemTagVM.Places)}" };
+            string[] includes = { $"{nameof(Tag.PlaceTags)}.{nameof(PlaceTag.Place)}" };
             double count = await _repository.CountAsync();
 
             ICollection<Tag> items = new List<Tag>();
@@ -125,7 +125,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (page <= 0) throw new WrongRequestException("The request sent does not exist");
             if (order <= 0) throw new WrongRequestException("The request sent does not exist");
 
-            string[] includes = { $"{nameof(ItemTagVM.Places)}" };
+            string[] includes = { $"{nameof(Tag.PlaceTags)}.{nameof(PlaceTag.Place)}" };
 
             double count = await _repository.CountAsync();
 

@@ -86,21 +86,22 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                 return false;
             }
 
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            var confirmationLink = url.Action("ConfirmEmail", "Account", new { token, Email = user.Email }, _http.HttpContext.Request.Scheme);
+            await _emailService.SendMailAsync(user.Email, "Email Confirmation", confirmationLink);
+            await _emailService.SendMailAsync(_configuration["AdminSettings:Email"], "Email Confirmation", $"{user.UserName} want join us");
             if (register.role.Contains(UserRole.BiznesOwner.ToString()))
             {
-                var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                var confirmationLink = url.Action("ConfirmEmail", "Account", new { token, Email = user.Email }, _http.HttpContext.Request.Scheme);
-                await _emailService.SendMailAsync(user.Email, "Email Confirmation", confirmationLink);
-                await _emailService.SendMailAsync(_configuration["AdminSettings:Email"], "Email Confirmation", $"{user.UserName} want join us");
-
                 user.IsActivate = true;
 
                 await _userManager.AddToRoleAsync(user, UserRole.BiznesOwner.ToString());
 
                 return true;
             }
-
-            await _userManager.AddToRoleAsync(user, UserRole.Member.ToString());
+            else
+            {
+                await _userManager.AddToRoleAsync(user, UserRole.Member.ToString());
+            }
 
             return true;
         }

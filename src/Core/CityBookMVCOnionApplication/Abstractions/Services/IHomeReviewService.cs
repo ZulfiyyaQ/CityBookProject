@@ -13,13 +13,12 @@ namespace CityBookMVCOnionApplication.Abstractions.Services
         Task<PaginationVM<ItemHomeReviewVM>> GetDeleteFilteredAsync(string? search, int take, int page, int order);
         Task<GetHomeReviewVM> GetByIdAsync(int id);
         Task<bool> CreateAsync(CreateHomeReviewVM create, ModelStateDictionary model);
-        Task<UpdateBlogVM> UpdateAsync(int id);
+        Task<UpdateHomeReviewVM> UpdateAsync(int id);
         Task<bool> UpdatePostAsync(int id, UpdateHomeReviewVM update, ModelStateDictionary model);
         Task DeleteAsync(int id);
         Task SoftDeleteAsync(int id);
         Task ReverseSoftDeleteAsync(int id);
-        Task CreatePopulateDropdowns(CreateHomeReviewVM create);
-        Task UpdatePopulateDropdowns(UpdateHomeReviewVM update);
+        
         
     }
     

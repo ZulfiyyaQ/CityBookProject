@@ -1,5 +1,95 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model PaginationVM<ItemFeatureVM>
+
 @{
+    int count = (Model.CurrentPage - 1) * Model.Take;
 }
+
+<div class="d-flex justify-content-end">
+    <div class="input-group mx-3">
+        <form asp-action="Index" asp-controller="Feature"
+              asp-route-order="@Model.Order">
+            <input type="text" class="form-control" placeholder="Search now" name="search" value="@(Model.Search == null? "":Model.Search)">
+        </form>
+    </div>
+
+    <a asp-controller="Feature" asp-action="DeletedItems" class="btn btn-outline-warning"><strong>Deleted</strong></a>
+</div>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Feature</h4>
+            <a asp-controller="Feature" asp-action="Create" class="btn btn-outline-success">Create</a>
+            <div class="table-responsive pt-3">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                No
+                            </th>
+                            <th>
+                                Icon
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Place Count
+                            </th>
+                            <th>
+                                Settings
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model.Items)
+                        {
+                            count++;
+                            <tr>
+                                <td>
+                                    @count
+                                </td>
+                                <td>
+                                    <i class="@item.Icon"></i>
+                                </td>
+                                <td>
+                                    @item.Name
+                                </td>
+                                <td>
+                                    @item.Places.Count()
+                                </td>
+
+                                <td>
+                                    <a asp-action="Update" asp-controller="Feature" asp-route-id="@item.Id" class="btn btn-outline-info">
+                                        <i class="mdi mdi-lead-pencil"></i>
+                                    </a>
+                                    @if (User.IsInRole(AdminRoles.Admin.ToString()))
+                                    {
+                                        <a asp-action="SoftDelete" asp-controller="Feature" asp-route-id="@item.Id" class="btn btn-outline-warning">
+                                            <i class="mdi mdi-delete-sweep"></i>
+                                        </a>
+                                    }
+                                    <a asp-action="Detail" asp-controller="Feature" asp-route-id="@item.Id" class="btn btn-outline-light">
+                                        <i class="mdi mdi-book-open-page-variant"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item @(Model.CurrentPage <= 1 ? "disabled" : "")"><a class="page-link" asp-route-page="@(Model.CurrentPage -1)" asp-action="Index" asp-controller="Feature">Previous</a></li>
+                    @for (int i = 1; i <= Model.TotalPage; i++)
+                    {
+                        <li class="page-item @(Model.CurrentPage == i ? "disabled" : "")"><a asp-action="Index" asp-route-page="@i" asp-controller="Feature" class="page-link">@i</a></li>
+                    }
+                    <li class="page-item @(Model.CurrentPage >= Model.TotalPage ? "disabled" : "")"><a class="page-link" asp-route-page="@(Model.CurrentPage +1)" asp-action="Index" asp-controller="Feature">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

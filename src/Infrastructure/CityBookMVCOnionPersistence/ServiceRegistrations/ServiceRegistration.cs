@@ -34,6 +34,7 @@ namespace CityBookMVCOnionPersistence.ServiceRegistrations
             }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
             services.AddScoped<IBlogRepository, BlogRepository>();
+            services.AddScoped<IHomeReviewRepository, HomeReviewRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IBTagRepository, BTagRepository>();
             services.AddScoped<ITagRepository, TagRepository>();
@@ -44,6 +45,7 @@ namespace CityBookMVCOnionPersistence.ServiceRegistrations
             services.AddScoped<ISettingRepository, SettingRepository>();
 
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IHomeReviewService, HomeReviewService>();
             services.AddScoped<IBlogService, BlogService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IBTagService, BTagService>();
