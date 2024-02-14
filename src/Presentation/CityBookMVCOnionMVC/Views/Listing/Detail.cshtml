@@ -1,282 +1,459 @@
-﻿ <!-- wrapper -->
+﻿@model GetPlaceVM
+
+<!-- wrapper -->
 <div id="wrapper">
-    <!--  content  -->
+    <!--  content-->
     <div class="content">
-        <!--  section  -->
-        <section class="parallax-section" data-scrollax-parent="true">
-            <div class="bg par-elem " data-bg="~/images/bg/1.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="section-title center-align">
-                    <h2><span>Listings Without Map</span></h2>
-                    <div class="breadcrumbs fl-wrap"><a href="#">Home</a><a href="#">Listings</a><span>Listings Without Map</span></div>
-                    <span class="section-separator"></span>
+        <!--  carousel-->
+        <div class="list-single-carousel-wrap fl-wrap" id="sec1">
+            <div class="fw-carousel fl-wrap full-height lightgallery">
+                <!-- slick-slide-item -->
+                <div class="slick-slide-item">
+                    <div class="box-item">
+                        <img src="~/images/all/single/1.jpg" alt="">
+                        <a href="~/images/all/single/1.jpg" class="gal-link popup-image"><i class="fa fa-search"></i></a>
+                    </div>
                 </div>
-            </div>
-            <div class="header-sec-link">
-                <div class="container"><a href="#sec1" class="custom-scroll-link">Let's Start</a></div>
-            </div>
-        </section>
-        <!--  section  end-->
-        <!--  section  -->
-        <section class="gray-bg no-pading no-top-padding" id="sec1">
-            <div class="col-list-wrap  center-col-list-wrap left-list">
-                <div class="container">
-                    <div class="listsearch-maiwrap box-inside fl-wrap">
-                        <div class="listsearch-header fl-wrap">
-                            <h3>Results For : <span>All Listings</span></h3>
-                            <div class="listing-view-layout">
-                                <ul>
-                                    <li><a class="grid active" href="#"><i class="fa fa-th-large"></i></a></li>
-                                    <li><a class="list" href="#"><i class="fa fa-list-ul"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- listsearch-input-wrap  -->
-                        <div class="listsearch-input-wrap fl-wrap">
-                            <div class="listsearch-input-item">
-                                <i class="mbri-key single-i"></i>
-                                <input type="text" placeholder="Keywords?" value="" />
-                            </div>
-                            <div class="listsearch-input-item">
-                                <select data-placeholder="Location" class="chosen-select">
-                                    <option>All Locations</option>
-                                    <option>Bronx</option>
-                                    <option>Brooklyn</option>
-                                    <option>Manhattan</option>
-                                    <option>Queens</option>
-                                    <option>Staten Island</option>
-                                </select>
-                            </div>
-                            <div class="listsearch-input-item">
-                                <select data-placeholder="All Categories" class="chosen-select">
-                                    <option>All Categories</option>
-                                    <option>Shops</option>
-                                    <option>Hotels</option>
-                                    <option>Restaurants</option>
-                                    <option>Fitness</option>
-                                    <option>Events</option>
-                                </select>
-                            </div>
-                            <div class="listsearch-input-text" id="autocomplete-container">
-                                <label><i class="mbri-map-pin"></i> Enter Addres </label>
-                                <input type="text" placeholder="Destination , Area , Street" id="autocomplete-input" class="qodef-archive-places-search" value="" />
-                                <a href="#" class="loc-act qodef-archive-current-location"><i class="fa fa-dot-circle-o"></i></a>
-                            </div>
-                            <!-- hidden-listing-filter -->
-                            <div class="hidden-listing-filter fl-wrap">
-                                <div class="distance-input fl-wrap">
-                                    <div class="distance-title"> Radius around selected destination <span></span> km</div>
-                                    <div class="distance-radius-wrap fl-wrap">
-                                        <input class="distance-radius rangeslider--horizontal" type="range" min="1" max="100" step="1" value="1" data-title="Radius around selected destination">
-                                    </div>
-                                </div>
-                                <!-- Checkboxes -->
-                                <div class=" fl-wrap filter-tags">
-                                    <h4>Filter by Tags</h4>
-                                    <div class="filter-tags-wrap">
-                                        <input id="check-a" type="checkbox" name="check" checked>
-                                        <label for="check-a">Elevator in building</label>
-                                    </div>
-                                    <div class="filter-tags-wrap">
-                                        <input id="check-b" type="checkbox" name="check">
-                                        <label for="check-b">Friendly workspace</label>
-                                    </div>
-                                    <div class="filter-tags-wrap">
-                                        <input id="check-c" type="checkbox" name="check">
-                                        <label for="check-c">Instant Book</label>
-                                    </div>
-                                    <div class="filter-tags-wrap">
-                                        <input id="check-d" type="checkbox" name="check">
-                                        <label for="check-d">Wireless Internet</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- hidden-listing-filter end -->
-                            <button class="button fs-map-btn">Update</button>
-                            <div class="more-filter-option">More Filters <span></span></div>
-                        </div>
-                        <!-- listsearch-input-wrap end -->
+                <!-- slick-slide-item end -->
+                <!-- slick-slide-item -->
+                <div class="slick-slide-item">
+                    <div class="box-item">
+                        <img src="~/images/all/single/1.jpg" alt="">
+                        <a href="~/images/all/single/1.jpg" class="gal-link popup-image"><i class="fa fa-search"></i></a>
                     </div>
-                    <!-- list-main-wrap-->
-                    <div class="list-main-wrap fl-wrap card-listing">
-                        <!-- listing-item -->
-                        <div class="listing-item">
-                            <article class="geodir-category-listing fl-wrap">
-                                <div class="geodir-category-img">
-                                    <img src="~/images/all/1.jpg" alt="">
-                                    <div class="overlay"></div>
-                                    <div class="list-post-counter"><span>4</span><i class="fa fa-heart"></i></div>
-                                </div>
-                                <div class="geodir-category-content fl-wrap">
-                                    <a class="listing-geodir-category" href="listing.html">Restourants</a>
-                                    <div class="listing-avatar">
-                                        <a href="author-single.html"><img src="~/images/avatar/1.jpg" alt=""></a>
-                                        <span class="avatar-tooltip">Added By  <strong>Lisa Smith</strong></span>
-                                    </div>
-                                    <h3><a href="listing-single.html">Luxury Restourant</a></h3>
-                                    <p>Sed interdum metus at nisi tempor laoreet. Integer gravida orci a justo sodales, sed lobortis est placerat.</p>
-                                    <div class="geodir-category-options fl-wrap">
-                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5">
-                                            <span>(7 reviews)</span>
+                </div>
+                <!-- slick-slide-item end -->
+                <!-- slick-slide-item -->
+                <div class="slick-slide-item">
+                    <div class="box-item">
+                        <img src="~/images/all/single/1.jpg" alt="">
+                        <a href="~/images/all/single/1.jpg" class="gal-link popup-image"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <!-- slick-slide-item end -->
+                <!-- slick-slide-item -->
+                <div class="slick-slide-item">
+                    <div class="box-item">
+                        <img src="~/images/all/single/1.jpg" alt="">
+                        <a href="~/images/all/single/1.jpg" class="gal-link popup-image"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <!-- slick-slide-item end -->
+                <!-- slick-slide-item -->
+                <div class="slick-slide-item">
+                    <div class="box-item">
+                        <img src="~/images/all/single/1.jpg" alt="">
+                        <a href="~/images/all/single/1.jpg" class="gal-link popup-image"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <!-- slick-slide-item end -->
+            </div>
+            <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
+            <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
+        </div>
+        <!--  carousel  end-->
+        <div class="scroll-nav-wrapper fl-wrap">
+            <div class="container">
+                <nav class="scroll-nav scroll-init">
+                    <ul>
+                        <li><a class="act-scrlink" href="#sec1">Gallery</a></li>
+                        <li><a href="#sec2">Details</a></li>
+                        <li><a href="#sec3">Video </a></li>
+                        <li><a href="#sec4">Reviews</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="save-btn"> <i class="fa fa-heart"></i> Save </a>
+            </div>
+        </div>
+        <!--  section   -->
+        <section class="gray-section no-top-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <!-- list-single-main-wrapper -->
+                        <div class="list-single-main-wrapper fl-wrap" id="sec2">
+                            <div class="breadcrumbs gradient-bg  fl-wrap"><a href="#">Home</a><a href="#">Listings</a><span>Listing Single</span></div>
+                            <!-- list-single-header -->
+                            <div class="list-single-header list-single-header-inside fl-wrap">
+                                <div class="container">
+                                    <div class="list-single-header-item">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="list-single-header-item-opt fl-wrap">
+                                                    <div class="list-single-header-cat fl-wrap">
+                                                        <a href="#">Hotels</a>
+                                                    </div>
+                                                </div>
+                                                <h2>Luxury Hotel Spa <span> - Hosted By </span><a href="author-single.html">Alisa Noory</a> </h2>
+                                                <span class="section-separator"></span>
+                                                <div class="listing-rating card-popup-rainingvis" data-starrating2="5">
+                                                    <span>(11 reviews)</span>
+                                                </div>
+                                                <div class="list-post-counter single-list-post-counter"><span>4</span><i class="fa fa-heart"></i></div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="fl-wrap list-single-header-column">
+                                                    <span class="viewed-counter"><i class="fa fa-eye"></i> Viewed -  156 </span>
+                                                    <a class="custom-scroll-link" href="#sec5"><i class="fa fa-hand-o-right"></i>Add Review </a>
+                                                    <div class="share-holder hid-share">
+                                                        <div class="showshare"><span>Share </span><i class="fa fa-share"></i></div>
+                                                        <div class="share-container  isShare"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="geodir-category-location"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 27th Brooklyn New York, NY 10065</a></div>
                                     </div>
                                 </div>
-                            </article>
-                        </div>
-                        <!-- listing-item end-->
-                        <!-- listing-item -->
-                        <div class="listing-item">
-                            <article class="geodir-category-listing fl-wrap">
-                                <div class="geodir-category-img">
-                                    <img src="~/images/all/1.jpg" alt="">
-                                    <div class="overlay"></div>
-                                    <div class="list-post-counter"><span>15</span><i class="fa fa-heart"></i></div>
-                                </div>
-                                <div class="geodir-category-content fl-wrap">
-                                    <a class="listing-geodir-category" href="listing.html">Event</a>
-                                    <div class="listing-avatar">
-                                        <a href="author-single.html"><img src="~/images/avatar/1.jpg" alt=""></a>
-                                        <span class="avatar-tooltip">Added By  <strong>Mark Rose</strong></span>
-                                    </div>
-                                    <h3><a href="listing-single.html">Event In City Mol</a></h3>
-                                    <p>Morbi suscipit erat in diam bibendum rutrum in nisl. Aliquam et purus ante.</p>
-                                    <div class="geodir-category-options fl-wrap">
-                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="4">
-                                            <span>(17 reviews)</span>
+                            </div>
+                            <!-- list-single-header end -->
+                            <div class="list-single-facts fl-wrap gradient-bg">
+                                <!-- inline-facts -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fa fa-home"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="45">0</div>
+                                            </div>
                                         </div>
-                                        <div class="geodir-category-location"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 27th Brooklyn New York, NY 10065</a></div>
+                                        <h6>Hotel Rooms</h6>
                                     </div>
                                 </div>
-                            </article>
-                        </div>
-                        <!-- listing-item end-->
-                        <!-- listing-item -->
-                        <div class="listing-item">
-                            <article class="geodir-category-listing fl-wrap">
-                                <div class="geodir-category-img">
-                                    <img src="~/images/all/1.jpg" alt="">
-                                    <div class="overlay"></div>
-                                    <div class="list-post-counter"><span>553</span><i class="fa fa-heart"></i></div>
-                                </div>
-                                <div class="geodir-category-content fl-wrap">
-                                    <a class="listing-geodir-category" href="listing.html">Restourants</a>
-                                    <div class="listing-avatar">
-                                        <a href="author-single.html"><img src="~/images/avatar/1.jpg" alt=""></a>
-                                        <span class="avatar-tooltip">Added By  <strong>Adam Koncy</strong></span>
-                                    </div>
-                                    <h3><a href="listing-single.html">Luxury Restourant</a></h3>
-                                    <p>Sed non neque elit. Sed ut imperdie.</p>
-                                    <div class="geodir-category-options fl-wrap">
-                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5">
-                                            <span>(7 reviews)</span>
+                                <!-- inline-facts end -->
+                                <!-- inline-facts  -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fa fa-male"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="2557">0</div>
+                                            </div>
                                         </div>
-                                        <div class="geodir-category-location"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 27th Brooklyn New York, NY 10065</a></div>
+                                        <h6>Happy customers every year</h6>
                                     </div>
                                 </div>
-                            </article>
-                        </div>
-                        <!-- listing-item end-->
-                        <div class="clearfix"></div>
-                        <!-- listing-item -->
-                        <div class="listing-item">
-                            <article class="geodir-category-listing fl-wrap">
-                                <div class="geodir-category-img">
-                                    <img src="~/images/all/1.jpg" alt="">
-                                    <div class="overlay"></div>
-                                    <div class="list-post-counter"><span>47</span><i class="fa fa-heart"></i></div>
-                                </div>
-                                <div class="geodir-category-content fl-wrap">
-                                    <a class="listing-geodir-category" href="listing.html">Fitness</a>
-                                    <div class="listing-avatar">
-                                        <a href="author-single.html"><img src="~/images/avatar/1.jpg" alt=""></a>
-                                        <span class="avatar-tooltip">Added By  <strong>Alisa Noory</strong></span>
-                                    </div>
-                                    <h3><a href="listing-single.html">Gym in the Center</a></h3>
-                                    <p>Mauris in erat justo. Nullam ac urna eu. </p>
-                                    <div class="geodir-category-options fl-wrap">
-                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5">
-                                            <span>(23 reviews)</span>
+                                <!-- inline-facts end -->
+                                <!-- inline-facts  -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fa fa-cutlery"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="5">0</div>
+                                            </div>
                                         </div>
-                                        <div class="geodir-category-location"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 27th Brooklyn New York, NY 10065</a></div>
+                                        <h6>Restorans Inside</h6>
                                     </div>
                                 </div>
-                            </article>
-                        </div>
-                        <!-- listing-item end-->
-                        <!-- listing-item -->
-                        <div class="listing-item">
-                            <article class="geodir-category-listing fl-wrap">
-                                <div class="geodir-category-img">
-                                    <img src="~/images/all/1.jpg" alt="">
-                                    <div class="overlay"></div>
-                                    <div class="list-post-counter"><span>3</span><i class="fa fa-heart"></i></div>
+                                <!-- inline-facts end -->
+                            </div>
+                            <div class="list-single-main-item fl-wrap">
+                                <div class="list-single-main-item-title fl-wrap">
+                                    <h3>About Hotel </h3>
                                 </div>
-                                <div class="geodir-category-content fl-wrap">
-                                    <a class="listing-geodir-category" href="listing.html">Shops</a>
-                                    <div class="listing-avatar">
-                                        <a href="author-single.html"><img src="~/images/avatar/1.jpg" alt=""></a>
-                                        <span class="avatar-tooltip">Added By  <strong>Nasty Wood</strong></span>
+                                <p>Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</p>
+                                <a href="#" class="btn transparent-btn float-btn">Visit Website <i class="fa fa-angle-right"></i></a>
+                                <span class="fw-separator"></span>
+                                <div class="list-single-main-item-title fl-wrap">
+                                    <h3>Amenities</h3>
+                                </div>
+                                <div class="listing-features fl-wrap">
+                                    <ul>
+                                        <li><i class="fa fa-rocket"></i> Elevator in building</li>
+                                        <li><i class="fa fa-wifi"></i> Free Wi Fi</li>
+                                        <li><i class="fa fa-motorcycle"></i> Free Parking</li>
+                                        <li><i class="fa fa-cloud"></i> Air Conditioned</li>
+                                        <li><i class="fa fa-shopping-cart"></i> Online Ordering</li>
+                                        <li><i class="fa fa-paw"></i> Pet Friendly</li>
+                                        <li><i class="fa fa-tree"></i> Outdoor Seating</li>
+                                        <li><i class="fa fa-wheelchair"></i> Wheelchair Friendly</li>
+                                    </ul>
+                                </div>
+                                <span class="fw-separator"></span>
+                                <div class="list-single-main-item-title fl-wrap">
+                                    <h3>Tags</h3>
+                                </div>
+                                <div class="list-single-tags tags-stylwrap">
+                                    <a href="#">Hotel</a>
+                                    <a href="#">Hostel</a>
+                                    <a href="#">Room</a>
+                                    <a href="#">Spa</a>
+                                    <a href="#">Restourant</a>
+                                    <a href="#">Parking</a>
+                                </div>
+                            </div>
+                            <!-- list-single-main-item-->
+                            <div class="list-single-main-item fl-wrap" id="sec3">
+                                <div class="list-single-main-item-title fl-wrap">
+                                    <h3>Promo Video</h3>
+                                </div>
+                                <div class="iframe-holder fl-wrap">
+                                    <div class="resp-video">
+                                        <iframe src="https://player.vimeo.com/video/161566855" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                                     </div>
-                                    <h3><a href="listing-single.html">Shop in Boutique Zone</a></h3>
-                                    <p>Morbiaccumsan ipsum velit tincidunt . </p>
-                                    <div class="geodir-category-options fl-wrap">
-                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="4">
-                                            <span>(6 reviews)</span>
+                                </div>
+                            </div>
+                            <!-- list-single-main-item end -->
+                            <div class="accordion">
+                                <a class="toggle act-accordion" href="#"> Details option   <i class="fa fa-angle-down"></i></a>
+                                <div class="accordion-inner visible">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</p>
+                                </div>
+                                <a class="toggle" href="#"> Details option 2  <i class="fa fa-angle-down"></i></a>
+                                <div class="accordion-inner">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</p>
+                                </div>
+                                <a class="toggle" href="#"> Details option 3  <i class="fa fa-angle-down"></i></a>
+                                <div class="accordion-inner">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</p>
+                                </div>
+                            </div>
+                            <!-- list-single-main-item -->
+                            <div class="list-single-main-item fl-wrap" id="sec4">
+                                <div class="list-single-main-item-title fl-wrap">
+                                    <h3>Item Revies -  <span> 3 </span></h3>
+                                </div>
+                                <div class="reviews-comments-wrap">
+                                    <!-- reviews-comments-item -->
+                                    <div class="reviews-comments-item">
+                                        <div class="review-comments-avatar">
+                                            <img src="~/images/avatar/1.jpg" alt="">
                                         </div>
-                                        <div class="geodir-category-location"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 27th Brooklyn New York, NY 10065</a></div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <!-- listing-item end-->
-                        <!-- listing-item -->
-                        <div class="listing-item">
-                            <article class="geodir-category-listing fl-wrap">
-                                <div class="geodir-category-img">
-                                    <img src="~/images/all/1.jpg" alt="">
-                                    <div class="overlay"></div>
-                                    <div class="list-post-counter"><span>35</span><i class="fa fa-heart"></i></div>
-                                </div>
-                                <div class="geodir-category-content fl-wrap">
-                                    <a class="listing-geodir-category" href="listing.html">Hotels</a>
-                                    <div class="listing-avatar">
-                                        <a href="author-single.html"><img src="~/images/avatar/1.jpg" alt=""></a>
-                                        <span class="avatar-tooltip">Added By  <strong>Kliff Antony</strong></span>
-                                    </div>
-                                    <h3><a href="listing-single.html">Luxary Hotel</a></h3>
-                                    <p>Lorem ipsum gravida nibh vel velit.</p>
-                                    <div class="geodir-category-options fl-wrap">
-                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5">
-                                            <span>(11 reviews)</span>
+                                        <div class="reviews-comments-item-text">
+                                            <h4><a href="#">Jessie Manrty</a></h4>
+                                            <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
+                                            <div class="clearfix"></div>
+                                            <p>" Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris. "</p>
+                                            <span class="reviews-comments-item-date"><i class="fa fa-calendar-check-o"></i>27 May 2018</span>
                                         </div>
-                                        <div class="geodir-category-location"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 27th Brooklyn New York, NY 10065</a></div>
                                     </div>
+                                    <!--reviews-comments-item end-->
+                                    <!-- reviews-comments-item -->
+                                    <div class="reviews-comments-item">
+                                        <div class="review-comments-avatar">
+                                            <img src="~/images/avatar/1.jpg" alt="">
+                                        </div>
+                                        <div class="reviews-comments-item-text">
+                                            <h4><a href="#">Mark Rose</a></h4>
+                                            <div class="listing-rating card-popup-rainingvis" data-starrating2="4"> </div>
+                                            <div class="clearfix"></div>
+                                            <p>" Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. "</p>
+                                            <span class="reviews-comments-item-date"><i class="fa fa-calendar-check-o"></i>12 April 2018</span>
+                                        </div>
+                                    </div>
+                                    <!--reviews-comments-item end-->
+                                    <!-- reviews-comments-item -->
+                                    <div class="reviews-comments-item">
+                                        <div class="review-comments-avatar">
+                                            <img src="~/images/avatar/1.jpg" alt="">
+                                        </div>
+                                        <div class="reviews-comments-item-text">
+                                            <h4><a href="#">Adam Koncy</a></h4>
+                                            <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
+                                            <div class="clearfix"></div>
+                                            <p>" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc posuere convallis purus non cursus. Cras metus neque, gravida sodales massa ut. "</p>
+                                            <span class="reviews-comments-item-date"><i class="fa fa-calendar-check-o"></i>03 December 2017</span>
+                                        </div>
+                                    </div>
+                                    <!--reviews-comments-item end-->
                                 </div>
-                            </article>
-                        </div>
-                        <!-- listing-item end-->
-                        <!-- pagination-->
-                        <div class="pagination">
-                            <a href="#" class="prevposts-link"><i class="fa fa-caret-left"></i></a>
-                            <a href="#" class="blog-page transition">1</a>
-                            <a href="#" class="blog-page current-page transition">2</a>
-                            <a href="#" class="blog-page transition">3</a>
-                            <a href="#" class="blog-page transition">4</a>
-                            <a href="#" class="nextposts-link"><i class="fa fa-caret-right"></i></a>
+                            </div>
+                            <!-- list-single-main-item end -->
+                            <!-- list-single-main-item -->
+                            <div class="list-single-main-item fl-wrap" id="sec5">
+                                <div class="list-single-main-item-title fl-wrap">
+                                    <h3>Add Revies  & Rate iteam</h3>
+                                </div>
+                                <!-- Add Review Box -->
+                                <div id="add-review" class="add-review-box">
+                                    <div class="leave-rating-wrap">
+                                        <span class="leave-rating-title">Your rating  for this listing : </span>
+                                        <div class="leave-rating">
+                                            <input type="radio" name="rating" id="rating-1" value="1" />
+                                            <label for="rating-1" class="fa fa-star-o"></label>
+                                            <input type="radio" name="rating" id="rating-2" value="2" />
+                                            <label for="rating-2" class="fa fa-star-o"></label>
+                                            <input type="radio" name="rating" id="rating-3" value="3" />
+                                            <label for="rating-3" class="fa fa-star-o"></label>
+                                            <input type="radio" name="rating" id="rating-4" value="4" />
+                                            <label for="rating-4" class="fa fa-star-o"></label>
+                                            <input type="radio" name="rating" id="rating-5" value="5" />
+                                            <label for="rating-5" class="fa fa-star-o"></label>
+                                        </div>
+                                    </div>
+                                    <!-- Review Comment -->
+                                    <form class="add-comment custom-form">
+                                        <fieldset>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label><i class="fa fa-user-o"></i></label>
+                                                    <input type="text" placeholder="Your Name *" value="" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label><i class="fa fa-envelope-o"></i>  </label>
+                                                    <input type="text" placeholder="Email Address*" value="" />
+                                                </div>
+                                            </div>
+                                            <textarea cols="40" rows="3" placeholder="Your Review:"></textarea>
+                                        </fieldset>
+                                        <button class="btn  big-btn  color-bg flat-btn">Submit Review <i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                                    </form>
+                                </div>
+                                <!-- Add Review Box / End -->
+                            </div>
+                            <!-- list-single-main-item end -->
                         </div>
                     </div>
-                    <!-- list-main-wrap end-->
+                    <!--box-widget-wrap -->
+                    <div class="col-md-4">
+                        <div class="box-widget-wrap">
+                            <!--box-widget-item -->
+                            <div class="box-widget-item fl-wrap">
+                                <div class="box-widget-item-header">
+                                    <h3>Working Hours : </h3>
+                                </div>
+                                <div class="box-widget opening-hours">
+                                    <div class="box-widget-content">
+                                        <span class="current-status"><i class="fa fa-clock-o"></i> Now Open</span>
+                                        <ul>
+                                            <li><span class="opening-hours-day">Monday </span><span class="opening-hours-time">9 AM - 5 PM</span></li>
+                                            <li><span class="opening-hours-day">Tuesday </span><span class="opening-hours-time">9 AM - 5 PM</span></li>
+                                            <li><span class="opening-hours-day">Wednesday </span><span class="opening-hours-time">9 AM - 5 PM</span></li>
+                                            <li><span class="opening-hours-day">Thursday </span><span class="opening-hours-time">9 AM - 5 PM</span></li>
+                                            <li><span class="opening-hours-day">Friday </span><span class="opening-hours-time">9 AM - 5 PM</span></li>
+                                            <li><span class="opening-hours-day">Saturday </span><span class="opening-hours-time">9 AM - 3 PM</span></li>
+                                            <li><span class="opening-hours-day">Sunday </span><span class="opening-hours-time">Closed</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--box-widget-item end -->
+                            <!--box-widget-item -->
+                            <div class="box-widget-item fl-wrap">
+                                <div class="box-widget-item-header">
+                                    <h3>Book a Reservation: </h3>
+                                </div>
+                                <div class="box-widget opening-hours">
+                                    <div class="box-widget-content">
+                                        @{
+                                            await Html
+                                            .RenderPartialAsync("_ReservationPartialView", new CreateReservationVM { PlaceId = Model.Id, DayOrMonth = Model.DayOrMonth });
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <!--box-widget-item end -->
+                            <!--box-widget-item -->
+                            <div class="box-widget-item fl-wrap">
+                                <div class="box-widget-item-header">
+                                    <h3>Weather in City : </h3>
+                                </div>
+                                <div id="weather-widget" class="gradient-bg ideaboxWeather" data-city="New York"></div>
+                            </div>
+                            <!--box-widget-item end -->
+                            <!--box-widget-item -->
+                            <div class="box-widget-item fl-wrap">
+                                <div class="box-widget-item-header">
+                                    <h3>Location / Contacts : </h3>
+                                </div>
+                                <div class="box-widget">
+                                    <div class="map-container">
+                                        <div id="singleMap" data-latitude="40.7427837" data-longitude="-73.11445617675781" data-mapTitle="Our Location"></div>
+                                    </div>
+                                    <div class="box-widget-content">
+                                        <div class="list-author-widget-contacts list-item-widget-contacts">
+                                            <ul>
+                                                <li><span><i class="fa fa-map-marker"></i> Adress :</span> <a href="#">USA 27TH Brooklyn NY</a></li>
+                                                <li><span><i class="fa fa-phone"></i> Phone :</span> <a href="#">+7(123)987654</a></li>
+                                                <li><span><i class="fa fa-envelope-o"></i> Mail :</span> <a href="#">AlisaNoory@domain.com</a></li>
+                                                <li><span><i class="fa fa-globe"></i> Website :</span> <a href="#">themeforest.net</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-widget-social">
+                                            <ul>
+                                                <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#" target="_blank"><i class="fa fa-vk"></i></a></li>
+                                                <li><a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--box-widget-item end -->
+                            <!--box-widget-item -->
+                            <div class="box-widget-item fl-wrap">
+                                <div class="box-widget-item-header">
+                                    <h3>Hosted by : </h3>
+                                </div>
+                                <div class="box-widget list-author-widget">
+                                    <div class="list-author-widget-header shapes-bg-small  color-bg fl-wrap">
+                                        <span class="list-author-widget-link"><a href="author-single.html">Alisa Noory</a></span>
+                                        <img src="~/images/avatar/1.jpg" alt="">
+                                    </div>
+                                    <div class="box-widget-content">
+                                        <div class="list-author-widget-text">
+                                            <div class="list-author-widget-contacts">
+                                                <ul>
+                                                    <li><span><i class="fa fa-phone"></i> Phone :</span> <a href="#">+7(123)987654</a></li>
+                                                    <li><span><i class="fa fa-envelope-o"></i> Mail :</span> <a href="#">AlisaNoory@domain.com</a></li>
+                                                    <li><span><i class="fa fa-globe"></i> Website :</span> <a href="#">themeforest.net</a></li>
+                                                </ul>
+                                            </div>
+                                            <a href="author-single.html" class="btn transparent-btn">View Profile <i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--box-widget-item end -->
+                            <!--box-widget-item -->
+                            <div class="box-widget-item fl-wrap">
+                                <div class="box-widget-item-header">
+                                    <h3>More from this employer : </h3>
+                                </div>
+                                <div class="box-widget widget-posts">
+                                    <div class="box-widget-content">
+                                        <ul>
+                                            <li class="clearfix">
+                                                <a href="#" class="widget-posts-img"><img src="~/images/all/1.jpg" alt=""></a>
+                                                <div class="widget-posts-descr">
+                                                    <a href="#" title="">Cafe "Lollipop"</a>
+                                                    <span class="widget-posts-date"><i class="fa fa-calendar-check-o"></i> 21 Mar 2017 </span>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <a href="#" class="widget-posts-img"><img src="~/images/all/1.jpg" alt=""></a>
+                                                <div class="widget-posts-descr">
+                                                    <a href="#" title=""> Apartment in the Center</a>
+                                                    <span class="widget-posts-date"><i class="fa fa-calendar-check-o"></i> 7 Mar 2017 </span>
+                                                </div>
+                                            </li>
+                                            <li class="clearfix">
+                                                <a href="#" class="widget-posts-img"><img src="~/images/all/1.jpg" alt=""></a>
+                                                <div class="widget-posts-descr">
+                                                    <a href="#" title="">Event in City Mol</a>
+                                                    <span class="widget-posts-date"><i class="fa fa-calendar-check-o"></i> 7 Mar 2017 </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <a class="widget-posts-link" href="#">See All Listing<span><i class="fa fa-angle-right"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--box-widget-item end -->
+                        </div>
+                    </div>
+                    <!--box-widget-wrap end -->
                 </div>
             </div>
         </section>
         <!--  section  end-->
         <div class="limit-box fl-wrap"></div>
-        <!--  section  -->
+        <!--  section   -->
         <section class="gradient-bg">
             <div class="cirle-bg">
-                <div class="bg" data-bg="~/images/bg/circle.png"></div>
+                <div class="bg" data-bg="images/bg/circle.png"></div>
             </div>
             <div class="container">
                 <div class="join-wrap fl-wrap">

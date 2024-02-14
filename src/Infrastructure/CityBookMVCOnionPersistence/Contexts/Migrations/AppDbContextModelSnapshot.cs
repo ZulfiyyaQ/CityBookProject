@@ -329,20 +329,66 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("DayOrMonth")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<TimeSpan?>("Friday")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("FridayTo")
+                        .HasColumnType("time");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<TimeSpan?>("Monday")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("MondayTo")
+                        .HasColumnType("time");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<TimeSpan?>("Saturday")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("SaturdayTo")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("Sunday")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("SundayTo")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("Thursday")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("ThursdayTo")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("Tuesday")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("TuesdayTo")
+                        .HasColumnType("time");
+
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<TimeSpan?>("Wednesday")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("WednesdayTo")
+                        .HasColumnType("time");
 
                     b.HasKey("Id");
 

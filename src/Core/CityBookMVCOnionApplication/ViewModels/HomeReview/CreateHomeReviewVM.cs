@@ -6,7 +6,7 @@ namespace CityBookMVCOnionApplication.ViewModels
     {
         public string? Text { get; init; }
         public string Name { get; init; }
-        public float RatingStar { get; init; }
+        public int RatingStar { get; init; }
         
         public IFormFile Photo { get; init; }
 

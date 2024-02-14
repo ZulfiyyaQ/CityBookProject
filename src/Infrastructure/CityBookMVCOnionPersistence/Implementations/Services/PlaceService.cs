@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using System.Security.Claims;
 
 namespace CityBookMVCOnionPersistence.Implementations.Services
 {
@@ -24,11 +25,13 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         private readonly ICategoryRepository _categoryRepository;
         private readonly IHttpContextAccessor _http;
         private readonly IWebHostEnvironment _env;
+        private readonly IReservationRepository _reservationRepository;
+        private readonly IEmailService _email;
         private readonly UserManager<User> _userManager;
 
         public PlaceService(IMapper mapper, IPlaceRepository repository, ITagRepository tagRepository,
             IFeatureRepository featureRepository, IHttpContextAccessor http, IWebHostEnvironment env,
-            ICategoryRepository categoryRepository, UserManager<User> userManager)
+            ICategoryRepository categoryRepository, UserManager<User> userManager, IReservationRepository reservationRepository, IEmailService email)
         {
             _mapper = mapper;
             _repository = repository;
@@ -38,6 +41,8 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             _env = env;
             _categoryRepository = categoryRepository;
             _userManager = userManager;
+            _reservationRepository = reservationRepository;
+            _email = email;
         }
         public async Task CreatePopulateDropdowns(CreatePlaceVM create)
         {
@@ -133,7 +138,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (item == null) throw new NotFoundException("Your request was not found");
             foreach (var image in item.PlaceImages)
             {
-                image.Url.DeleteFile(_env.WebRootPath,"images");
+                image.Url.DeleteFile(_env.WebRootPath, "images");
             }
             _repository.Delete(item);
             await _repository.SaveChanceAsync();
@@ -390,7 +395,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             foreach (var image in remove)
             {
-                image.Url.DeleteFile(_env.WebRootPath,  "images");
+                image.Url.DeleteFile(_env.WebRootPath, "images");
                 item.PlaceImages.Remove(image);
             }
 
@@ -414,7 +419,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
                     item.PlaceImages.Add(new PlaceImage
                     {
-                        Url = await photo.CreateFileAsync(_env.WebRootPath,  "images")
+                        Url = await photo.CreateFileAsync(_env.WebRootPath, "images")
                     });
                 }
             }
@@ -452,5 +457,51 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             return update;
         }
+        public async Task<bool> AddReservation(int id, CreateReservationVM reservation, ModelStateDictionary model)
+        {
+            if (!model.IsValid) return false;
+            if (reservation.Persons <= 0)
+            {
+                model.AddModelError("Persons", "The count of people cannot be less than 1");
+                return false;
+            }
+            Reservation reserv = _mapper.Map<Reservation>(reservation);
+            reserv.UserId = _http.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            await _reservationRepository.AddAsync(reserv);
+            await _reservationRepository.SaveChanceAsync();
+            return true;
+        }
+        public async Task AcceptReservation(int id)
+        {
+            Reservation reserv = await _reservationRepository.GetByIdAsync(id, true, $"{nameof(Reservation.User)}", $"{nameof(Reservation.Place)}");
+            if (reserv.ReservationDateTo == null)
+            {
+                await _email.SendMailAsync(reserv.User.Email, "Accepted ", $"accepted by {_http.HttpContext.User.FindFirstValue(ClaimTypes.GivenName)} {reserv.Place.Name} {reserv.ReservationDate}");
+            }
+            else
+            {
+                await _email.SendMailAsync(reserv.User.Email, "Accepted ", $"accepted by {_http.HttpContext.User.FindFirstValue(ClaimTypes.GivenName)} {reserv.Place.Name} {reserv.ReservationDate} {reserv.ReservationDateTo}");
+            }
+
+            reserv.IsApproved = true;
+            _reservationRepository.Update(reserv);
+        }
+        public async Task CanceledReservation(int id)
+        {
+            Reservation reserv = await _reservationRepository.GetByIdAsync(id, true, $"{nameof(Reservation.User)}", $"{nameof(Reservation.Place)}");
+            if (reserv.ReservationDateTo == null)
+            {
+                await _email.SendMailAsync(reserv.User.Email, "Canceled ", $"Canceled by {_http.HttpContext.User.FindFirstValue(ClaimTypes.GivenName)} {reserv.Place.Name} {reserv.ReservationDate}");
+            }
+            else
+            {
+                await _email.SendMailAsync(reserv.User.Email, "Canceled ", $"Canceled by {_http.HttpContext.User.FindFirstValue(ClaimTypes.GivenName)} {reserv.Place.Name} {reserv.ReservationDate} {reserv.ReservationDateTo}");
+            }
+
+            reserv.IsApproved = false;
+            _reservationRepository.Update(reserv);
+        }
+
     }
 }

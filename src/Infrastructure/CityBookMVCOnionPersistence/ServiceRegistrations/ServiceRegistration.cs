@@ -43,6 +43,7 @@ namespace CityBookMVCOnionPersistence.ServiceRegistrations
             services.AddScoped<IFeatureRepository, FeatureRepository>();
             services.AddScoped<IServiceRepository, ServiceRepository>();
             services.AddScoped<ISettingRepository, SettingRepository>();
+            services.AddScoped<IReservationRepository, ReservationRepository>();
 
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IHomeReviewService, HomeReviewService>();

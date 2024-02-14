@@ -39,6 +39,11 @@ namespace CityBookMVCOnionPersistence.Contexts
                 if (!await _roleManager.RoleExistsAsync(role))
                     await _roleManager.CreateAsync(new IdentityRole { Name = role });
             }
+            foreach (var role in Enum.GetNames(typeof(UserRole)))
+            {
+                if (!await _roleManager.RoleExistsAsync(role))
+                    await _roleManager.CreateAsync(new IdentityRole { Name = role });
+            }
         }
 
         public async Task InitializeAdminAsync()
