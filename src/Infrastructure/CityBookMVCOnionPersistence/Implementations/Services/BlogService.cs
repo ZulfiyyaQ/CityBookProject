@@ -87,7 +87,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                 item.BlogImages.Add(new BlogImage
                 {
                     //CreatedBy = _http.HttpContext.User.Identity.Name,
-                    Url = await photo.CreateFileAsync(_env.WebRootPath, "assets", "images")
+                    Url = await photo.CreateFileAsync(_env.WebRootPath, "images")
                 });
             }
             //item.CreatedBy = _http.HttpContext.User.Identity.Name;
@@ -330,7 +330,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             foreach (var image in remove)
             {
-                image.Url.DeleteFile(_env.WebRootPath, "assets", "images");
+                image.Url.DeleteFile(_env.WebRootPath,  "images");
                 item.BlogImages.Remove(image);
             }
 
@@ -356,7 +356,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                     {
                         //CreatedBy = _http.HttpContext.User.Identity.Name,
 
-                        Url = await photo.CreateFileAsync(_env.WebRootPath, "assets", "images")
+                        Url = await photo.CreateFileAsync(_env.WebRootPath, "images")
                     });
                 }
             }

@@ -53,7 +53,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             Category item = _mapper.Map<Category>(create);
 
-            item.Image = await create.Photo.CreateFileAsync(_env.WebRootPath, "assets", "images");
+            item.Image = await create.Photo.CreateFileAsync(_env.WebRootPath, "images");
             //item.CreatedBy = _http.HttpContext.User.Identity.Name;
 
             await _repository.AddAsync(item);
@@ -69,7 +69,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             Category item = await _repository.GetByIdAsync(id, includes: includes);
             if (item == null) throw new NotFoundException("Your request was not found");
 
-            item.Image.DeleteFile(_env.WebRootPath, "assets", "images");
+            item.Image.DeleteFile(_env.WebRootPath,  "images");
 
             _repository.Delete(item);
             await _repository.SaveChanceAsync();
@@ -261,7 +261,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                 }
 
                 item.Image.DeleteFile(_env.WebRootPath, "assets", "images");
-                item.Image = await update.Photo.CreateFileAsync(_env.WebRootPath, "assets", "images");
+                item.Image = await update.Photo.CreateFileAsync(_env.WebRootPath,  "images");
             }
             var config = new MapperConfiguration(cfg =>
             {

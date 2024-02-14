@@ -328,8 +328,8 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                     model.AddModelError("Photo", "Image should not be larger than 10 mb");
                     return false;
                 }
-                user.Image.DeleteFile(_env.WebRootPath, "assets", "images");
-                user.Image = await update.Photo.CreateFileAsync(_env.WebRootPath, "assets", "images");
+                user.Image.DeleteFile(_env.WebRootPath,  "images");
+                user.Image = await update.Photo.CreateFileAsync(_env.WebRootPath,  "images");
             }
 
             await _userManager.UpdateAsync(user);

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kmCEbpxAF2dvZyL+YayOCoEejqCCO/SAS1FTDfQDsWU=",
+  "Hash": "sh72GPUo26tjhNNM9mvboZ+p+J6KJVTUP3I07TMpuBA=",
   "Source": "CityBookMVCOnionMVC",
   "BasePath": "_content/CityBookMVCOnionMVC",
   "Mode": "Default",
@@ -2990,6 +2990,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\fonts\\weathericons-regular-webfont.woff"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\5022d462-d210-44de-8e3f-bc35aed00f5f.png",
+      "SourceId": "CityBookMVCOnionMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\",
+      "BasePath": "_content/CityBookMVCOnionMVC",
+      "RelativePath": "images/5022d462-d210-44de-8e3f-bc35aed00f5f.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\5022d462-d210-44de-8e3f-bc35aed00f5f.png"
     },
     {
       "Identity": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\all\\1.jpg",

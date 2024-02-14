@@ -51,7 +51,7 @@
                                     @count
                                 </td>
                                 <td>
-                                    <img src="@item.ImageUrl" alt="@item.Name">
+                                    <img src="~/images/@item.ImageUrl" alt="@item.Name">
                                 </td>
                                 <td>
                                     @item.Name
@@ -70,7 +70,7 @@
                                             <i class="mdi mdi-delete-sweep"></i>
                                         </a>
                                     }
-                                    <a asp-action="Detail" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-outline-light">
+                                    <a asp-action="Detail" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-outline-dark">
                                         <i class="mdi mdi-book-open-page-variant"></i>
                                     </a>
                                 </td>

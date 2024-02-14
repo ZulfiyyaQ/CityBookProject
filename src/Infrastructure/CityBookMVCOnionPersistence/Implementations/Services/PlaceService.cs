@@ -108,7 +108,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
                 item.PlaceImages.Add(new PlaceImage
                 {
-                    Url = await photo.CreateFileAsync(_env.WebRootPath, "assets", "images")
+                    Url = await photo.CreateFileAsync(_env.WebRootPath, "images")
                 });
             }
             User user = await _userManager.FindByNameAsync(_http.HttpContext.User.Identity.Name);
@@ -133,7 +133,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (item == null) throw new NotFoundException("Your request was not found");
             foreach (var image in item.PlaceImages)
             {
-                image.Url.DeleteFile(_env.WebRootPath, "assets", "images");
+                image.Url.DeleteFile(_env.WebRootPath,"images");
             }
             _repository.Delete(item);
             await _repository.SaveChanceAsync();
@@ -390,7 +390,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             foreach (var image in remove)
             {
-                image.Url.DeleteFile(_env.WebRootPath, "assets", "images");
+                image.Url.DeleteFile(_env.WebRootPath,  "images");
                 item.PlaceImages.Remove(image);
             }
 
@@ -414,7 +414,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
                     item.PlaceImages.Add(new PlaceImage
                     {
-                        Url = await photo.CreateFileAsync(_env.WebRootPath, "assets", "images")
+                        Url = await photo.CreateFileAsync(_env.WebRootPath,  "images")
                     });
                 }
             }
