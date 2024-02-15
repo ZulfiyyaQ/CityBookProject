@@ -349,7 +349,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             await _emailService.SendMailAsync(user.Email, "Password Reset", confirmationLink);
         }
 
-        public async Task<bool> ChangePassword(string id, string token, ForgotPasswordVM fogotPassword, ModelStateDictionary model)
+        public async Task<bool> ChangePassword(string id, string token, ChangePasswordVM fogotPassword, ModelStateDictionary model)
         {
             if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(token)) throw new NotFoundException("Your request was not found");
             User user = await _userManager.FindByIdAsync(id);

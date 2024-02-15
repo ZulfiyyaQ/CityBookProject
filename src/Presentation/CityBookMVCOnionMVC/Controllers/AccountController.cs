@@ -88,7 +88,7 @@ namespace CityBookMVCOnionMVC.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> ChangePassword(string id, string token, ForgotPasswordVM forgotPassword)
+        public async Task<IActionResult> ChangePassword(string id, string token, ChangePasswordVM forgotPassword)
         {
             bool result = await _service.ChangePassword(id, token, forgotPassword, ModelState);
             if (!result)

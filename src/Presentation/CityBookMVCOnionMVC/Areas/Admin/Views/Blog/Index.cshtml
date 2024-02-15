@@ -19,7 +19,7 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Blogs table</h4>
-            <a asp-controller="Blog" asp-action="Create" class="btn btn-outline-success">Create</a>
+           
             <div class="table-responsive pt-3">
                 <table class="table table-bordered">
                     <thead>
@@ -54,7 +54,7 @@
                                     @count
                                 </td>
                                 <td>
-                                    <img src="@Blog.BlogImage" alt="@Blog.Name">
+                                    <img src="~/images/@Blog.BlogImage" alt="@Blog.Name">
                                 </td>
                                 <td>
                                     @Blog.Name

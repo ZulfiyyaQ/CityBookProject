@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="RatingStar">Rating Star</label>
-                    <input asp-for="RatingStar" class="form-control" placeholder="Rating Star">
+                    <input  min="0" max="5" asp-for="RatingStar" class="form-control" placeholder="Rating Star">
                     <span asp-validation-for="RatingStar" class="text-danger"></span>
                 </div>
                 <div class="form-group">

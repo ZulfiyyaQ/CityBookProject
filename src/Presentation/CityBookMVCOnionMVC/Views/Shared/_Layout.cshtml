@@ -32,8 +32,12 @@
                 <div class="logo-holder">
                     <a asp-action="index" asp-controller="home"><img src="~/images/logo.png" alt=""></a>
                 </div>
-               
-                @* @if(User.IsInRole) *@
+
+                @if (User.IsInRole(UserRole.BiznesOwner.ToString()))
+                {
+                    <a asp-action="index" asp-controller="Add" class="add-list">Add Listing <span><i class="fa fa-plus"></i></span></a>
+                    <a href="dashboard-add-listing.html" class="add-list">Add Listing <span><i class="fa fa-plus"></i></span></a>
+                }
                 <a href="dashboard-add-listing.html" class="add-list">Add Listing <span><i class="fa fa-plus"></i></span></a>
                 @if (User.Identity.IsAuthenticated)
                 {

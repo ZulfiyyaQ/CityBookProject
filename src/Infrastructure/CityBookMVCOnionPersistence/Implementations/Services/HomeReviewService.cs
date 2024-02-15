@@ -4,6 +4,8 @@ using CityBookMVCOnionApplication.Abstractions.Services;
 using CityBookMVCOnionApplication.ViewModels;
 using CityBookMVCOnionDomain.Entities;
 using CityBookMVCOnionInfrastructure.Exceptions;
+using CityBookMVCOnionInfrastructure.Implementations;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -17,15 +19,17 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         private readonly IMapper _mapper;
         private readonly IHomeReviewRepository _repository;
         private readonly IHttpContextAccessor _http;
+        private readonly IWebHostEnvironment _env;
         private readonly UserManager<User> _userManager;
 
         public HomeReviewService(IMapper mapper, IHomeReviewRepository repository,
-            IHttpContextAccessor http, UserManager<User> userManager)
+            IHttpContextAccessor http, UserManager<User> userManager, IWebHostEnvironment env)
         {
             _mapper = mapper;
             _repository = repository;
             _http = http;
             _userManager = userManager;
+            _env = env;
         }
 
         public async Task<bool> CreateAsync(CreateHomeReviewVM create, ModelStateDictionary model)
@@ -36,7 +40,19 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                 model.AddModelError("Name", "Name is exists");
                 return false;
             }
+            if (!create.Photo.ValidateType())
+            {
+                model.AddModelError("Photo", "File Not supported");
+                return false;
+            }
+            if (!create.Photo.ValidataSize())
+            {
+                model.AddModelError("Photo", "Image should not be larger than 10 mb");
+                return false;
+            }
             HomeReview item = _mapper.Map<HomeReview>(create);
+            item.Image = await create.Photo.CreateFileAsync(_env.WebRootPath, "images");
+
             //item.CreatedBy = user.UserName;
 
             await _repository.AddAsync(item);

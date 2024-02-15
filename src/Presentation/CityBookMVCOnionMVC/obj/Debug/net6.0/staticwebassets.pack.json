@@ -697,6 +697,14 @@
       "PackagePath": "staticwebassets\\fonts\\weathericons-regular-webfont.woff"
     },
     {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\03c87f71-0aba-426a-80d0-1359f39ceed1.png",
+      "PackagePath": "staticwebassets\\images\\03c87f71-0aba-426a-80d0-1359f39ceed1.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\4c7b0a50-c922-4cc8-8e31-2717f6e82ef1.jpg",
+      "PackagePath": "staticwebassets\\images\\4c7b0a50-c922-4cc8-8e31-2717f6e82ef1.jpg"
+    },
+    {
       "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\5022d462-d210-44de-8e3f-bc35aed00f5f.png",
       "PackagePath": "staticwebassets\\images\\5022d462-d210-44de-8e3f-bc35aed00f5f.png"
     },

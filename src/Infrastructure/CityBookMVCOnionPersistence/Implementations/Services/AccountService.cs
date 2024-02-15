@@ -143,7 +143,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             return true;
         }
 
-        public async Task<bool> ChangePassword(string id, string token, ForgotPasswordVM fogotPassword, ModelStateDictionary model)
+        public async Task<bool> ChangePassword(string id, string token, ChangePasswordVM fogotPassword, ModelStateDictionary model)
         {
             if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(token)) throw new NotFoundException("Your request was not found");
             User user = await _userManager.FindByIdAsync(id);
@@ -152,7 +152,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                 if (user == null) throw new NotFoundException("Your request was not found");
             }
 
-            var result = await _userManager.ChangePasswordAsync(user, fogotPassword.Password, fogotPassword.NewPassword);
+            var result = await _userManager.ResetPasswordAsync(user,token , fogotPassword.NewPassword);
             if (!result.Succeeded)
             {
                 string errors = "";

@@ -304,7 +304,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EmployeeReviews");
+                    b.ToTable("HomeReview");
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Place", b =>

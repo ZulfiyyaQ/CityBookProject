@@ -22,7 +22,7 @@ namespace CityBookMVCOnionApplication.Abstractions.Services
         Task<EditUserVM> EditUser(string id);
         Task<bool> EditUserAsync(string id, EditUserVM update, ModelStateDictionary model);
         Task ForgotPassword(string id, IUrlHelper url);
-        Task<bool> ChangePassword(string id, string token, ForgotPasswordVM forgotPassword, ModelStateDictionary model);
+        Task<bool> ChangePassword(string id, string token, ChangePasswordVM forgotPassword, ModelStateDictionary model);
         
         
     }

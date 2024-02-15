@@ -22,7 +22,7 @@ namespace CityBookMVCOnionPersistence.Contexts
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
        
-        public DbSet<HomeReview> EmployeeReviews { get; set; }
+        public DbSet<HomeReview> HomeReview { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<Place> Places { get; set; }
         public DbSet<PlaceFeature> PlaceFeatures { get; set; }

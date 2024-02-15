@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace CityBookMVCOnionApplication.Validators.Account
 {
-    public class ForgotPasswordVMValidator : AbstractValidator<ForgotPasswordVM>
+    public class ForgotPasswordVMValidator : AbstractValidator<ChangePasswordVM>
     {
         public ForgotPasswordVMValidator()
         {

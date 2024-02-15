@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sh72GPUo26tjhNNM9mvboZ+p+J6KJVTUP3I07TMpuBA=",
+  "Hash": "0UgZbV3x4RbZDybMoKF6NresyysymCpZaLgSsGKPX8I=",
   "Source": "CityBookMVCOnionMVC",
   "BasePath": "_content/CityBookMVCOnionMVC",
   "Mode": "Default",
@@ -2990,6 +2990,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\fonts\\weathericons-regular-webfont.woff"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\03c87f71-0aba-426a-80d0-1359f39ceed1.png",
+      "SourceId": "CityBookMVCOnionMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\",
+      "BasePath": "_content/CityBookMVCOnionMVC",
+      "RelativePath": "images/03c87f71-0aba-426a-80d0-1359f39ceed1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\03c87f71-0aba-426a-80d0-1359f39ceed1.png"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\4c7b0a50-c922-4cc8-8e31-2717f6e82ef1.jpg",
+      "SourceId": "CityBookMVCOnionMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\",
+      "BasePath": "_content/CityBookMVCOnionMVC",
+      "RelativePath": "images/4c7b0a50-c922-4cc8-8e31-2717f6e82ef1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\4c7b0a50-c922-4cc8-8e31-2717f6e82ef1.jpg"
     },
     {
       "Identity": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\5022d462-d210-44de-8e3f-bc35aed00f5f.png",
