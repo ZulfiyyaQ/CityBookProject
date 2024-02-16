@@ -6,6 +6,9 @@
         public string Name { get; init; }
         public string Address { get; init; }
         public string Description { get; init; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Website { get; set; }
         public string ImageUrl { get; init; }
         public int UserId { get; init; }
         public IncludeUserVM User { get; init; }

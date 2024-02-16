@@ -1,4 +1,4 @@
 ﻿namespace CityBookMVCOnionApplication.ViewModels
 {
-    public record IncludeBlogImageVM(string Url, int BlogId);
+    public record IncludeBlogImageVM(int Id,string Url, int BlogId);
 }

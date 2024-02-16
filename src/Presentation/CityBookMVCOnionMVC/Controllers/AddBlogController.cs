@@ -2,7 +2,7 @@
 
 namespace CityBookMVCOnionMVC.Controllers
 {
-    public class ContactsController : Controller
+    public class AddBlogController : Controller
     {
         public IActionResult Index()
         {

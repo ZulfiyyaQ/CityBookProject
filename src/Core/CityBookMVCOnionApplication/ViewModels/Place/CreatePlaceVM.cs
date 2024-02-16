@@ -7,9 +7,12 @@ namespace CityBookMVCOnionApplication.ViewModels
         public string Name { get; init; }
         public string Address { get; init; }
         public string Description { get; init; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Website { get; set; }
         public List<IFormFile> Photos { get; init; }
 
-        public TimeSpan? Monday { get; init; }
+        public TimeOnly? Monday { get; init; }
         public TimeSpan? Tuesday { get; init; }
         public TimeSpan? Wednesday { get; init; }
         public TimeSpan? Thursday { get; init; }

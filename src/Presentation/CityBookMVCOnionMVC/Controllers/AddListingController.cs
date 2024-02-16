@@ -1,12 +1,36 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CityBookMVCOnionApplication.Abstractions.Services;
+using CityBookMVCOnionApplication.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CityBookMVCOnionMVC.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class AddListingController : Controller
     {
-        public IActionResult Index()
+        private readonly IPlaceService _service;
+
+        public AddListingController(IPlaceService service)
         {
-            return View();
+            _service = service;
         }
+
+        public IActionResult Create()
+        {
+            CreatePlaceVM create = new CreatePlaceVM();
+            _service.CreatePopulateDropdowns(create);
+            return View(create);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(CreatePlaceVM create)
+        {
+            bool result = await _service.CreateAsync(create, ModelState, TempData);
+            if (result)
+            {
+                return View(create);
+            }
+            return RedirectToAction("Index", "Home", new { Area = "" } );
+        }
+       
     }
 }
+

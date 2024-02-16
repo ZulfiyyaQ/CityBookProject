@@ -58,7 +58,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasIndex("UserId1");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Blogs", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.BlogImage", b =>
@@ -90,7 +90,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasIndex("BlogId");
 
-                    b.ToTable("BlogImage");
+                    b.ToTable("BlogImage", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.BlogTag", b =>
@@ -123,7 +123,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasIndex("TagId");
 
-                    b.ToTable("BlogTags");
+                    b.ToTable("BlogTags", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.BTag", b =>
@@ -150,7 +150,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BTags");
+                    b.ToTable("BTags", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Category", b =>
@@ -185,7 +185,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Comment", b =>
@@ -227,7 +227,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Comments");
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Feature", b =>
@@ -258,7 +258,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Features");
+                    b.ToTable("Features", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.HomeReview", b =>
@@ -304,7 +304,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("HomeReview");
+                    b.ToTable("HomeReview", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Place", b =>
@@ -337,6 +337,10 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<TimeSpan?>("Friday")
                         .HasColumnType("time");
 
@@ -353,6 +357,10 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                         .HasColumnType("time");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -384,6 +392,10 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("Website")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<TimeSpan?>("Wednesday")
                         .HasColumnType("time");
 
@@ -396,7 +408,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Places");
+                    b.ToTable("Places", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.PlaceFeature", b =>
@@ -429,7 +441,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasIndex("PlaceId");
 
-                    b.ToTable("PlaceFeatures");
+                    b.ToTable("PlaceFeatures", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.PlaceImage", b =>
@@ -464,7 +476,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasIndex("PlaceId");
 
-                    b.ToTable("PlaceImage");
+                    b.ToTable("PlaceImage", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.PlaceTag", b =>
@@ -497,7 +509,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasIndex("TagId");
 
-                    b.ToTable("PlaceTags");
+                    b.ToTable("PlaceTags", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Position", b =>
@@ -524,7 +536,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Positions");
+                    b.ToTable("Positions", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Reply", b =>
@@ -562,7 +574,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Replies");
+                    b.ToTable("Replies", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Reservation", b =>
@@ -612,7 +624,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reservations");
+                    b.ToTable("Reservations", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Review", b =>
@@ -658,7 +670,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasIndex("UserId1");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Service", b =>
@@ -693,7 +705,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Services");
+                    b.ToTable("Services", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Setting", b =>
@@ -724,7 +736,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Settings");
+                    b.ToTable("Settings", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.Tag", b =>
@@ -751,7 +763,7 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tags");
+                    b.ToTable("Tags", (string)null);
                 });
 
             modelBuilder.Entity("CityBookMVCOnionDomain.Entities.User", b =>

@@ -1,4 +1,10 @@
-﻿<!DOCTYPE HTML>
+﻿
+@inject LayoutServices service
+
+@{
+    Dictionary<string, string> setting = await service.GetSettingsAsync();
+}
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
     <!--=============== basic  ===============-->
@@ -14,6 +20,8 @@
     <link type="text/css" rel="stylesheet" href="~/css/plugins.css">
     <link type="text/css" rel="stylesheet" href="~/css/style.css">
     <link type="text/css" rel="stylesheet" href="~/css/color.css">
+    <link type="text/css" rel="stylesheet" href="~/css/Create.css">
+
     <!--=============== favicons ===============-->
     <link rel="shortcut icon" href="~/images/favicon.ico">
 </head>
@@ -30,18 +38,17 @@
         <header class="main-header dark-header fs-header sticky">
             <div class="header-inner">
                 <div class="logo-holder">
-                    <a asp-action="index" asp-controller="home"><img src="~/images/logo.png" alt=""></a>
+                    <a asp-action="index" asp-controller="home"><img src="~/images/@setting["Logo"]" alt=""></a>
                 </div>
-
-                @if (User.IsInRole(UserRole.BiznesOwner.ToString()))
-                {
-                    <a asp-action="index" asp-controller="Add" class="add-list">Add Listing <span><i class="fa fa-plus"></i></span></a>
-                    <a href="dashboard-add-listing.html" class="add-list">Add Listing <span><i class="fa fa-plus"></i></span></a>
-                }
-                <a href="dashboard-add-listing.html" class="add-list">Add Listing <span><i class="fa fa-plus"></i></span></a>
                 @if (User.Identity.IsAuthenticated)
                 {
-                    
+                    @if (User.IsInRole(UserRole.BiznesOwner.ToString()))
+                    {
+                        <a asp-action="index" asp-controller="AddListing" class="add-list">Add Listing <span><i class="fa fa-plus"></i></span></a>
+                        <a asp-action="index" asp-controller="AddBlog" class="add-list">Add Blog <span><i class="fa fa-plus"></i></span></a>
+                    }
+
+
                     <a class="show-reg-form" asp-action="LogOut" asp-controller="Account"><i class="fa fa-sign-in"></i>Log Out</a>
                 }
                 else
@@ -50,7 +57,7 @@
 
 
                 }
-                
+
                 <!-- nav-button-wrap-->
                 <div class="nav-button-wrap color-bg">
                     <div class="nav-button">
@@ -128,117 +135,108 @@
             </div>
         </header>
         <!--  header end -->
-            @RenderBody()
+        @RenderBody()
         <!--footer -->
-            <footer class="main-footer dark-footer  ">
+        <footer class="main-footer dark-footer  ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="footer-widget fl-wrap">
+                            <h3>About Us</h3>
+                            <div class="footer-contacts-widget fl-wrap">
+                                <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam. </p>
+                                <ul class="footer-contacts fl-wrap">
+                                    <li><span><i class="@setting["MailLogo"]"></i> Mail :</span><a href="#" target="_blank">@setting["Mail"]</a></li>
+                                    <li> <span><i class="@setting["AddressLogo"]"></i> Adress :</span><a href="#" target="_blank">@setting["Address"]</a></li>
+                                    <li><span><i class="@setting["PhoneLogo"]"></i> Phone :</span><a href="#">@setting["Phone"]</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="footer-widget fl-wrap">
+                            <h3>Our Last News</h3>
+                            <div class="widget-posts fl-wrap">
+                                <ul>
+                                    <li class="clearfix">
+                                        <a href="#" class="widget-posts-img"><img src="~/images/all/1.jpg" class="respimg" alt=""></a>
+                                        <div class="widget-posts-descr">
+                                            <a href="#" title="">Vivamus dapibus rutrum</a>
+                                            <span class="widget-posts-date"> 21 Mar 09.05 </span>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <a href="#" class="widget-posts-img"><img src="~/images/all/1.jpg" class="respimg" alt=""></a>
+                                        <div class="widget-posts-descr">
+                                            <a href="#" title=""> In hac habitasse platea</a>
+                                            <span class="widget-posts-date"> 7 Mar 18.21 </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-menu fl-wrap">
+                                <ul>
+                                    <li><a href="#" style="color:#4DB7FE">Read All News</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="footer-widget fl-wrap">
+                         
+                         
+                            <div class="footer-widget fl-wrap">
+                                <div class="footer-menu fl-wrap">
+                                    <ul>
+                                        <li><a asp-action="index" asp-controller="home">Home </a></li>
+                                        <li><a asp-action="index" asp-controller="blog">Blog</a></li>
+                                        <li><a asp-action="index" asp-controller="listing">Listing</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-footer fl-wrap">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="footer-widget fl-wrap">
-                                <h3>About Us</h3>
-                                <div class="footer-contacts-widget fl-wrap">
-                                    <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam. </p>
-                                    <ul  class="footer-contacts fl-wrap">
-                                        <li><span><i class="fa fa-envelope-o"></i> Mail :</span><a href="#" target="_blank">yourmail@domain.com</a></li>
-                                        <li> <span><i class="fa fa-map-marker"></i> Adress :</span><a href="#" target="_blank">USA 27TH Brooklyn NY</a></li>
-                                        <li><span><i class="fa fa-phone"></i> Phone :</span><a href="#">+7(111)123456789</a></li>
-                                    </ul>
-                                </div>
+                            <div class="about-widget">
+                                <img src="~/images/logo.png" alt="">
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="footer-widget fl-wrap">
-                                <h3>Our Last News</h3>
-                                <div class="widget-posts fl-wrap">
-                                    <ul>
-                                        <li class="clearfix">
-                                            <a href="#"  class="widget-posts-img"><img src="~/images/all/1.jpg" class="respimg" alt=""></a>
-                                            <div class="widget-posts-descr">
-                                                <a href="#" title="">Vivamus dapibus rutrum</a>
-                                                <span class="widget-posts-date"> 21 Mar 09.05 </span> 
-                                            </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <a href="#"  class="widget-posts-img"><img src="~/images/all/1.jpg" class="respimg" alt=""></a>
-                                            <div class="widget-posts-descr">
-                                                <a href="#" title=""> In hac habitasse platea</a>
-                                                <span class="widget-posts-date"> 7 Mar 18.21 </span> 
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer-menu fl-wrap">
-                                    <ul>
-                                        <li><a href="#" style="color:#4DB7FE">Read All News</a></li>
-                                     </ul>
-                                </div>								
-                            </div>
+                            <div class="copyright"> &#169; CityBook 2018 .  All rights reserved.</div>
                         </div>
                         <div class="col-md-4">
-                            <div class="footer-widget fl-wrap">
-                                <h3>Subscribe</h3>
-                                <div class="subscribe-widget fl-wrap">
-                                    <p>Want to be notified when we launch a new template or an udpate. Just sign up and we'll send you a notification by email.</p>
-                                    <div class="subcribe-form">
-                                        <form id="subscribe">
-                                            <input class="enteremail" name="email" id="subscribe-email" placeholder="Email" spellcheck="false" type="text">
-                                            <button type="submit" id="subscribe-button" class="subscribe-button"><i class="fa fa-rss"></i> Subscribe</button>
-                                            <label for="subscribe-email" class="subscribe-message"></label>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="footer-widget fl-wrap">
-                                    <div class="footer-menu fl-wrap">
-                                        <ul>
-                                            <li><a href="#">Home </a></li>
-                                            <li><a href="#">Blog</a></li>
-                                            <li><a href="#">Listing</a></li>
-                                            <li><a href="#">Contacts</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <div class="footer-social">
+                                <ul>
+                                    <li><a href="@setting["Facebook"]" target="_blank"><i class="@setting["FacebookLogo"]"></i></a></li>
+                                    <li><a href="@setting["Twit"]" target="_blank"><i class="@setting["TwitLogo"]"></i></a></li>
+                                    <li><a href="@setting["Chrome"]" target="_blank"><i class="@setting["ChromeLogo"]"></i></a></li>
+                                    <li><a href="@setting["VK"]" target="_blank"><i class="@setting["VKLogo"]"></i></a></li>
+                                    <li><a href="@setting["WP"]" target="_blank"><i class="@setting["WPLogo"]"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="sub-footer fl-wrap">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="about-widget">
-                                    <img src="~/images/logo.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="copyright"> &#169; CityBook 2018 .  All rights reserved.</div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="footer-social">
-                                    <ul>
-                                        <li><a href="#" target="_blank" ><i class="fa fa-facebook-official"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#" target="_blank" ><i class="fa fa-chrome"></i></a></li>
-                                        <li><a href="#" target="_blank" ><i class="fa fa-vk"></i></a></li>
-                                        <li><a href="#" target="_blank" ><i class="fa fa-whatsapp"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!--footer end  -->
+            </div>
+        </footer>
+        <!--footer end  -->
 
 
 
-            <a class="to-top"><i class="fa fa-angle-up"></i></a>
-        </div>
-        <!-- Main end -->
-        <!--=============== scripts  ===============-->
+        <a class="to-top"><i class="fa fa-angle-up"></i></a>
+    </div>
+    <!-- Main end -->
+    <!--=============== scripts  ===============-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="~/js/jquery.min.js"></script>
-        <script type="text/javascript" src="~/js/plugins.js"></script>
-        <script type="text/javascript" src="~/js/scripts.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwJSRi0zFjDemECmFl9JtRj1FY7TiTRRo&libraries=places&callback=initAutocomplete"></script>
-    </body>
+    <script type="text/javascript" src="~/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/plugins.js"></script>
+    <script type="text/javascript" src="~/js/scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwJSRi0zFjDemECmFl9JtRj1FY7TiTRRo&libraries=places&callback=initAutocomplete"></script>
+</body>
 </html>

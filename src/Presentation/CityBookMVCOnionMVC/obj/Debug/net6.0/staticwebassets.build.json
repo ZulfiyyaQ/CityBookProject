@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0UgZbV3x4RbZDybMoKF6NresyysymCpZaLgSsGKPX8I=",
+  "Hash": "jc3WLWKbnzronDusD5qejaksN1BJYb6ExdoosoHY+UI=",
   "Source": "CityBookMVCOnionMVC",
   "BasePath": "_content/CityBookMVCOnionMVC",
   "Mode": "Default",
@@ -2599,6 +2599,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\color.css"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\css\\Create.css",
+      "SourceId": "CityBookMVCOnionMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\",
+      "BasePath": "_content/CityBookMVCOnionMVC",
+      "RelativePath": "css/Create.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Create.css"
     },
     {
       "Identity": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\css\\date-droop-color.css",

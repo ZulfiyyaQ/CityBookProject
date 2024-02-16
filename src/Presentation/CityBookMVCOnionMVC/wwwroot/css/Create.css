@@ -1,0 +1,9 @@
+﻿.days-wrapper{
+    display: flex;
+    flex-direction:column;
+}
+.days{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+}

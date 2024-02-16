@@ -1,5 +1,6 @@
 ﻿using CityBookMVCOnionApplication.Abstractions.Services;
 using CityBookMVCOnionApplication.ViewModels;
+using CityBookMVCOnionApplication.ViewModels.Account;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityBookMVCOnionMVC.Controllers
@@ -83,17 +84,17 @@ namespace CityBookMVCOnionMVC.Controllers
             }
             return RedirectToAction(nameof(ForgotPasswordSended));
         }
-        public IActionResult ChangePassword(string id, string token)
+        public IActionResult ResetPassword(string id, string token)
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> ChangePassword(string id, string token, ChangePasswordVM forgotPassword)
+        public async Task<IActionResult> ResetPassword(string id, string token, ResetPasswordVM resetPassword)
         {
-            bool result = await _service.ChangePassword(id, token, forgotPassword, ModelState);
+            bool result = await _service.ResetPassword(id, token, resetPassword, ModelState);
             if (!result)
             {
-                return View(forgotPassword);
+                return View(resetPassword);
             }
             return RedirectToAction(nameof(Login));
         }
