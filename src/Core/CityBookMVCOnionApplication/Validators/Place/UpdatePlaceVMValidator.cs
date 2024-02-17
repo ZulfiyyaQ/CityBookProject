@@ -8,7 +8,6 @@ namespace CityBookMVCOnionApplication.Validators.Place
         public UpdatePlaceVMValidator()
         {
             RuleFor(x => x.CategoryId).GreaterThan(0).WithMessage("CategoryId must be greater than 0");
-            RuleFor(x => x.UserId).NotEmpty().WithMessage("UserId must be upload");
 
             RuleFor(x => x.FeatureIds).NotNull().WithMessage("Feature was not be emty");
             RuleForEach(x => x.FeatureIds).GreaterThan(0).WithMessage("Feature must be greater than 0");

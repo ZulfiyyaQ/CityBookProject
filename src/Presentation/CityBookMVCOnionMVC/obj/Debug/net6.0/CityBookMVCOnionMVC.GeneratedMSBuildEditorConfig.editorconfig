@@ -240,6 +240,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTdWNjZXNzZnVsbHlSZWdpc3RyZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Views/AddBlog/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkQmxvZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Views/AddListing/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkTGlzdGluZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

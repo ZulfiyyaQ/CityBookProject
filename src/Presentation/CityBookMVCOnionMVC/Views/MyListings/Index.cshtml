@@ -1,4 +1,5 @@
-﻿<div id="wrapper">
+﻿@model PaginationVM<ItemPlaceVM>
+<div id="wrapper">
     <!--content -->
     <div class="content">
         <!--section -->
@@ -33,10 +34,11 @@
                                             <h3>Listings</h3>
 
                                             <ul>
-                                                <li><a asp-action="index" asp-controller="mylisting"><i class="fa fa-th-list"></i> My listigs  </a></li>
+                                                <li><a asp-action="index" asp-controller="mylistings"><i class="fa fa-th-list"></i> My listigs  </a></li>
                                                 <li><a href="dashboard-bookings.html"> <i class="fa fa-calendar-check-o"></i> Bookings <span>2</span></a></li>
                                                 <li><a href="dashboard-review.html"><i class="fa fa-comments-o"></i> Reviews </a></li>
-                                                <li><a asp-action="create" asp-controller="addlisting"><i class="fa fa-plus-square-o"></i> Add New</a></li>
+                                                <li><a asp-action="create" asp-controller="addlisting"><i class="fa fa-plus-square-o"></i> Add New Place</a></li>
+                                                <li><a asp-action="create" asp-controller="addblog"><i class="fa fa-plus-square-o"></i> Add New Blog</a></li>
                                             </ul>
                                         </div>
                                     }
@@ -51,87 +53,30 @@
                                 <div class="dashboard-header fl-wrap">
                                     <h3>Indox</h3>
                                 </div>
-                                <!-- dashboard-list end-->
-                                <div class="dashboard-list">
-                                    <div class="dashboard-message">
-                                        <span class="new-dashboard-item">New</span>
-                                        <div class="dashboard-listing-table-image">
-                                            <a href="listing-single.html"><img src="images/all/1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="dashboard-listing-table-text">
-                                            <h4><a href="listing-single.html">Event In City Hall</a></h4>
-                                            <span class="dashboard-listing-table-address"><i class="fa fa-map-marker"></i><a href="#">USA 27TH Brooklyn NY</a></span>
-                                            <div class="listing-rating card-popup-rainingvis fl-wrap" data-starrating2="5">
-                                                <span>(2 reviews)</span>
+                                @foreach (var item in Model.Items)
+                                {
+                                    <div class="dashboard-list">
+                                        <div class="dashboard-message">
+                                            <span class="new-dashboard-item">New</span>
+                                            <div class="dashboard-listing-table-image">
+                                                <a href="listing-single.html"><img src="~/images/@item.PlaceImages.FirstOrDefault()?.ImageUrl" alt="@item.Name"></a>
                                             </div>
-                                            <ul class="dashboard-listing-table-opt  fl-wrap">
-                                                <li><a href="#">Edit <i class="fa fa-pencil-square-o"></i></a></li>
-                                                <li><a href="#" class="del-btn">Delete <i class="fa fa-trash-o"></i></a></li>
-                                            </ul>
+                                            <div class="dashboard-listing-table-text">
+                                                <h4><a asp-action="detail" asp-controller="listing" asp-route-id="@item.Id">@item.Name</a></h4>
+                                                <span class="dashboard-listing-table-address"><i class="fa fa-map-marker"></i><a href="#">@item.Address</a></span>
+                                             @*    <div class="listing-rating card-popup-rainingvis fl-wrap" data-starrating2="5">
+                                                    <span>(@item.Review.Count())</span>
+                                                </div> *@
+                                                <ul class="dashboard-listing-table-opt  fl-wrap">
+                                                    <li><a asp-action="update" asp-controller="mylisting">Edit <i class="fa fa-pencil-square-o"></i></a></li>
+                                                    <li><a asp-action="delete" asp-controller="mylisting" class="del-btn">Delete <i class="fa fa-trash-o"></i></a></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- dashboard-list end-->
-                                <!-- dashboard-list end-->
-                                <div class="dashboard-list">
-                                    <div class="dashboard-message">
-                                        <div class="dashboard-listing-table-image">
-                                            <a href="listing-single.html"><img src="images/all/1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="dashboard-listing-table-text">
-                                            <h4><a href="listing-single.html">Event In City Hall</a></h4>
-                                            <span class="dashboard-listing-table-address"><i class="fa fa-map-marker"></i><a href="#">USA 27TH Brooklyn NY</a></span>
-                                            <div class="listing-rating card-popup-rainingvis fl-wrap" data-starrating2="3">
-                                                <span>(2 reviews)</span>
-                                            </div>
-                                            <ul class="dashboard-listing-table-opt  fl-wrap">
-                                                <li><a href="#">Edit <i class="fa fa-pencil-square-o"></i></a></li>
-                                                <li><a href="#" class="del-btn">Delete <i class="fa fa-trash-o"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- dashboard-list end-->
-                                <!-- dashboard-list end-->
-                                <div class="dashboard-list">
-                                    <div class="dashboard-message">
-                                        <div class="dashboard-listing-table-image">
-                                            <a href="listing-single.html"><img src="images/all/1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="dashboard-listing-table-text">
-                                            <h4><a href="listing-single.html">Event In City Hall</a></h4>
-                                            <span class="dashboard-listing-table-address"><i class="fa fa-map-marker"></i><a href="#">USA 27TH Brooklyn NY</a></span>
-                                            <div class="listing-rating card-popup-rainingvis fl-wrap" data-starrating2="4">
-                                                <span>(2 reviews)</span>
-                                            </div>
-                                            <ul class="dashboard-listing-table-opt  fl-wrap">
-                                                <li><a href="#">Edit <i class="fa fa-pencil-square-o"></i></a></li>
-                                                <li><a href="#" class="del-btn">Delete <i class="fa fa-trash-o"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- dashboard-list end-->
-                                <!-- dashboard-list end-->
-                                <div class="dashboard-list">
-                                    <div class="dashboard-message">
-                                        <div class="dashboard-listing-table-image">
-                                            <a href="listing-single.html"><img src="images/all/1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="dashboard-listing-table-text">
-                                            <h4><a href="listing-single.html">Event In City Hall</a></h4>
-                                            <span class="dashboard-listing-table-address"><i class="fa fa-map-marker"></i><a href="#">USA 27TH Brooklyn NY</a></span>
-                                            <div class="listing-rating card-popup-rainingvis fl-wrap" data-starrating2="5">
-                                                <span>(2 reviews)</span>
-                                            </div>
-                                            <ul class="dashboard-listing-table-opt  fl-wrap">
-                                                <li><a href="#">Edit <i class="fa fa-pencil-square-o"></i></a></li>
-                                                <li><a href="#" class="del-btn">Delete <i class="fa fa-trash-o"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- dashboard-list end-->
+                                }
+                                
+                              
                             </div>
                             <!-- pagination-->
                             <div class="pagination">
@@ -152,22 +97,7 @@
         <!-- section end -->
         <div class="limit-box fl-wrap"></div>
         <!--section -->
-        <section class="gradient-bg">
-            <div class="cirle-bg">
-                <div class="bg" data-bg="images/bg/circle.png"></div>
-            </div>
-            <div class="container">
-                <div class="join-wrap fl-wrap">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h3>Do You Have Questions ?</h3>
-                            <p>Lorem ipsum dolor sit amet, harum dolor nec in, usu molestiae at no.</p>
-                        </div>
-                        <div class="col-md-4"><a href="contacts.html" class="join-wrap-btn">Get In Touch <i class="fa fa-envelope-o"></i></a></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
         <!-- section end -->
     </div>
 </div>

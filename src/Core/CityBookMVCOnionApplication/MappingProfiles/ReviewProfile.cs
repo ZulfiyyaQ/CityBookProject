@@ -14,7 +14,8 @@ namespace CityBookMVCOnionApplication.MappingProfiles
                 
                 .ForMember(x => x.Place, opt => opt.MapFrom(src => src.Place))
                 .ForMember(x => x.User, opt => opt.MapFrom(src => src.User));
-            CreateMap<IncludeReviewVM, Review>().ReverseMap();
+            CreateMap<IncludeReviewVM, Review>().ReverseMap()
+                .ForMember(x => x.User, opt => opt.MapFrom(src => src.User));
 
 
             CreateMap<ItemReviewVM, Review>().ReverseMap()

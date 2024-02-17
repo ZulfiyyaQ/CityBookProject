@@ -1,4 +1,6 @@
-﻿namespace CityBookMVCOnionApplication.ViewModels
+﻿using CityBookMVCOnionDomain.Entities;
+
+namespace CityBookMVCOnionApplication.ViewModels
 {
     public record IncludeReviewVM
     {
@@ -6,5 +8,7 @@
         public string Name { get; init; }
         public string? Text { get; init; }
         public float RatingStar { get; init; }
+        public string UserId { get; init; }
+        public IncludeUserVM User { get; init; }
     }
 }

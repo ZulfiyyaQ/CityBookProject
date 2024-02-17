@@ -1,12 +1,34 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CityBookMVCOnionApplication.Abstractions.Services;
+using CityBookMVCOnionApplication.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CityBookMVCOnionMVC.Controllers
 {
+    [AutoValidateAntiforgeryToken]
     public class AddBlogController : Controller
     {
-        public IActionResult Index()
+        private readonly IBlogService _service;
+
+        public AddBlogController(IBlogService service)
         {
-            return View();
+            _service = service;
+        }
+
+        public IActionResult Create()
+        {
+            CreateBlogVM create = new CreateBlogVM();
+            _service.CreatePopulateDropdowns(create);
+            return View(create);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(CreateBlogVM create)
+        {
+            bool result = await _service.CreateAsync(create, ModelState, TempData);
+            if (result)
+            {
+                return View(create);
+            }
+            return RedirectToAction("Index", "Home", new { Area = "" });
         }
     }
 }

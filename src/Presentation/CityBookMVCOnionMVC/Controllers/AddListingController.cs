@@ -14,17 +14,17 @@ namespace CityBookMVCOnionMVC.Controllers
             _service = service;
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             CreatePlaceVM create = new CreatePlaceVM();
-            _service.CreatePopulateDropdowns(create);
+            await _service.CreatePopulateDropdowns(create);
             return View(create);
         }
         [HttpPost]
         public async Task<IActionResult> Create(CreatePlaceVM create)
         {
             bool result = await _service.CreateAsync(create, ModelState, TempData);
-            if (result)
+            if (!result)
             {
                 return View(create);
             }

@@ -10,65 +10,105 @@
                 <!-- profile-edit-wrap -->
                 <div class="profile-edit-wrap">
                     <div class="profile-edit-page-header">
-                        <h2>Add Listing</h2>
-                        <div class="breadcrumbs"><a href="#">Home</a><a href="#">Dasboard</a><span>Add Listing</span></div>
+                        <h2>Update Place</h2>
+
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="fixed-bar fl-wrap">
-                                <div class="user-profile-menu-wrap fl-wrap">
-                                    <!-- user-profile-menu-->
-                                    <div class="user-profile-menu">
-                                        <h3>Main</h3>
-                                        <ul>
+                            <div class="user-profile-menu-wrap fl-wrap">
+                                <!-- user-profile-menu-->
+                                <div class="user-profile-menu">
+                                    <h3>Main</h3>
+                                    <ul>
 
-                                            <li><a asp-action="index" asp-controller="myaccount"><i class="fa fa-user-o"></i> Edit profile</a></li>
-                                            <li><a asp-action="changepassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
-                                            <li><a asp-action="forgotpassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Forgot Password</a></li>
+                                        <li><a asp-action="index" asp-controller="myaccount"><i class="fa fa-user-o"></i> Edit profile</a></li>
+                                        <li><a asp-action="changepassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
+                                        <li><a asp-action="forgotpassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Forgot Password</a></li>
+                                    </ul>
+                                </div>
+                                <!-- user-profile-menu end-->
+                                <!-- user-profile-menu-->
+                                @if (User.IsInRole(UserRole.BiznesOwner.ToString()))
+                                {
+                                    <div class="user-profile-menu">
+                                        <h3>Listings</h3>
+
+                                        <ul>
+                                            <li><a asp-action="index" asp-controller="mylistings"><i class="fa fa-th-list"></i> My listigs  </a></li>
+                                            <li><a href="dashboard-bookings.html"> <i class="fa fa-calendar-check-o"></i> Bookings <span>2</span></a></li>
+                                            <li><a href="dashboard-review.html"><i class="fa fa-comments-o"></i> Reviews </a></li>
+                                            <li><a asp-action="create" asp-controller="addlisting"><i class="fa fa-plus-square-o"></i> Add New Place</a></li>
+                                            <li><a asp-action="create" asp-controller="addblog"><i class="fa fa-plus-square-o"></i> Add New Blog</a></li>
                                         </ul>
                                     </div>
-                                    <!-- user-profile-menu end-->
-                                    <!-- user-profile-menu-->
-                                    @if (User.IsInRole(UserRole.BiznesOwner.ToString()))
-                                    {
-                                        <div class="user-profile-menu">
-                                            <h3>Listings</h3>
+                                }
 
-                                            <ul>
-                                                <li><a asp-action="index" asp-controller="mylisting"><i class="fa fa-th-list"></i> My listigs  </a></li>
-                                                <li><a href="dashboard-bookings.html"> <i class="fa fa-calendar-check-o"></i> Bookings <span>2</span></a></li>
-                                                <li><a href="dashboard-review.html"><i class="fa fa-comments-o"></i> Reviews </a></li>
-                                                <li><a asp-action="create" asp-controller="addlisting"><i class="fa fa-plus-square-o"></i> Add New</a></li>
-                                            </ul>
-                                        </div>
-                                    }
-
-                                    <!-- user-profile-menu end-->
-                                    <a asp-action="logout" asp-controller="account" class="log-out-btn">Log Out</a>
-                                </div>
+                                <!-- user-profile-menu end-->
+                                <a asp-action="logout" asp-controller="account" class="log-out-btn">Log Out</a>
                             </div>
                         </div>
-                        <div class="col-md-9">
+                        <form method="post" enctype="multipart/form-data" class="col-md-9">
                             <!-- profile-edit-container-->
                             <div class="profile-edit-container add-list-container">
                                 <div class="profile-edit-header fl-wrap">
-                                    <h4>Basic Informations</h4>
+                                    <h4>Update Place</h4>
                                 </div>
+
+
+
                                 <div class="custom-form">
-                                    <label>Listing Title <i class="fa fa-briefcase"></i></label>
-                                    <input type="text" placeholder="Name of your business" value="" />
+                                    <label asp-for="Name">Title <i class="fa fa-briefcase"></i></label>
+                                    <input asp-for="Name" placeholder="Name of your business" />
+                                    <span asp-validation-for="Name"></span>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label>Category</label>
-                                            <select data-placeholder="All Categories" class="chosen-select">
-                                                <option>All Categories</option>
-                                                <option>Shops</option>
-                                                <option>Hotels</option>
-                                                <option>Restaurants</option>
-                                                <option>Fitness</option>
-                                                <option>Events</option>
-                                            </select>
+                                            <div class="form-group">
+                                                <label asp-for="CategoryId">Category</label>
+                                                <select asp-for="CategoryId" asp-items="new SelectList(Model.Categories, nameof(IncludeCategoryVM.Id), nameof(IncludeCategoryVM.Name))" class="form-control">
+                                                    <option selected disabled>Choose Category</option>
+                                                </select>
+                                                <span asp-validation-for="CategoryId" class="text-danger"></span>
+                                            </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="custom-form days-wrapper">
+                                    <div class="days">
+                                        <span>Monday</span>
+                                        <input asp-for="Monday" type="time" />
+                                        <input asp-for="MondayTo" type="time" />
+                                    </div>
+                                    <div class="days">
+                                        <span>
+                                            Tuesday
+                                        </span>
+                                        <input asp-for="Tuesday" type="time" />
+                                        <input asp-for="TuesdayTo" type="time" />
+                                    </div>
+                                    <div class="days">
+                                        <span>Wednesday</span>
+                                        <input asp-for="Wednesday" type="time" />
+                                        <input asp-for="WednesdayTo" type="time" />
+                                    </div>
+                                    <div class="days">
+                                        <span>Thursday</span>
+                                        <input asp-for="Thursday" type="time" />
+                                        <input asp-for="ThursdayTo" type="time" />
+                                    </div>
+                                    <div class="days">
+                                        <span>Friday</span>
+                                        <input asp-for="Friday" type="time" />
+                                        <input asp-for="FridayTo" type="time" />
+                                    </div>
+                                    <div class="days">
+                                        <span>Saturday</span>
+                                        <input asp-for="Saturday" type="time" />
+                                        <input asp-for="SaturdayTo" type="time" />
+                                    </div>
+                                    <div class="days">
+                                        <span>Sunday</span>
+                                        <input asp-for="Sunday" type="time" />
+                                        <input asp-for="SundayTo" type="time" />
                                     </div>
                                 </div>
                             </div>
@@ -79,14 +119,18 @@
                                     <h4>Location /  Contacts</h4>
                                 </div>
                                 <div class="custom-form">
-                                    <label>Address<i class="fa fa-map-marker"></i></label>
-                                    <input type="text" placeholder="Address of your business" value="" />
-                                    <label>Phone<i class="fa fa-phone"></i></label>
-                                    <input type="text" placeholder="Your Phone" value="" />
-                                    <label>Email<i class="fa fa-envelope-o"></i></label>
-                                    <input type="text" placeholder="Your Email" value="" />
-                                    <label>Website<i class="fa fa-globe"></i></label>
-                                    <input type="text" placeholder="Your Website" value="" />
+                                    <label asp-for="Address">Address<i class="fa fa-map-marker"></i></label>
+                                    <input asp-for="Address" type="text" placeholder="Address of your business" />
+                                    <span asp-validation-for="Address"></span>
+                                    <label asp-for="Phone">Phone<i class="fa fa-phone"></i></label>
+                                    <input asp-for="Phone" placeholder="Your Phone" />
+                                    <span asp-validation-for="Phone"></span>
+                                    <label asp-for="Email">Email<i class="fa fa-envelope-o"></i></label>
+                                    <input asp-for="Email" type="email" placeholder="Your Email" value="" />
+                                    <span asp-validation-for="Email"></span>
+                                    <label asp-for="Website">Website<i class="fa fa-globe"></i></label>
+                                    <input asp-for="Website" placeholder="Your Website" />
+                                    <span asp-validation-for="Website"></span>
                                 </div>
                             </div>
                             <!-- profile-edit-container end-->
@@ -99,42 +143,19 @@
                                     <div class="row">
                                         <!--col -->
                                         <div class="col-md-4">
+
                                             <div class="add-list-media-header">
-                                                <label class="radio inline">
-                                                    <input type="radio" name="gender" checked>
-                                                    <span>Background image</span>
-                                                </label>
+                                                <label asp-for="Photos">Images</label>
+
+                                                <input asp-for="Photos" accept="image/*" checked>
+                                                <span asp-validation-for="Photos">Click here or drop files to upload</span>
+
                                             </div>
-                                            <div class="add-list-media-wrap">
-                                                <form class="fuzone">
-                                                    <div class="fu-text">
-                                                        <span><i class="fa fa-picture-o"></i> Click here or drop files to upload</span>
-                                                        <div class="photoUpload-files fl-wrap"></div>
-                                                    </div>
-                                                    <input type="file" class="upload">
-                                                </form>
-                                            </div>
+
                                         </div>
                                         <!--col end-->
-                                        <!--col -->
-                                        <div class="col-md-4">
-                                            <div class="add-list-media-header">
-                                                <label class="radio inline">
-                                                    <input type="radio" name="gender">
-                                                    <span>Carousel</span>
-                                                </label>
-                                            </div>
-                                            <div class="add-list-media-wrap">
-                                                <form class="fuzone">
-                                                    <div class="fu-text">
-                                                        <span><i class="fa fa-picture-o"></i> Click here or drop files to upload</span>
-                                                        <div class="photoUpload-files fl-wrap"></div>
-                                                    </div>
-                                                    <input type="file" class="upload">
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <!--col end-->
+
+
                                     </div>
                                 </div>
                             </div>
@@ -145,24 +166,22 @@
                                     <h4>Detailed Information</h4>
                                 </div>
                                 <div class="custom-form">
-                                    <label>Description</label>
-                                    <textarea cols="40" rows="3" placeholder=""></textarea>
+                                    <label asp-for="Description">Description</label>
+                                    <textarea asp-for="Description" cols="40" rows="3" placeholder=""></textarea>
                                     <!-- Checkboxes -->
                                     <div class=" fl-wrap filter-tags">
                                         <h4>Features </h4>
-                                        <input id="check-a" type="checkbox" name="check">
-                                        <label for="check-a">Elevator in building</label>
-                                        <input id="check-b" type="checkbox" name="check">
-                                        <label for="check-b">Friendly workspace</label>
-                                        <input id="check-c" type="checkbox" name="check">
-                                        <label for="check-c">Instant Book</label>
-                                        <input id="check-d" type="checkbox" name="check">
-                                        <label for="check-d">Wireless Internet</label>
+
+                                        <label asp-for="FeatureIds">Feature</label>
+                                        <select asp-for="FeatureIds" asp-items="new SelectList(Model.Features, nameof(IncludeFeatureVM.Id), nameof(IncludeFeatureVM.Name))" class="form-control">
+                                            <option selected disabled>Choose Features</option>
+                                        </select>
+                                        <span asp-validation-for="FeatureIds" class="text-danger"></span>
                                     </div>
                                 </div>
                             </div>
                             <!-- profile-edit-container end-->
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <!--profile-edit-wrap end -->
@@ -172,22 +191,12 @@
         <!-- section end -->
         <div class="limit-box fl-wrap"></div>
         <!--section -->
-        <section class="gradient-bg">
-            <div class="cirle-bg">
-                <div class="bg" data-bg="/images/bg/circle.png"></div>
-            </div>
-            <div class="container">
-                <div class="join-wrap fl-wrap">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h3>Do You Have Questions ?</h3>
-                            <p>Lorem ipsum dolor sit amet, harum dolor nec in, usu molestiae at no.</p>
-                        </div>
-                        <div class="col-md-4"><a href="contacts.html" class="join-wrap-btn">Get In Touch <i class="fa fa-envelope-o"></i></a></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div style="margin-bottom:20px;">
+            <button type="submit" class="btn btn-primary me-2">Submit</button>
+            <button asp-action="index" asp-controller="home" class="btn btn-danger">Cancel</button>
+        </div>
+
+
         <!-- section end -->
     </div>
 </div>

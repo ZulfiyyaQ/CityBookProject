@@ -113,7 +113,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
                 item.PlaceImages.Add(new PlaceImage
                 {
-                    Url = await photo.CreateFileAsync(_env.WebRootPath, "images")
+                    ImageUrl = await photo.CreateFileAsync(_env.WebRootPath, "images")
                 });
             }
             User user = await _userManager.FindByNameAsync(_http.HttpContext.User.Identity.Name);
@@ -131,6 +131,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (id <= 0) throw new WrongRequestException("The request sent does not exist");
             string[] includes ={
                 $"{nameof(Place.Category)}",
+                $"{nameof(Place.Reviews)}",
                 $"{nameof(Place.PlaceFeatures)}.{nameof(PlaceFeature.Feature)}",
                 $"{nameof(Place.PlaceTags)}.{nameof(PlaceTag.Tag)}",
                 $"{nameof(Place.PlaceImages)}" };
@@ -138,7 +139,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (item == null) throw new NotFoundException("Your request was not found");
             foreach (var image in item.PlaceImages)
             {
-                image.Url.DeleteFile(_env.WebRootPath, "images");
+                image.ImageUrl.DeleteFile(_env.WebRootPath, "images");
             }
             _repository.Delete(item);
             await _repository.SaveChanceAsync();
@@ -148,6 +149,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         {
             string[] includes ={
                 $"{nameof(Place.Category)}",
+                $"{nameof(Place.Reviews)}",
                 $"{nameof(Place.PlaceFeatures)}.{nameof(PlaceFeature.Feature)}",
                 $"{nameof(Place.PlaceTags)}.{nameof(PlaceTag.Tag)}",
                 $"{nameof(Place.PlaceImages)}" };
@@ -180,6 +182,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             string[] includes ={
                 $"{nameof(Place.Category)}",
+                $"{nameof(Place.User)}",
                 $"{nameof(Place.PlaceFeatures)}.{nameof(PlaceFeature.Feature)}",
                 $"{nameof(Place.PlaceTags)}.{nameof(PlaceTag.Tag)}",
                 $"{nameof(Place.PlaceImages)}" };
@@ -231,6 +234,8 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             string[] includes ={
                 $"{nameof(Place.Category)}",
+                $"{nameof(Place.User)}",
+                $"{nameof(Place.Reviews)}",
                 $"{nameof(Place.PlaceFeatures)}.{nameof(PlaceFeature.Feature)}",
                 $"{nameof(Place.PlaceTags)}.{nameof(PlaceTag.Tag)}",
                 $"{nameof(Place.PlaceImages)}" };
@@ -282,6 +287,8 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (id <= 0) throw new WrongRequestException("The request sent does not exist");
             string[] includes ={
                 $"{nameof(Place.Category)}",
+                $"{nameof(Place.Reviews)}",
+                $"{nameof(Place.User)}",
                 $"{nameof(Place.PlaceFeatures)}.{nameof(PlaceFeature.Feature)}",
                 $"{nameof(Place.PlaceTags)}.{nameof(PlaceTag.Tag)}",
                 $"{nameof(Place.PlaceImages)}" };
@@ -318,6 +325,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (id <= 0) throw new WrongRequestException("The request sent does not exist");
             string[] includes ={
                 $"{nameof(Place.Category)}",
+                $"{nameof(Place.Reviews)}",
                 $"{nameof(Place.PlaceFeatures)}.{nameof(PlaceFeature.Feature)}",
                 $"{nameof(Place.PlaceTags)}.{nameof(PlaceTag.Tag)}",
                 $"{nameof(Place.PlaceImages)}" };
@@ -395,7 +403,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             foreach (var image in remove)
             {
-                image.Url.DeleteFile(_env.WebRootPath, "images");
+                image.ImageUrl.DeleteFile(_env.WebRootPath, "images");
                 item.PlaceImages.Remove(image);
             }
 
@@ -419,7 +427,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
                     item.PlaceImages.Add(new PlaceImage
                     {
-                        Url = await photo.CreateFileAsync(_env.WebRootPath, "images")
+                        ImageUrl = await photo.CreateFileAsync(_env.WebRootPath, "images")
                     });
                 }
             }
@@ -442,6 +450,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (id <= 0) throw new WrongRequestException("The request sent does not exist");
             string[] includes ={
                 $"{nameof(Place.Category)}",
+                $"{nameof(Place.Reviews)}",
                 $"{nameof(Place.PlaceFeatures)}.{nameof(PlaceFeature.Feature)}",
                 $"{nameof(Place.PlaceTags)}.{nameof(PlaceTag.Tag)}",
                 $"{nameof(Place.PlaceImages)}" };

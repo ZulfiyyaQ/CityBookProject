@@ -10,6 +10,7 @@ namespace CityBookMVCOnionApplication.ViewModels
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Website { get; set; }
+        public string DayOrMonth { get; init; }
         public List<IFormFile> Photos { get; init; }
 
         public TimeOnly? Monday { get; init; }
@@ -32,7 +33,6 @@ namespace CityBookMVCOnionApplication.ViewModels
         public List<IncludeCategoryVM>? Categories { get; set; }
 
         public int CategoryId { get; init; }
-        public string UserId { get; init; }
         public List<int> TagIds { get; init; }
         public List<int> FeatureIds { get; init; }
 

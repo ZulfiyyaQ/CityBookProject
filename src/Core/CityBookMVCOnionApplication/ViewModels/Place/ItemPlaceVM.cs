@@ -9,9 +9,8 @@
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Website { get; set; }
-        public string ImageUrl { get; init; }
-        public int UserId { get; init; }
-        public IncludeUserVM User { get; init; }
+        public string UserId { get; init; }
+        public IncludeUserVM? User { get; init; }
         public int CategoryId { get; init; }
         public IncludeCategoryVM Category { get; init; }
         public List<IncludePlaceImageVM> PlaceImages { get; init; }

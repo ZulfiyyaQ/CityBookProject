@@ -11,6 +11,7 @@ namespace CityBookMVCOnionApplication.ViewModels
         public string Email { get; set; }
         public string Website { get; set; }
         public string ImageUrl { get; init; }
+        public string DayOrMonth { get; init; }
         public List<IFormFile>? Photos { get; init; }
 
         public TimeSpan? Monday { get; init; }
@@ -34,7 +35,6 @@ namespace CityBookMVCOnionApplication.ViewModels
         public List<IncludeTagVM>? Tags { get; set; }
         public List<IncludeFeatureVM>? Features { get; set; }
         public int CategoryId { get; init; }
-        public int UserId { get; init; }
         public List<int> TagIds { get; set; }
         public List<int> FeatureIds { get; set; }
     }
