@@ -2,6 +2,6 @@
 {
     public class BTag : BaseNameableEntity
     {
-        public List<BlogTag> BlogTags { get; set; }
+        public List<BlogTag>? BlogTags { get; set; }
     }
 }

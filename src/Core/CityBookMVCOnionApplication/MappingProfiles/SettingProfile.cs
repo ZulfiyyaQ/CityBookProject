@@ -8,6 +8,7 @@ namespace CityBookMVCOnionApplication.MappingProfiles
     {
         public SettingProfile()
         {
+            CreateMap<ItemSettingVM, Setting>().ReverseMap();
             CreateMap<UpdateSettingVM, Setting>().ReverseMap();
         }
     }

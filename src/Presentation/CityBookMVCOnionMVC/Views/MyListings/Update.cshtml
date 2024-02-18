@@ -1,4 +1,4 @@
-﻿@model CreatePlaceVM
+﻿@model UpdatePlaceVM
 <!-- wrapper -->
 <div id="wrapper">
     <!--content -->
@@ -10,7 +10,7 @@
                 <!-- profile-edit-wrap -->
                 <div class="profile-edit-wrap">
                     <div class="profile-edit-page-header">
-                        <h2>Update Place</h2>
+                        <h2>Add Place</h2>
 
                     </div>
                     <div class="row">
@@ -53,13 +53,19 @@
                                 <div class="profile-edit-header fl-wrap">
                                     <h4>Update Place</h4>
                                 </div>
-
-
-
                                 <div class="custom-form">
-                                    <label asp-for="Name">Title <i class="fa fa-briefcase"></i></label>
+                                    <label asp-for="Name">Title  <i class="fa fa-briefcase"></i></label>
                                     <input asp-for="Name" placeholder="Name of your business" />
                                     <span asp-validation-for="Name"></span>
+                                    <label asp-for="DayOrMonth">Day or Month </label>
+                                    <select asp-for="DayOrMonth" class="form-control">
+                                        <option selected disabled>Choose Day or Month</option>
+                                        @foreach (var dayOrMonth in Enum.GetNames(typeof(DayOrMonth)))
+                                        {
+                                            <option value="@dayOrMonth">@dayOrMonth</option>
+                                        }
+                                    </select>
+                                    <span asp-validation-for="DayOrMonth"></span>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -126,7 +132,7 @@
                                     <input asp-for="Phone" placeholder="Your Phone" />
                                     <span asp-validation-for="Phone"></span>
                                     <label asp-for="Email">Email<i class="fa fa-envelope-o"></i></label>
-                                    <input asp-for="Email" type="email" placeholder="Your Email" value="" />
+                                    <input asp-for="Email" type="email" placeholder="Your Email"  />
                                     <span asp-validation-for="Email"></span>
                                     <label asp-for="Website">Website<i class="fa fa-globe"></i></label>
                                     <input asp-for="Website" placeholder="Your Website" />
@@ -177,8 +183,20 @@
                                             <option selected disabled>Choose Features</option>
                                         </select>
                                         <span asp-validation-for="FeatureIds" class="text-danger"></span>
+                                    </div> <div class=" fl-wrap filter-tags">
+                                        <h4>Features </h4>
+
+                                        <label asp-for="TagIds">Tags</label>
+                                        <select asp-for="TagIds" asp-items="new SelectList(Model.Tags, nameof(IncludeTagVM.Id), nameof(IncludeTagVM.Name))" class="form-control">
+                                            <option selected disabled>Choose Features</option>
+                                        </select>
+                                        <span asp-validation-for="TagIds" class="text-danger"></span>
                                     </div>
                                 </div>
+                            </div>
+                            <div style="margin-bottom:20px;">
+                                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                                <button asp-action="index" asp-controller="home" class="btn btn-danger">Cancel</button>
                             </div>
                             <!-- profile-edit-container end-->
                         </form>
@@ -191,12 +209,6 @@
         <!-- section end -->
         <div class="limit-box fl-wrap"></div>
         <!--section -->
-        <div style="margin-bottom:20px;">
-            <button type="submit" class="btn btn-primary me-2">Submit</button>
-            <button asp-action="index" asp-controller="home" class="btn btn-danger">Cancel</button>
-        </div>
-
-
         <!-- section end -->
     </div>
 </div>

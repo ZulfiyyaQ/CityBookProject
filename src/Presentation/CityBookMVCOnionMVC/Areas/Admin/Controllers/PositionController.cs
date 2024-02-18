@@ -19,12 +19,12 @@ namespace CityBookMVCOnionMVC.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index(string? search, int order = 1, int page = 1)
         {
-            return View(model: await _service.GetFilteredAsync(search, 10, page, order));
+            return View(model: await _service.GetFilteredAsync(search, 3, page, order));
         }
 
         public async Task<IActionResult> DeletedItems(string? search, int order = 1, int page = 1)
         {
-            return View(model: await _service.GetDeleteFilteredAsync(search, 10, page, order));
+            return View(model: await _service.GetDeleteFilteredAsync(search, 3, page, order));
         }
 
         public IActionResult Create()

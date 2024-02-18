@@ -115,7 +115,10 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             {
                 throw new WrongRequestException("The request sent does not exist");
             }
-            await _signInManager.SignInAsync(User, false);
+            if (User.IsActivate == false)
+            {
+                await _signInManager.SignInAsync(User, false);
+            }
 
             return true;
         }

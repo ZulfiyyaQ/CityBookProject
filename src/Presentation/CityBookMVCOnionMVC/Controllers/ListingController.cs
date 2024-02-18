@@ -12,9 +12,13 @@ namespace CityBookMVCOnionMVC.Controllers
         {
             _service = service;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string? search, string? returnUrl, int? categoryId, int order = 1, int page = 1)
         {
-            return View();
+            if (!string.IsNullOrWhiteSpace(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            return View(model: await _service.GetFilteredAsync(search, 3, page, order, categoryId));
         }
         public async Task<IActionResult> Detail(int id)
         {

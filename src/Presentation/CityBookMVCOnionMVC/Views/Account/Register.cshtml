@@ -48,7 +48,7 @@
                             </div>
                             <div>
                                
-                                <select asp-for="role">
+                                <select asp-for="role" class="form-control-lg  d-flex my-4">
                                     <option selected disabled>Choose Role</option>
                                     @foreach (var role in Enum.GetNames(typeof(UserRole)))
                                     {

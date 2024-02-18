@@ -20,27 +20,27 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
     {
         private readonly IMapper _mapper;
         private readonly IBlogRepository _repository;
-        private readonly ITagRepository _tagRepository;
+        private readonly IBTagRepository _bTagRepository;
         private readonly IHttpContextAccessor _http;
         private readonly IWebHostEnvironment _env;
 
         public BlogService(IMapper mapper, IBlogRepository repository, IHttpContextAccessor http,
-            IWebHostEnvironment env, ITagRepository tagRepository)
+            IWebHostEnvironment env, IBTagRepository bTagRepository)
         {
             _mapper = mapper;
             _repository = repository;
             _http = http;
             _env = env;
-            _tagRepository = tagRepository;
+            _bTagRepository = bTagRepository;
         }
 
         public async Task CreatePopulateDropdowns(CreateBlogVM create)
         {
-            create.Tags = _mapper.Map<List<IncludeTagVM>>(await _tagRepository.GetAll().ToListAsync());
+            create.Tags = _mapper.Map<List<IncludeBTagVM>>(await _bTagRepository.GetAll().ToListAsync());
         }
         public async Task UpdatePopulateDropdowns(UpdateBlogVM update)
         {
-            update.Tags = _mapper.Map<List<IncludeTagVM>>(await _tagRepository.GetAll().ToListAsync());
+            update.Tags = _mapper.Map<List<IncludeBTagVM>>(await _bTagRepository.GetAll().ToListAsync());
         }
 
         public async Task<bool> CreateAsync(CreateBlogVM create, ModelStateDictionary model, ITempDataDictionary tempData)
@@ -58,7 +58,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             }
             foreach (int tagId in create.TagIds)
             {
-                if (!await _tagRepository.CheckUniqueAsync(x => x.Id == tagId))
+                if (!await _bTagRepository.CheckUniqueAsync(x => x.Id == tagId))
                 {
                     await CreatePopulateDropdowns(create);
                     return false;
@@ -298,7 +298,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             }
             foreach (int tagId in update.TagIds)
             {
-                if (!await _tagRepository.CheckUniqueAsync(x => x.Id == tagId))
+                if (!await _bTagRepository.CheckUniqueAsync(x => x.Id == tagId))
                 {
                     await UpdatePopulateDropdowns(update);
                     return false;

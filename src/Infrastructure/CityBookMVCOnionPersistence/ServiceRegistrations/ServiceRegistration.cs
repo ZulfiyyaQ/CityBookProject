@@ -56,6 +56,7 @@ namespace CityBookMVCOnionPersistence.ServiceRegistrations
             services.AddScoped<IPositionService, PositionService>();
             services.AddScoped<IServiceService, ServiceService>();
             services.AddScoped<ISettingService, SettingService>();
+            services.AddScoped<IUserService, UserService>();
 
             services.AddScoped<AppDbContextInitializer>();
 

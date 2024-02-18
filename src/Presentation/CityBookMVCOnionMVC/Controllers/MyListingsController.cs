@@ -1,6 +1,7 @@
 ﻿using CityBookMVCOnionApplication.Abstractions.Services;
 using CityBookMVCOnionApplication.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace CityBookMVCOnionMVC.Controllers
 {
@@ -8,18 +9,16 @@ namespace CityBookMVCOnionMVC.Controllers
     public class MyListingsController : Controller
     {
         private readonly IPlaceService _service;
+        private readonly IUserService _Userservice;
 
-        public MyListingsController(IPlaceService service)
+        public MyListingsController(IPlaceService service,IUserService userservice)
         {
             _service = service;
+            _Userservice = userservice;
         }
-        public async Task<IActionResult> Index(string? search, string? returnUrl, int? categoryId, int order = 1, int page = 1)
+        public async Task<IActionResult> Index()
         {
-            if (!string.IsNullOrWhiteSpace(returnUrl))
-            {
-                return Redirect(returnUrl);
-            }
-            return View(model: await _service.GetFilteredAsync(search, 10, page, order, categoryId));
+            return View(await _Userservice.GetByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)));
         }
         public async Task<IActionResult> Update(int id)
         {
@@ -30,7 +29,7 @@ namespace CityBookMVCOnionMVC.Controllers
         public async Task<IActionResult> Update(int id, UpdatePlaceVM update)
         {
             bool result = await _service.UpdatePostAsync(id, update, ModelState, TempData);
-            if (result)
+            if (!result)
             {
                 return View(update);
             }

@@ -3,7 +3,7 @@
     public class Review : BaseNameableEntity
     {
         public string? Text { get; set; }
-        public float RatingStar { get; set; }
+        public int RatingStar { get; set; }
         //Relational props
         public int UserId { get; set; }
        

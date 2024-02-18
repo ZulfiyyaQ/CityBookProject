@@ -1,4 +1,4 @@
-﻿@model PaginationVM<ItemPlaceVM>
+﻿@model GetUserVM
 <div id="wrapper">
     <!--content -->
     <div class="content">
@@ -53,7 +53,7 @@
                                 <div class="dashboard-header fl-wrap">
                                     <h3>Indox</h3>
                                 </div>
-                                @foreach (var item in Model.Items)
+                                @foreach (var item in Model.Places)
                                 {
                                     <div class="dashboard-list">
                                         <div class="dashboard-message">
@@ -68,8 +68,8 @@
                                                     <span>(@item.Review.Count())</span>
                                                 </div> *@
                                                 <ul class="dashboard-listing-table-opt  fl-wrap">
-                                                    <li><a asp-action="update" asp-controller="mylisting">Edit <i class="fa fa-pencil-square-o"></i></a></li>
-                                                    <li><a asp-action="delete" asp-controller="mylisting" class="del-btn">Delete <i class="fa fa-trash-o"></i></a></li>
+                                                    <li><a asp-action="update" asp-controller="mylistings" asp-route-id="@item.Id">Edit <i class="fa fa-pencil-square-o"></i></a></li>
+                                                    <li><a asp-action="delete" asp-controller="mylistings" asp-route-id="@item.Id" class="del-btn">Delete <i class="fa fa-trash-o"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -78,15 +78,7 @@
                                 
                               
                             </div>
-                            <!-- pagination-->
-                            <div class="pagination">
-                                <a href="#" class="prevposts-link"><i class="fa fa-caret-left"></i></a>
-                                <a href="#">1</a>
-                                <a href="#" class="current-page">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#" class="nextposts-link"><i class="fa fa-caret-right"></i></a>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>

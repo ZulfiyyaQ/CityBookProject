@@ -773,6 +773,10 @@
       "PackagePath": "staticwebassets\\images\\default-profile.png"
     },
     {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\f8b1c290-6296-4f39-9e18-52fb75fd63b3.png",
+      "PackagePath": "staticwebassets\\images\\f8b1c290-6296-4f39-9e18-52fb75fd63b3.png"
+    },
+    {
       "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\favicon.ico",
       "PackagePath": "staticwebassets\\images\\favicon.ico"
     },

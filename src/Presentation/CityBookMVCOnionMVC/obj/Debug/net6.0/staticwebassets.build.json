@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fevmnWrM8XhlO+ZaLvPjMV1hc2lzFB8YiPlp21nsfZc=",
+  "Hash": "gMqdE1sKJY1a447Eo3IMi/XGwPgTMi5/grH3cVz3pzo=",
   "Source": "CityBookMVCOnionMVC",
   "BasePath": "_content/CityBookMVCOnionMVC",
   "Mode": "Default",
@@ -3313,6 +3313,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\default-profile.png"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\f8b1c290-6296-4f39-9e18-52fb75fd63b3.png",
+      "SourceId": "CityBookMVCOnionMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\",
+      "BasePath": "_content/CityBookMVCOnionMVC",
+      "RelativePath": "images/f8b1c290-6296-4f39-9e18-52fb75fd63b3.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\f8b1c290-6296-4f39-9e18-52fb75fd63b3.png"
     },
     {
       "Identity": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\favicon.ico",

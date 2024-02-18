@@ -19,11 +19,11 @@ namespace CityBookMVCOnionMVC.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index(string? search, int categoryId, int order = 1, int page = 1)
         {
-            return View(model: await _service.GetFilteredAsync(search,categoryId, 10, page, order));
+            return View(model: await _service.GetFilteredAsync(search,categoryId, 3, page, order));
         }
         public async Task<IActionResult> DeletedItems(string? search, int categoryId, int order = 1, int page = 1)
         {
-            return View(model: await _service.GetDeleteFilteredAsync(search, 10,categoryId, page, order));
+            return View(model: await _service.GetDeleteFilteredAsync(search, categoryId, 3, page, order));
         }
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ReverseSoftDelete(int id)

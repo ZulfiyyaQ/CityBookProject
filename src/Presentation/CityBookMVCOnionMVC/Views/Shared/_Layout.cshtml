@@ -48,7 +48,10 @@
                         <a asp-action="create" asp-controller="AddBlog" class="add-list">Add Blog <span><i class="fa fa-plus"></i></span></a>
                     }
 
-
+                    if (User.IsInRole(AdminRoles.Admin.ToString()))
+                    {
+                        <a class="show-reg-form" asp-action="Index" asp-controller="Home" asp-area="Admin">Admin Panel</a>
+                    }
                     <a class="show-reg-form" asp-action="LogOut" asp-controller="Account"><i class="fa fa-sign-in"></i>Log Out</a>
                 }
                 else
@@ -93,8 +96,6 @@
                                             <li><a asp-action="index" asp-controller="author">User single</a></li>
                                         }
 
-
-                                       
                                     }
                                    
                                     

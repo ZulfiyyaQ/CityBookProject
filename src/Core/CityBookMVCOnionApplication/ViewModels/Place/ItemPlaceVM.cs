@@ -16,6 +16,6 @@
         public List<IncludePlaceImageVM> PlaceImages { get; init; }
         public List<IncludeTagVM> Tags { get; init; }
         public List<IncludeFeatureVM> Features { get; init; }
-        public IncludeReviewVM Review { get; init; }
+        public List<IncludeReviewVM> Review { get; init; }
     }
 }

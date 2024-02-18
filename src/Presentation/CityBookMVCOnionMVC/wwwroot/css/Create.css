@@ -1,9 +1,25 @@
 ﻿.days-wrapper{
     display: flex;
     flex-direction:column;
+    justify-content:space-between;
+    padding:10px 0;
+    width:500px;
+    gap:10px;
 }
-.days{
-    display:flex;
-    align-items:center;
-    justify-content:space-around;
+.days {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    justify-content: space-between;
+    margin: 0;
 }
+
+.days input {
+    margin:0;
+}
+
+    .days span {
+        width: 100px;
+        display: block;
+    }  

@@ -6,7 +6,7 @@
     int mondayminutesto = (int)Model.MondayTo.Minutes;
     string formattedTime = $"{mondayhours:D2}:{mondayminutes:D2}";
     string formattedTimeto = $"{mondayhoursto:D2}:{mondayminutesto:D2}";
-
+      
     int twohours = (int)Model.Tuesday.TotalHours;
     int twominutes = (int)Model.Tuesday.Minutes;
     int twohoursto = (int)Model.TuesdayTo.TotalHours;
@@ -301,7 +301,7 @@
                                 </div>
                                 <div class="box-widget list-author-widget">
                                     <div class="list-author-widget-header shapes-bg-small  color-bg fl-wrap">
-                                        <span class="list-author-widget-link"><a asp-action="index" asp-controller="author">@Model.User.Name @Model.User.Surname</a></span>
+                                        <span class="list-author-widget-link"><a asp-action="index" asp-controller="author" asp-route-id="@Model.UserId">@Model.User.Name @Model.User.Surname</a></span>
                                         <img src="~/images/@Model.User.Image" alt="">
                                     </div>
                                     <div class="box-widget-content">
