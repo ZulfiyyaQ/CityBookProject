@@ -38,7 +38,7 @@ namespace CityBookMVCOnionMVC.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _service.SoftDeleteAsync(id);
-            return RedirectToAction("Index", "Home", new { Area = "" });
+            return RedirectToAction("Index", "MyListings", new { Area = "" });
         }
     }
 }

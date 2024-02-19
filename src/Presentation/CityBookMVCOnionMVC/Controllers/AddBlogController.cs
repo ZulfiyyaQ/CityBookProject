@@ -24,7 +24,7 @@ namespace CityBookMVCOnionMVC.Controllers
         public async Task<IActionResult> Create(CreateBlogVM create)
         {
             bool result = await _service.CreateAsync(create, ModelState, TempData);
-            if (result)
+            if (!result)
             {
                 return View(create);
             }

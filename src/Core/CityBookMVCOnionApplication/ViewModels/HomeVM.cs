@@ -3,11 +3,11 @@
     public record HomeVM
     {
         //public PaginationVM<ProductFilterVM> Pagination { get; set; }
-        public List<ItemServiceVM> Services { get; set; }
-        public List<ItemBlogVM> Blogs { get; set; }
-        public List<ItemPlaceVM> Places { get; set; }
-        public List<ItemCategoryVM> Categories { get; set; }
-        public List<ItemHomeReviewVM> HomeReviews { get; set; }
+        public ICollection<ItemServiceVM> Services { get; set; }
+        public ICollection<ItemBlogVM> Blogs { get; set; }
+        public ICollection<ItemPlaceVM> Places { get; set; }
+        public ICollection<ItemCategoryVM> Categories { get; set; }
+        public ICollection<ItemHomeReviewVM> HomeReviews { get; set; }
     }
    
 }

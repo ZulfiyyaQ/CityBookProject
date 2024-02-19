@@ -21,13 +21,13 @@ namespace CityBookMVCOnionApplication.Validators.Place
 
             RuleFor(x => x.Address)
                 .NotEmpty().WithMessage("Address is required")
-                .Length(5, 250).WithMessage("Address max characters is 25-250")
-                .Matches(@"^[A-Za-z0-9\s"",.]+$").WithMessage("Address can only contain letters, numbers, spaces, double quotes, commas, and periods.");
+                .Length(5, 250).WithMessage("Address max characters is 25-250");
+                
 
             RuleFor(x => x.Description)
                 .NotEmpty().WithMessage("Description is required")
-                .Length(15, 250).WithMessage("Description max characters is 25-250")
-                .Matches(@"^[A-Za-z0-9\s"",.]+$").WithMessage("Description can only contain letters, numbers, spaces, double quotes, commas, and periods.");
+                .Length(15, 1000).WithMessage("Description max characters is 25-1000");
+                
 
             RuleFor(x => x.Photos)
                 .NotEmpty().WithMessage("Image is required");

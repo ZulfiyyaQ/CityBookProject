@@ -91,15 +91,17 @@
                                     <li><a asp-action="index" asp-controller="about">About</a></li>
                                     @if (User.Identity.IsAuthenticated)
                                     {
+                                        <li><a asp-action="edituser" asp-controller="myaccount">My Account</a></li>
                                         @if (User.IsInRole(UserRole.BiznesOwner.ToString()))
                                         {
                                             <li><a asp-action="index" asp-controller="author">User single</a></li>
+
                                         }
 
                                     }
                                    
                                     
-                                    <li><a asp-action="index" asp-controller="myaccount">My Account</a></li>
+                                   
                                     <li><a asp-action="detail" asp-controller="blog">Blog Single</a></li>
 
                                 </ul>
@@ -215,5 +217,7 @@
     <script type="text/javascript" src="~/js/plugins.js"></script>
     <script type="text/javascript" src="~/js/scripts.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwJSRi0zFjDemECmFl9JtRj1FY7TiTRRo&libraries=places&callback=initAutocomplete"></script>
+    @RenderSection("DeleteImages",false)
+
 </body>
 </html>

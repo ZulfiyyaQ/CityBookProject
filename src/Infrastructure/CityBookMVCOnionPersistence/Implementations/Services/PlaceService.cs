@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using System.Security.Claims;
+using System.Text.RegularExpressions;
 
 namespace CityBookMVCOnionPersistence.Implementations.Services
 {
@@ -116,8 +117,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                     ImageUrl = await photo.CreateFileAsync(_env.WebRootPath, "images")
                 });
             }
-            User user = await _userManager.FindByNameAsync(_http.HttpContext.User.Identity.Name);
-            item.UserId = user.Id;
+            item.UserId = _http.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             //item.CreatedBy = user.UserName;
 
             await _repository.AddAsync(item);
@@ -149,6 +149,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         {
             string[] includes ={
                 $"{nameof(Place.Category)}",
+                $"{nameof(Place.User)}",
                 $"{nameof(Place.Reviews)}",
                 $"{nameof(Place.PlaceFeatures)}.{nameof(PlaceFeature.Feature)}",
                 $"{nameof(Place.PlaceTags)}.{nameof(PlaceTag.Tag)}",
@@ -165,6 +166,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         {
             string[] includes ={
                 $"{nameof(Place.Category)}",
+                $"{nameof(Place.User)}",
                 $"{nameof(Place.PlaceFeatures)}.{nameof(PlaceFeature.Feature)}",
                 $"{nameof(Place.PlaceTags)}.{nameof(PlaceTag.Tag)}",
                 $"{nameof(Place.PlaceImages)}" };
@@ -511,6 +513,34 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             reserv.IsApproved = false;
             _reservationRepository.Update(reserv);
         }
+        public async Task<bool> Review(int id, int rating, string comment, ModelStateDictionary model)
+        {
+            if (string.IsNullOrWhiteSpace(comment))
+            {
+                model.AddModelError("Error", "Comment is required");
+                return false;
+            }
+            if (comment.Length > 1500)
+            {
+                model.AddModelError("Error", "Comment max characters is 1-1500");
+                return false;
+            }
+            if (!Regex.IsMatch(comment, @"^[A-Za-z0-9\s,\.]+$"))
+            {
+                model.AddModelError("Error", "Comment can only contain letters, numbers, spaces, commas, and periods.");
+                return false;
+            }
+            Review review = new Review
+            {
+                Text = comment,
+                RatingStar = rating,
+                PlaceId = id,
+                UserId = _http.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)
+            };
 
+            await _repository.AddReview(review);
+            await _repository.SaveChanceAsync();
+            return true;
+        }
     }
 }

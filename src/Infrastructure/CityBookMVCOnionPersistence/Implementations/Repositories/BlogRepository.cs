@@ -10,12 +10,13 @@ namespace CityBookMVCOnionPersistence.Implementations.Repositories
     {
         private readonly DbSet<Comment> _dbComment;
         private readonly DbSet<Reply> _dbReply;
+        private readonly DbSet<BlogTag> _dbTag;
 
         public BlogRepository(AppDbContext context) : base(context)
         {
-
             _dbComment = context.Set<Comment>();
             _dbReply = context.Set<Reply>();
+            _dbTag = context.Set<BlogTag>();
         }
 
         public async Task AddComment(Comment item)
@@ -25,6 +26,10 @@ namespace CityBookMVCOnionPersistence.Implementations.Repositories
         public async Task AddReply(Reply item)
         {
             await _dbReply.AddAsync(item);
+        }
+        public void DeleteTag(BlogTag item)
+        {
+            _dbTag.Remove(item);
         }
     }
 }

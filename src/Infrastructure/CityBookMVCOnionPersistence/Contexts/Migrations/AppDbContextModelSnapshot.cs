@@ -48,15 +48,13 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Blogs");
                 });
@@ -652,8 +650,8 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                     b.Property<int>("PlaceId")
                         .HasColumnType("int");
 
-                    b.Property<float>("RatingStar")
-                        .HasColumnType("real");
+                    b.Property<int>("RatingStar")
+                        .HasColumnType("int");
 
                     b.Property<string>("Text")
                         .HasColumnType("nvarchar(max)");
@@ -1008,7 +1006,9 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                 {
                     b.HasOne("CityBookMVCOnionDomain.Entities.User", "User")
                         .WithMany("Blogs")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });

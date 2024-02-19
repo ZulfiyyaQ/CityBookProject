@@ -21,7 +21,7 @@
                                     <h3>Main</h3>
                                     <ul>
 
-                                        <li><a asp-action="index" asp-controller="myaccount"><i class="fa fa-user-o"></i> Edit profile</a></li>
+                                        <li><a asp-action="edituser" asp-controller="myaccount"><i class="fa fa-user-o"></i> Edit profile</a></li>
                                         <li><a asp-action="changepassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
                                         <li><a asp-action="forgotpassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Forgot Password</a></li>
                                     </ul>
@@ -34,7 +34,7 @@
                                         <h3>Listings</h3>
 
                                         <ul>
-                                            <li><a asp-action="index" asp-controller="mylistings"><i class="fa fa-th-list"></i> My listigs  </a></li>
+                                            <li><a asp-action="index" asp-controller="mylistings"><i class="fa fa-th-list"></i> My listings  </a></li>
                                             <li><a href="dashboard-bookings.html"> <i class="fa fa-calendar-check-o"></i> Bookings <span>2</span></a></li>
                                             <li><a href="dashboard-review.html"><i class="fa fa-comments-o"></i> Reviews </a></li>
                                             <li><a asp-action="create" asp-controller="addlisting"><i class="fa fa-plus-square-o"></i> Add New Place</a></li>
@@ -63,9 +63,9 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <h4>Tags </h4>
+                                                <h4 >Tags </h4>
 
-                                                <label asp-for="TagIds">Tags</label>
+                                                <label asp-for="TagIds"></label>
                                                 <select asp-for="TagIds" asp-items="new SelectList(Model.Tags, nameof(IncludeBTagVM.Id), nameof(IncludeBTagVM.Name))" class="form-control">
                                                     <option selected disabled>Choose Tags</option>
                                                 </select>

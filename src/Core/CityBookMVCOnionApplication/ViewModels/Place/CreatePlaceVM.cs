@@ -13,7 +13,7 @@ namespace CityBookMVCOnionApplication.ViewModels
         public string DayOrMonth { get; init; }
         public List<IFormFile> Photos { get; init; }
 
-        public TimeOnly? Monday { get; init; }
+        public TimeSpan? Monday { get; init; }
         public TimeSpan? Tuesday { get; init; }
         public TimeSpan? Wednesday { get; init; }
         public TimeSpan? Thursday { get; init; }

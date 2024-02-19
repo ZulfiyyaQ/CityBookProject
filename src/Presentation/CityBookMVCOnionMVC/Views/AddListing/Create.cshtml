@@ -21,7 +21,7 @@
                                     <h3>Main</h3>
                                     <ul>
 
-                                        <li><a asp-action="index" asp-controller="myaccount"><i class="fa fa-user-o"></i> Edit profile</a></li>
+                                        <li><a asp-action="edituser" asp-controller="myaccount"><i class="fa fa-user-o"></i> Edit profile</a></li>
                                         <li><a asp-action="changepassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
                                         <li><a asp-action="forgotpassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Forgot Password</a></li>
                                     </ul>
@@ -34,7 +34,7 @@
                                         <h3>Listings</h3>
 
                                         <ul>
-                                            <li><a asp-action="index" asp-controller="mylistings"><i class="fa fa-th-list"></i> My listigs  </a></li>
+                                            <li><a asp-action="index" asp-controller="mylistings"><i class="fa fa-th-list"></i> My listings  </a></li>
                                             <li><a href="dashboard-bookings.html"> <i class="fa fa-calendar-check-o"></i> Bookings <span>2</span></a></li>
                                             <li><a href="dashboard-review.html"><i class="fa fa-comments-o"></i> Reviews </a></li>
                                             <li><a asp-action="create" asp-controller="addlisting"><i class="fa fa-plus-square-o"></i> Add New Place</a></li>
@@ -53,13 +53,10 @@
                                 <div class="profile-edit-header fl-wrap">
                                     <h4>Create Place</h4>
                                 </div>
-
-
-
                                 <div class="custom-form">
                                     <label asp-for="Name">Title  <i class="fa fa-briefcase"></i></label>
                                     <input asp-for="Name" placeholder="Name of your business" />
-                                    <span asp-validation-for="Name"></span>
+                                    <span asp-validation-for="Name" class="text-danger"></span>
                                     <label asp-for="DayOrMonth">Day or Month </label>
                                     <select asp-for="DayOrMonth" class="form-control">
                                         <option selected disabled>Choose Day or Month</option>
@@ -81,7 +78,9 @@
                                         </div>
                                     </div>
                                 </div>
+                              
                                 <div class="custom-form days-wrapper">
+                                    <span style="font-size: 15px; text-align: left; "> Select Working Hours </span>
                                     <div class="days">
                                         <span>Monday</span>
                                         <input asp-for="Monday" type="time" />
@@ -130,16 +129,16 @@
                                 <div class="custom-form">
                                     <label asp-for="Address">Address<i class="fa fa-map-marker"></i></label>
                                     <input asp-for="Address" type="text" placeholder="Address of your business" />
-                                    <span asp-validation-for="Address"></span>
+                                    <span asp-validation-for="Address" class="text-danger" ></span>
                                     <label asp-for="Phone">Phone<i class="fa fa-phone"></i></label>
                                     <input asp-for="Phone" placeholder="Your Phone" />
-                                    <span asp-validation-for="Phone"></span>
+                                    <span asp-validation-for="Phone" class="text-danger"></span>
                                     <label asp-for="Email">Email<i class="fa fa-envelope-o"></i></label>
                                     <input asp-for="Email" type="email" placeholder="Your Email" value="" />
-                                    <span asp-validation-for="Email"></span>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
                                     <label asp-for="Website">Website<i class="fa fa-globe"></i></label>
                                     <input asp-for="Website" placeholder="Your Website" />
-                                    <span asp-validation-for="Website"></span>
+                                    <span asp-validation-for="Website" class="text-danger"></span>
                                 </div>
                             </div>
                             <!-- profile-edit-container end-->
@@ -157,7 +156,7 @@
                                                 <label asp-for="Photos">Images</label>
 
                                                 <input asp-for="Photos" accept="image/*" checked>
-                                                <span asp-validation-for="Photos">Click here or drop files to upload</span>
+                                                <span asp-validation-for="Photos" class="text-danger">Click here or drop files to upload</span>
 
                                             </div>
 
@@ -177,6 +176,7 @@
                                 <div class="custom-form">
                                     <label asp-for="Description">Description</label>
                                     <textarea asp-for="Description" cols="40" rows="3" placeholder=""></textarea>
+                                    <span asp-validation-for="Description" class="text-danger"></span>
                                     <!-- Checkboxes -->
                                     <div class=" fl-wrap filter-tags">
                                         <h4>Features </h4>
@@ -199,7 +199,7 @@
                             </div>
                             <div style="margin-bottom:20px;">
                                 <button type="submit" class="btn btn-primary me-2">Submit</button>
-                                <button asp-action="index" asp-controller="home" class="btn btn-danger">Cancel</button>
+                                <a asp-action="index" asp-controller="home" class="btn btn-danger">Cancel</a>
                             </div>
                             <!-- profile-edit-container end-->
                         </form>

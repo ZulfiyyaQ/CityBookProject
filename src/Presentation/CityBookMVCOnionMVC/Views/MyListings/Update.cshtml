@@ -21,7 +21,7 @@
                                     <h3>Main</h3>
                                     <ul>
 
-                                        <li><a asp-action="index" asp-controller="myaccount"><i class="fa fa-user-o"></i> Edit profile</a></li>
+                                        <li><a asp-action="edituser" asp-controller="myaccount"><i class="fa fa-user-o"></i> Edit profile</a></li>
                                         <li><a asp-action="changepassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
                                         <li><a asp-action="forgotpassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Forgot Password</a></li>
                                     </ul>
@@ -34,7 +34,7 @@
                                         <h3>Listings</h3>
 
                                         <ul>
-                                            <li><a asp-action="index" asp-controller="mylistings"><i class="fa fa-th-list"></i> My listigs  </a></li>
+                                            <li><a asp-action="index" asp-controller="mylistings"><i class="fa fa-th-list"></i> My listings  </a></li>
                                             <li><a href="dashboard-bookings.html"> <i class="fa fa-calendar-check-o"></i> Bookings <span>2</span></a></li>
                                             <li><a href="dashboard-review.html"><i class="fa fa-comments-o"></i> Reviews </a></li>
                                             <li><a asp-action="create" asp-controller="addlisting"><i class="fa fa-plus-square-o"></i> Add New Place</a></li>
@@ -149,7 +149,16 @@
                                     <div class="row">
                                         <!--col -->
                                         <div class="col-md-4">
-
+                                            <div class=" d-flex container row">
+                                                @foreach (var productImage in Model.Images)
+                                                {
+                                                    <div class="position-relative m-3 col-3">
+                                                        <img src="~/images/@productImage.ImageUrl" width="150px" height="200px" />
+                                                        <button type="button" style="left:13px; top:2px;" class="cus-delete btn btn-danger opacity-50 text-white position-absolute">X</button>
+                                                        <input asp-for="ImageIds" value="@productImage.Id" type="hidden" class="form-control">
+                                                    </div>
+                                                }
+                                            </div>
                                             <div class="add-list-media-header">
                                                 <label asp-for="Photos">Images</label>
 
@@ -213,3 +222,14 @@
     </div>
 </div>
 <!-- wrapper end -->
+@section DeleteImages{
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".cus-delete").forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    btn.parentElement.remove();
+                });
+            });
+        });
+    </script>
+}

@@ -25,8 +25,6 @@ namespace CityBookMVCOnionPersistence.Implementations.Repositories
         {
             _dbreservations.Remove(item);
         }
-       
-
         public async Task AddReview(Review item)
         {
             await _dbreview.AddAsync(item);

@@ -7,5 +7,6 @@ namespace CityBookMVCOnionApplication.Abstractions.Repositories
     {
         Task AddComment(Comment item);
         Task AddReply(Reply item);
+        void DeleteTag(BlogTag item);
     }
 }

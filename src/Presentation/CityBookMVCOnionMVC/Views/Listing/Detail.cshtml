@@ -1,12 +1,12 @@
 ﻿@model GetPlaceVM
 @{
     int mondayhours = (int)Model.Monday.TotalHours;
-    int mondayminutes =(int)Model.Monday.Minutes;
+    int mondayminutes = (int)Model.Monday.Minutes;
     int mondayhoursto = (int)Model.MondayTo.TotalHours;
     int mondayminutesto = (int)Model.MondayTo.Minutes;
     string formattedTime = $"{mondayhours:D2}:{mondayminutes:D2}";
     string formattedTimeto = $"{mondayhoursto:D2}:{mondayminutesto:D2}";
-      
+
     int twohours = (int)Model.Tuesday.TotalHours;
     int twominutes = (int)Model.Tuesday.Minutes;
     int twohoursto = (int)Model.TuesdayTo.TotalHours;
@@ -33,7 +33,7 @@
     int fivehoursto = (int)Model.FridayTo.TotalHours;
     int fiveminutesto = (int)Model.FridayTo.Minutes;
     string five = $"{fivehours:D2}:{fiveminutes:D2}";
-    string fiveto = $"{fivehoursto:D2}:{fiveminutesto:D2}"; 
+    string fiveto = $"{fivehoursto:D2}:{fiveminutesto:D2}";
 
     int sixhours = (int)Model.Saturday.TotalHours;
     int sixminutes = (int)Model.Saturday.Minutes;
@@ -70,11 +70,11 @@
                     <ul>
                         <li><a class="act-scrlink" href="#sec1">Gallery</a></li>
                         <li><a href="#sec2">Details</a></li>
-                       
+
                         <li><a href="#sec4">Reviews</a></li>
                     </ul>
                 </nav>
-               
+
             </div>
         </div>
         <!--  section   -->
@@ -101,13 +101,13 @@
                                                 <div class="listing-rating card-popup-rainingvis" data-starrating2="5">
                                                     <span>(@Model.Review.Count reviews)</span>
                                                 </div>
-                                               
+
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="fl-wrap list-single-header-column">
-                                                    
+
                                                     <a class="custom-scroll-link" href="#sec5"><i class="fa fa-hand-o-right"></i>Add Review </a>
-                                                   
+
                                                 </div>
                                             </div>
                                         </div>
@@ -115,13 +115,13 @@
                                 </div>
                             </div>
                             <!-- list-single-header end -->
-                            
+
                             <div class="list-single-main-item fl-wrap">
                                 <div class="list-single-main-item-title fl-wrap">
                                     <h3>About @Model.Name </h3>
                                 </div>
                                 <p> @Model.Description</p>
-                                
+
                                 <a href="@Model.Website" class="btn transparent-btn float-btn">Visit Website <i class="fa fa-angle-right"></i></a>
                                 <span class="fw-separator"></span>
                                 <div class="list-single-main-item-title fl-wrap">
@@ -163,14 +163,13 @@
                             </div>
                             <!-- list-single-main-item-->
                             <!-- list-single-main-item end -->
-                            
                             <!-- list-single-main-item -->
                             <div class="list-single-main-item fl-wrap" id="sec4">
                                 <div class="list-single-main-item-title fl-wrap">
                                     <h3>Item Revies -  <span> @Model.Review.Count </span></h3>
                                 </div>
                                 <div class="reviews-comments-wrap">
-                                  @foreach (var item in Model.Review)
+                                    @foreach (var item in Model.Review)
                                     {
                                         <div class="reviews-comments-item">
                                             <div class="review-comments-avatar">
@@ -181,12 +180,12 @@
                                                 <div class="listing-rating card-popup-rainingvis" data-starrating2="@item.RatingStar"> </div>
                                                 <div class="clearfix"></div>
                                                 <p>" @item.Text"</p>
-                                               
+
                                             </div>
                                         </div>
                                     }
-                                   
-                                   
+
+
                                 </div>
                             </div>
                             <!-- list-single-main-item end -->
@@ -266,14 +265,13 @@
                                 </div>
                             </div>
                             <!--box-widget-item end -->
-                            
                             <!--box-widget-item -->
                             <div class="box-widget-item fl-wrap">
                                 <div class="box-widget-item-header">
                                     <h3>Location / Contacts : </h3>
                                 </div>
                                 <div class="box-widget">
-                                    
+
                                     <div class="box-widget-content">
                                         <div class="list-author-widget-contacts list-item-widget-contacts">
                                             <ul>
@@ -287,7 +285,7 @@
                                             <ul>
                                                 <li><a href="@Model.User.Face" target="_blank"><i class="fa fa-facebook"></i></a></li>
                                                 <li><a href="@Model.User.Tvit" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                               
+
                                             </ul>
                                         </div>
                                     </div>
@@ -320,7 +318,6 @@
                             </div>
                             <!--box-widget-item end -->
                             <!--box-widget-item -->
-                            
                             <!--box-widget-item end -->
                         </div>
                     </div>
@@ -331,7 +328,6 @@
         <!--  section  end-->
         <div class="limit-box fl-wrap"></div>
         <!--  section   -->
-        
         <!--  section  end-->
     </div>
     <!--  content  end-->

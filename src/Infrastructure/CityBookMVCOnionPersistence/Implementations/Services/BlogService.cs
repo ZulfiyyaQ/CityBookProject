@@ -91,6 +91,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                 });
             }
             //item.CreatedBy = _http.HttpContext.User.Identity.Name;
+            item.UserId = _http.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             await _repository.AddAsync(item);
             await _repository.SaveChanceAsync();
@@ -308,8 +309,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                 .Where(ps => !update.TagIds.Contains(ps.TagId)).ToList();
             foreach (var tagRemove in tagToRemove)
             {
-                item.BlogTags.Remove(tagRemove);
-                //_repository.DeleteFeatures(featureRemove);
+                _repository.DeleteTag(tagRemove);
             }
 
             ICollection<BlogTag> tagToAdd = update.TagIds
@@ -385,6 +385,8 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (item == null) throw new NotFoundException("Your request was not found");
 
             UpdateBlogVM update = _mapper.Map<UpdateBlogVM>(item);
+            update.TagIds = item.BlogTags.Select(p => p.TagId).ToList();
+            await UpdatePopulateDropdowns(update);
 
             return update;
         }

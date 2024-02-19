@@ -1,0 +1,138 @@
+﻿@model EditUserVM
+<!-- wrapper -->
+<div id="wrapper">
+    <!--content -->
+    <div class="content">
+        <!--section -->
+        <section>
+            <!-- container -->
+            <div class="container">
+                <!-- profile-edit-wrap -->
+                <div class="profile-edit-wrap">
+                    <div class="profile-edit-page-header">
+                        <h2>Edit profile</h2>
+                        <div class="breadcrumbs"><a href="#">Home</a><a href="#">Dasboard</a><span>Edit profile</span></div>
+                    </div>
+                    <div class="row">
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="col-md-3">
+                                <div class="fixed-bar fl-wrap">
+                                    <div class="user-profile-menu-wrap fl-wrap">
+                                        <!-- user-profile-menu-->
+                                        <div class="user-profile-menu">
+                                            <h3>Main</h3>
+                                            <ul>
+
+                                                <li><a asp-action="edituser" asp-controller="myaccount"><i class="fa fa-user-o"></i> Edit profile</a></li>
+                                                <li><a asp-action="changepassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
+                                                <li><a asp-action="forgotpassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Forgot Password</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- user-profile-menu end-->
+                                        <!-- user-profile-menu-->
+                                        @if (User.IsInRole(UserRole.BiznesOwner.ToString()))
+                                        {
+                                            <div class="user-profile-menu">
+                                                <h3>Listings</h3>
+
+                                                <ul>
+                                                    <li><a asp-action="index" asp-controller="mylistings"><i class="fa fa-th-list"></i> My listings  </a></li>
+                                                    <li><a href="dashboard-bookings.html"> <i class="fa fa-calendar-check-o"></i> Bookings <span>2</span></a></li>
+                                                    <li><a href="dashboard-review.html"><i class="fa fa-comments-o"></i> Reviews </a></li>
+                                                    <li><a asp-action="create" asp-controller="addlisting"><i class="fa fa-plus-square-o"></i> Add New Place</a></li>
+                                                    <li><a asp-action="create" asp-controller="addblog"><i class="fa fa-plus-square-o"></i> Add New Blog</a></li>
+                                                </ul>
+                                            </div>
+                                        }
+
+                                        <!-- user-profile-menu end-->
+                                        <a asp-action="logout" asp-controller="account" class="log-out-btn">Log Out</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <!-- profile-edit-container-->
+                                <div class="profile-edit-container">
+                                    <div class="profile-edit-header fl-wrap">
+                                        <h4>My Account</h4>
+                                    </div>
+                                    <div class="custom-form">
+                                        <label asp-for="Name">Your Name <i class="fa fa-user-o"></i></label>
+                                        <input asp-for="Name" type="text" placeholder="Name" />
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                        <label asp-for="UserName">Your UserName <i class="fa fa-user-o"></i></label>
+                                        <input asp-for="UserName" type="text" placeholder="UserName" />
+                                        <span asp-validation-for="UserName" class="text-danger"></span>
+                                        <label asp-for="Surname">Your Surname <i class="fa fa-user-o"></i></label>
+                                        <input asp-for="Surname" type="text" placeholder="@Model.Surname" />
+                                        <span asp-validation-for="Surname" class="text-danger"></span>
+                                        <label asp-for="Email">Email Address<i class="fa fa-envelope-o"></i>  </label>
+                                        <input asp-for="Email" type="email" placeholder="@Model.Email" />
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                        <label asp-for="Phone">Phone<i class="fa fa-phone"></i>  </label>
+                                        <input asp-for="Phone" placeholder="@Model.Phone" />
+                                        <span asp-validation-for="Phone" class="text-danger"></span>
+                                        <label asp-for="Address"> Address <i class="fa fa-map-marker"></i>  </label>
+                                        <input asp-for="Address" type="text" placeholder="@Model.Address" />
+                                        <span asp-validation-for="Address" class="text-danger"></span>
+                                        <label asp-for="Website"> Website <i class="fa fa-globe"></i>  </label>
+                                        <input asp-for="Website" type="text" placeholder="@Model.Website" />
+                                        <span asp-validation-for="Website" class="text-danger"></span>
+                                        <label asp-for="About"> Notes</label>
+                                        <textarea asp-for="About" cols="40" rows="3" placeholder="@Model.About"></textarea>
+                                        <span asp-validation-for="About" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <!-- profile-edit-container end-->
+                                <!-- profile-edit-container-->
+                                <!-- profile-edit-container end-->
+                                <!-- profile-edit-container-->
+                                <div class="profile-edit-container">
+                                    <div class="profile-edit-header fl-wrap" style="margin-top:30px">
+                                        <h4>My Socials</h4>
+                                    </div>
+                                    <div class="custom-form">
+                                        <label asp-for="Face">Facebook <i class="fa fa-facebook"></i></label>
+                                        <input asp-for="Face" type="text" placeholder="@Model.Face" />
+                                        <span asp-validation-for="Face" class="text-danger"></span>
+                                        <label asp-for="Tvit">Twitter<i class="fa fa-twitter"></i>  </label>
+                                        <input asp-for="Tvit" type="text" placeholder="@Model.Tvit" />
+                                        <span asp-validation-for="Tvit" class="text-danger"></span>
+                                        <label asp-for="Inst">Instagram </label>
+                                        <input asp-for="Inst" type="text" placeholder="@Model.Inst" />
+                                        <span asp-validation-for="Tvit" class="text-danger"></span>
+                                        <label asp-for="Link"> LinkedIn <i class="fa fa-whatsapp"></i>  </label>
+                                        <input asp-for="Link" type="text" placeholder="@Model.Link" />
+                                        <span asp-validation-for="Link" class="text-danger"></span>
+                                        <button type="submit" class="btn  big-btn  color-bg flat-btn">Save Changes<i class="fa fa-angle-right"></i></button>
+                                    </div>
+                                </div>
+                                <!-- profile-edit-container end-->
+                            </div>
+                            <div class="col-md-2">
+                                <div class="edit-profile-photo fl-wrap">
+                                    <img src="~/images/@Model.Image" class="respimg" alt="@Model.Name">
+                                    <input hidden asp-for="Image">
+                                    <div class="change-photo-btn">
+                                        <div class="photoUpload">
+                                            <span><i class="fa fa-upload"></i> Upload Photo</span>
+                                            <input asp-for="Photo" type="file" accept="image/*" class="upload">
+                                            <span asp-validation-for="Photo" class="text-danger"> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--profile-edit-wrap end -->
+            </div>
+            <!--container end -->
+        </section>
+        <!-- section end -->
+        <div class="limit-box fl-wrap"></div>
+        <!--section -->
+        <!-- section end -->
+    </div>
+</div>
+<!-- wrapper end -->

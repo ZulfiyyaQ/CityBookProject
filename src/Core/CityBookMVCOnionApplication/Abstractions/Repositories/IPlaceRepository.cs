@@ -7,5 +7,6 @@ namespace CityBookMVCOnionApplication.Abstractions.Repositories
     {
         Task AddReservasion(Reservation item);
         void RemoveReservasion(Reservation item);
+        Task AddReview(Review item);
     }
 }

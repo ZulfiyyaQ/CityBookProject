@@ -9,7 +9,7 @@ namespace CityBookMVCOnionApplication.ViewModels
         public List<IncludeBTagVM>? Tags { get; set; }
         public List<int> TagIds { get; init; }
         public string Text { get; init; }
-        public int UserId { get; init; }
+        
         
 
     }
