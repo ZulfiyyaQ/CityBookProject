@@ -1,6 +1,6 @@
 ﻿namespace CityBookMVCOnionDomain.Entities
 {
-    public class Review : BaseNameableEntity
+    public class Review : BaseEntity
     {
         public string? Text { get; set; }
         public int RatingStar { get; set; }

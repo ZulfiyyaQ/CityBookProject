@@ -9,7 +9,7 @@
         public string UserId { get; init; }
         public IncludeUserVM User { get; init; }
         public string Text { get; init; }
-        public List<IncludeBlogImageVM> BlogImage { get; init; }
+        public List<IncludeBlogImageVM>? BlogImage { get; init; }
         public List<IncludeBTagVM> Tags { get; init; }
 
     }

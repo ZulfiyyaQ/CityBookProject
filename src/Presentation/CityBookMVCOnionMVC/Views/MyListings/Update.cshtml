@@ -231,5 +231,44 @@
                 });
             });
         });
+        let commentArea = document.querySelector(".textarea")
+        let star1 = document.querySelector("#rating-1")
+        let star2 = document.querySelector("#rating-2")
+        let star3 = document.querySelector("#rating-3")
+        let star4 = document.querySelector("#rating-4")
+        let star5 = document.querySelector("#rating-5")
+        commentSubmit.addEventListener("click", function (event) {
+            event.preventDefault();
+            async function CommentSubmitHandler(button) {
+                let id = button.id
+                let starcount = 0;
+                let comment = commentArea.value
+                star1.addEventListener("click", function () {
+                    starcount = 1;
+                    console.log("Star Count:", starcount);
+                });
+
+                star2.addEventListener("click", function () {
+                    starcount = 2;
+                    console.log("Star Count:", starcount);
+                });
+
+                star3.addEventListener("click", function () {
+                    starcount = 3;
+                    console.log("Star Count:", starcount);
+                });
+
+                star4.addEventListener("click", function () {
+                    starcount = 4;
+                    console.log("Star Count:", starcount);
+                });
+
+                star5.addEventListener("click", function () {
+                    starcount = 5;
+                    console.log("Star Count:", starcount);
+                });
+                console.log(starcount comment)
+            }
+
     </script>
 }

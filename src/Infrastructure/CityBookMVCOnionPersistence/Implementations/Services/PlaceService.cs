@@ -298,7 +298,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (item == null) throw new NotFoundException("Your request was not found");
 
             GetPlaceVM get = _mapper.Map<GetPlaceVM>(item);
-
+            get.CurrentUser = _mapper.Map<IncludeUserVM>(await _userManager.FindByIdAsync(_http.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)));
             return get;
         }
 

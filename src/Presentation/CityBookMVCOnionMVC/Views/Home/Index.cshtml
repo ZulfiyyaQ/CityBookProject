@@ -18,22 +18,22 @@
                     </div>
                     <div class="main-search-input-wrap">
                         <div class="main-search-input fl-wrap">
+                            <form>
+                                <div class="main-search-input-item">
+                                    <input type="text" placeholder="What are you looking for?" value="" />
+                                </div>
+                            </form>
                             <div class="main-search-input-item">
-                                <input type="text" placeholder="What are you looking for?" value="" />
-                            </div>
-                            <div class="main-search-input-item location" id="autocomplete-container">
-                                <input type="text" placeholder="Location" id="autocomplete-input" value="" />
-                                <a href="#"><i class="fa fa-dot-circle-o"></i></a>
-                            </div>
-                            <div class="main-search-input-item">
-                                <select data-placeholder="All Categories" class="chosen-select">
-                                    <option>All Categories</option>
-                                    <option>Shops</option>
-                                    <option>Hotels</option>
-                                    <option>Restaurants</option>
-                                    <option>Fitness</option>
-                                    <option>Events</option>
-                                </select>
+                                <form>
+                                    <select data-placeholder="All Categories" class="chosen-select">
+                                        <option>All Categories</option>
+                                        <option>Shops</option>
+                                        <option>Hotels</option>
+                                        <option>Restaurants</option>
+                                        <option>Fitness</option>
+                                        <option>Events</option>
+                                    </select>
+                                </form>
                             </div>
                             <button class="main-search-button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
                         </div>
@@ -67,7 +67,7 @@
                                     <div class="listing-counter"><span>@item.Places.Count </span> Locations</div>
                                     <div class="listing-item-cat">
                                         <h3><a>@item.Name</a></h3>
-                                        <p>@item.Description</p>
+                                        <p>@item.Description.Substring(10).LastIndexOf("...") </p>
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@
                             <div class="listing-item">
                                 <article class="geodir-category-listing fl-wrap">
                                     <div class="geodir-category-img">
-                                        <img src="~/images/@item.PlaceImages.FirstOrDefault()?.ImageUrl" alt="">
+                                        <a asp-action="detail" asp-controller="listing" asp-route-di="@item.Id"> <img src="~/images/@item.PlaceImages.FirstOrDefault()?.ImageUrl" alt=""></a>
                                         <div class="overlay"></div>
 
                                     </div>
@@ -114,8 +114,8 @@
                                             <a href="author-single.html"><img src="~/images/@item.User.Image" alt="@item.User.Name"></a>
                                             <span class="avatar-tooltip">Added By  <strong>@item.User.Name @item.User.Surname</strong></span>
                                         </div>
-                                        <h3><a href="listing-single.html">@item.Name</a></h3>
-                                        <p>@item.Description  </p>
+                                        <h3><a asp-action="detail" asp-controller="listing" asp-route-di="@item.Id">@item.Name</a></h3>
+                                        <p>@item.Description.Substring(10).LastIndexOf("...")  </p>
                                         <div class="geodir-category-options fl-wrap">
                                             <div class="listing-rating card-popup-rainingvis" data-starrating2="@* ortalama review bal *@">
                                                 <span>(@item.Review.Count() reviews)</span>
@@ -211,7 +211,6 @@
             </div>
         </section>
         <!-- section end -->
-        
         <!--section -->
         <section class="color-bg">
             <div class="shapes-bg-big"></div>
@@ -297,8 +296,8 @@
                             </div>
                         </div>
                     }
-                    
-                   
+
+
                 </div>
                 <!--testimonials-carousel end-->
                 <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
@@ -344,27 +343,34 @@
                                 </div>
                                 <div class="card-post-content fl-wrap">
                                     <h3><a asp-action="detail" asp-controller="blog">@item.Name</a></h3>
-                                    <p>@item.Text </p>
+                                    <p>@(item.Text.Length > 44 ? item.Text.Substring(0, 44) + " ..." : item.Text)</p>
                                     <div class="post-author"><a href="#"><img src="~/images/@item.User.Image" alt=""><span>By , @item.User.Name  @item.User.Surname</span></a></div>
                                     <div class="post-opt">
                                         <ul>
-                                            <li><i class="fa fa-calendar-check-o"></i> <span>@item.CreateAt.ToString()</span></li>
-                                            
-                                            <li><i class="fa fa-tags"></i> <a href="#">@item.Tags.FirstOrDefault()</a>  </li>
+                                            <li><i class="fa fa-calendar-check-o"></i> <span>@item.CreateAt.ToString("yyyy-MM-dd")</span></li>
+
+                                            <li>
+                                                <i class="fa fa-tags"></i> <a href="#">
+                                                    @foreach (var tag in item.Tags)
+                                                    {
+                                                        @(tag.Name + " ")
+                                                    }
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
                             </article>
                         </div>
                     }
-                    
-                   
+
+
                 </div>
                 <a asp-action="index" asp-controller="blog" class="btn  big-btn circle-btn  dec-btn color-bg flat-btn">Read All<i class="fa fa-eye"></i></a>
             </div>
         </section>
         <!-- section end -->
-       
+
     </div>
     <!-- Content end -->
 </div>

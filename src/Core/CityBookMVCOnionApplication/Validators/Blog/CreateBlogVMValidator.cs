@@ -14,8 +14,8 @@ namespace CityBookMVCOnionApplication.Validators.Blog
 
             RuleFor(x => x.Text)
                 .NotEmpty().WithMessage("Text is required")
-                .Length(1, 3000).WithMessage("Text max characters is 1-3000")
-                .Matches(@"^[A-Za-z0-9\s"",.]+$").WithMessage("Text can only contain letters, numbers, spaces, double quotes, commas, and periods.");
+                .Length(1, 3000).WithMessage("Text max characters is 1-3000");
+                
             RuleFor(x => x.Photos)
                 .NotEmpty().WithMessage("Images is required");
         }

@@ -103,6 +103,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         {
             if (id <= 0) throw new WrongRequestException("The request sent does not exist");
             string[] includes ={
+                $"{nameof(Blog.User)}",
                 $"{nameof(Blog.BlogTags)}.{nameof(BlogTag.Tag)}",
                 $"{nameof(Blog.Comments)}.{nameof(Comment.Replies)}",
                 $"{nameof(Blog.BlogImages)}" };
@@ -120,6 +121,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         public async Task<ICollection<ItemBlogVM>> GetAllWhereAsync(int take, int page = 1)
         {
             string[] includes ={
+                $"{nameof(Blog.User)}",
                 $"{nameof(Blog.BlogTags)}.{nameof(BlogTag.Tag)}",
                 $"{nameof(Blog.Comments)}.{nameof(Comment.Replies)}",
                 $"{nameof(Blog.BlogImages)}" };

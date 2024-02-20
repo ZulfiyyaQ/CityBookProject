@@ -34,5 +34,6 @@
         public List<IncludeTagVM> Tags { get; init; }
         public List<IncludeFeatureVM> Features { get; init; }
         public List<IncludeReviewVM> Review { get; init; }
+        public IncludeUserVM CurrentUser { get; set; }
     }
 }

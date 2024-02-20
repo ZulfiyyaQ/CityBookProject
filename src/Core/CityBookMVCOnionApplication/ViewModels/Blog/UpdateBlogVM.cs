@@ -11,7 +11,7 @@ namespace CityBookMVCOnionApplication.ViewModels
         public List<IncludeBTagVM> Tags { get; set; }
         public List<int> TagIds { get; set; }
         public string Text { get; init; }
-        public ICollection<IncludePlaceImageVM>? Images { get; init; }
+        public ICollection<IncludeBlogImageVM>? Images { get; init; }
         public List<int>? ImageIds { get; set; }
     }
 }

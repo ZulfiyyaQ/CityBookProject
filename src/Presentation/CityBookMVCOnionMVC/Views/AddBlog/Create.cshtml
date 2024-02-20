@@ -59,7 +59,7 @@
                                 <div class="custom-form">
                                     <label asp-for="Name">Title <i class="fa fa-briefcase"></i></label>
                                     <input asp-for="Name" Blogholder="Name of your business" />
-                                    <span asp-validation-for="Name"></span>
+                                    <span asp-validation-for="Name" class="text-danger"></span>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -83,6 +83,7 @@
                                 <div class="custom-form">
                                     <label asp-for="Text">Text</label>
                                     <textarea asp-for="Text" cols="40" rows="3" placeholder=""></textarea>
+                                    <span asp-validation-for="Text" class="text-danger"></span>
                                     <!-- Checkboxes -->
                                     
                                 </div>
@@ -100,7 +101,7 @@
                                                 <label asp-for="Photos">Images</label>
 
                                                 <input asp-for="Photos" accept="image/*" checked>
-                                                <span asp-validation-for="Photos">Click here or drop files to upload</span>
+                                                <span asp-validation-for="Photos" class="text-danger">Click here or drop files to upload</span>
 
                                             </div>
 

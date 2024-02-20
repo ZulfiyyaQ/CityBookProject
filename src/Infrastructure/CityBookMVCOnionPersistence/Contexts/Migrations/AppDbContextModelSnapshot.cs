@@ -643,10 +643,6 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("PlaceId")
                         .HasColumnType("int");
 
@@ -656,17 +652,15 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                     b.Property<string>("Text")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("PlaceId");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Reviews");
                 });
@@ -1178,7 +1172,9 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
 
                     b.HasOne("CityBookMVCOnionDomain.Entities.User", "User")
                         .WithMany("Reviews")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Place");
 

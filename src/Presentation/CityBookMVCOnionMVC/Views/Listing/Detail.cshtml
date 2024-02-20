@@ -190,7 +190,7 @@
                             </div>
                             <!-- list-single-main-item end -->
                             <!-- list-single-main-item -->
-                            <form asp-action="Reveiw" asp-controller="Listing" asp-route-id="@Model.Id">
+                            <form>
                                 <div class="list-single-main-item fl-wrap" id="sec5">
                                     <div class="list-single-main-item-title fl-wrap">
                                         <h3>Add Revies  & Rate iteam</h3>
@@ -214,11 +214,17 @@
                                         </div>
                                         <!-- Review Comment -->
                                         <div class="add-comment custom-form">
+                                            <div class="comment-user-name">
+                                                @Model.CurrentUser.Name @Model.CurrentUser.Surname
+                                            </div>
+                                            <div class="add-comment-userimg">
+                                                @Model.CurrentUser.Image
+                                            </div>
                                             <fieldset>
-                                                <textarea cols="40" rows="3" name="comment" placeholder="Your Review:"></textarea>
+                                                <textarea class="textarea" cols="40" rows="3" name="comment" placeholder="Your Review:"></textarea>
                                             </fieldset>
                                         </div>
-                                        <button class="btn  big-btn  color-bg flat-btn">Submit Review <i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                                        <button onclick="CommentSubmitHandler(this)" id="@Model.Id" class="commentsubmit btn big-btn color-bg flat-btn">Submit Review <i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
                                     </div>
                                 </div>
                             </form>
@@ -271,7 +277,7 @@
                                     <h3>Location / Contacts : </h3>
                                 </div>
                                 <div class="box-widget">
-
+                                    
                                     <div class="box-widget-content">
                                         <div class="list-author-widget-contacts list-item-widget-contacts">
                                             <ul>
