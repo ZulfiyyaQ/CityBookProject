@@ -3,6 +3,7 @@ using CityBookMVCOnionApplication.Abstractions.Repositories;
 using CityBookMVCOnionApplication.Abstractions.Services;
 using CityBookMVCOnionApplication.ViewModels;
 using CityBookMVCOnionDomain.Entities;
+using CityBookMVCOnionDomain.Enums;
 using CityBookMVCOnionInfrastructure.Exceptions;
 using CityBookMVCOnionInfrastructure.Implementations;
 using Microsoft.AspNetCore.Hosting;
@@ -468,16 +469,52 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             return update;
         }
-        public async Task<bool> AddReservation(int id, CreateReservationVM reservation, ModelStateDictionary model)
+        public async Task<bool> AddReservation(int id, string dayOrMonth, int? persons, string reservationDate,
+            string? reservationDateTo, string about, ITempDataDictionary tempData)
         {
-            if (!model.IsValid) return false;
-            if (reservation.Persons <= 0)
+            tempData["Reserv"] = "";
+
+            if (string.IsNullOrWhiteSpace(dayOrMonth))
             {
-                model.AddModelError("Persons", "The count of people cannot be less than 1");
+                tempData["Reserv"] += $"<p class=\"text-danger\"> You must enter reservation day or month </p>";
                 return false;
             }
-            Reservation reserv = _mapper.Map<Reservation>(reservation);
-            reserv.UserId = _http.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrWhiteSpace(about))
+            {
+                tempData["Reserv"] += $"<p class=\"text-danger\"> You must enter additional information </p>";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(reservationDate))
+            {
+                tempData["Reserv"] += $"<p class=\"text-danger\"> You need to choose reservation date </p>";
+                return false;
+            }
+
+            if (dayOrMonth.Contains(DayOrMonth.Month.ToString()) && reservationDateTo == null)
+            {
+                tempData["Reserv"] += $"<p class=\"text-danger\"> You need to choose expiration date</p>";
+                return false;
+            }
+
+            if (dayOrMonth.Contains(DayOrMonth.Day.ToString()) && persons <= 0 && persons != null)
+            {
+                tempData["Reserv"] += $"<p class=\"text-danger\">The count of people cannot be less than 1</p>";
+                return false;
+            }
+            if (id <= 0) throw new WrongRequestException("The request sent does not exist");
+            Place item = await _repository.GetByIdAsync(id);
+            if (item == null) throw new NotFoundException("Your request was not found");
+            Reservation reserv = new Reservation
+            {
+                UserId = _http.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier),
+                PlaceId = item.Id,
+                Persons = persons,
+                ReservationDate = reservationDate,
+                ReservationDateTo = reservationDateTo,
+                About = about
+            };
 
             await _reservationRepository.AddAsync(reserv);
             await _reservationRepository.SaveChanceAsync();

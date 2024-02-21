@@ -21,7 +21,8 @@ namespace CityBookMVCOnionApplication.Abstractions.Services
         Task ReverseSoftDeleteAsync(int id);
         Task CreatePopulateDropdowns(CreatePlaceVM create);
         Task UpdatePopulateDropdowns(UpdatePlaceVM update);
-        Task<bool> AddReservation(int id, CreateReservationVM reservation, ModelStateDictionary model);
+        Task<bool> AddReservation(int id, string dayOrMonth, int? persons, string reservationDate,
+                  string? reservationDateTo, string about, ITempDataDictionary tempData);
         Task AcceptReservation(int id);
         Task CanceledReservation(int id);
         Task<bool> Review(int id, int rating, string comment, ModelStateDictionary model);

@@ -705,6 +705,10 @@
       "PackagePath": "staticwebassets\\images\\03c87f71-0aba-426a-80d0-1359f39ceed1.png"
     },
     {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\0b9ebb0e-12f6-4d31-8284-ec2aa274b53f.jpg",
+      "PackagePath": "staticwebassets\\images\\0b9ebb0e-12f6-4d31-8284-ec2aa274b53f.jpg"
+    },
+    {
       "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\0d65f9a5-8896-45ec-ae75-5d2599f9cc27.jpg",
       "PackagePath": "staticwebassets\\images\\0d65f9a5-8896-45ec-ae75-5d2599f9cc27.jpg"
     },
@@ -723,6 +727,10 @@
     {
       "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\2ee5c8f1-c489-461c-b747-f485cfd16e3a.jpg",
       "PackagePath": "staticwebassets\\images\\2ee5c8f1-c489-461c-b747-f485cfd16e3a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\3c0c5181-21ba-4720-b51b-f0f917a1345f.jpg",
+      "PackagePath": "staticwebassets\\images\\3c0c5181-21ba-4720-b51b-f0f917a1345f.jpg"
     },
     {
       "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\3df58530-f222-4437-9ea9-a769771902c4.jpg",
@@ -749,12 +757,32 @@
       "PackagePath": "staticwebassets\\images\\6143648d-5faf-468b-b41c-32ed369d60e8.jpg"
     },
     {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\6279fffd-8383-4de4-b0a1-4b2c1d703f5a.jpg",
+      "PackagePath": "staticwebassets\\images\\6279fffd-8383-4de4-b0a1-4b2c1d703f5a.jpg"
+    },
+    {
       "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\6a2337cf-f6aa-425f-b23f-465cbba98606.jpeg",
       "PackagePath": "staticwebassets\\images\\6a2337cf-f6aa-425f-b23f-465cbba98606.jpeg"
     },
     {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\76071e90-5cbc-472d-b82e-93de5bcf20d0.jpg",
+      "PackagePath": "staticwebassets\\images\\76071e90-5cbc-472d-b82e-93de5bcf20d0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\76c3ad94-75a7-46d1-b99a-4c453089e19c.jpg",
+      "PackagePath": "staticwebassets\\images\\76c3ad94-75a7-46d1-b99a-4c453089e19c.jpg"
+    },
+    {
       "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\7888e6f6-7ce7-45e6-b57c-05b0f46501a5.jpg",
       "PackagePath": "staticwebassets\\images\\7888e6f6-7ce7-45e6-b57c-05b0f46501a5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\7d03bb16-dbd2-4fbe-91ee-ef4e860d74d2.jpg",
+      "PackagePath": "staticwebassets\\images\\7d03bb16-dbd2-4fbe-91ee-ef4e860d74d2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\84227e0e-2c85-40f4-862e-2111d91436ee.jpg",
+      "PackagePath": "staticwebassets\\images\\84227e0e-2c85-40f4-862e-2111d91436ee.jpg"
     },
     {
       "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\87b8b2e6-309f-4c81-bb40-c67f329cefc2.jpeg",
@@ -813,28 +841,16 @@
       "PackagePath": "staticwebassets\\images\\b2e04b7f-0593-44b9-9b55-865ed9e71818.jpg"
     },
     {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\b3eba256-74a4-4af9-a43a-fff526e2a349.jpg",
+      "PackagePath": "staticwebassets\\images\\b3eba256-74a4-4af9-a43a-fff526e2a349.jpg"
+    },
+    {
       "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\bd9a16ab-b63b-41f0-9802-230c8f38726a.jpg",
       "PackagePath": "staticwebassets\\images\\bd9a16ab-b63b-41f0-9802-230c8f38726a.jpg"
     },
     {
       "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\bg\\1.jpg",
       "PackagePath": "staticwebassets\\images\\bg\\1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\bg\\circle.png",
-      "PackagePath": "staticwebassets\\images\\bg\\circle.png"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\bg\\shapes-big.png",
-      "PackagePath": "staticwebassets\\images\\bg\\shapes-big.png"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\bg\\shapes-small.png",
-      "PackagePath": "staticwebassets\\images\\bg\\shapes-small.png"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\bg\\slider\\1.jpg",
-      "PackagePath": "staticwebassets\\images\\bg\\slider\\1.jpg"
     },
     {
       "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\cdc573b2-cbf3-4565-b414-c8637532824b.jpg",
@@ -859,6 +875,14 @@
     {
       "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\default-profile.png",
       "PackagePath": "staticwebassets\\images\\default-profile.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\e2b19525-078a-4931-9610-dced325080dd.jpeg",
+      "PackagePath": "staticwebassets\\images\\e2b19525-078a-4931-9610-dced325080dd.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\f346f6b1-2dca-4a3a-b324-5b30a3db28cf.jpeg",
+      "PackagePath": "staticwebassets\\images\\f346f6b1-2dca-4a3a-b324-5b30a3db28cf.jpeg"
     },
     {
       "Id": "C:\\Users\\Asus\\Desktop\\CityBookMVCOnion\\src\\Presentation\\CityBookMVCOnionMVC\\wwwroot\\images\\f8b1c290-6296-4f39-9e18-52fb75fd63b3.png",

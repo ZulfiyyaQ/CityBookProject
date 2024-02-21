@@ -600,17 +600,18 @@ namespace CityBookMVCOnionPersistence.Contexts.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Persons")
+                    b.Property<int?>("Persons")
                         .HasColumnType("int");
 
                     b.Property<int>("PlaceId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ReservationDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("ReservationDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("ReservationDateTo")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("ReservationDateTo")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
                         .IsRequired()

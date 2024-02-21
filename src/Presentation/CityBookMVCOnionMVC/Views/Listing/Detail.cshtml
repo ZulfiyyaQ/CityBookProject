@@ -263,10 +263,37 @@
                                 </div>
                                 <div class="box-widget opening-hours">
                                     <div class="box-widget-content">
-                                        @{
-                                            await Html
-                                            .RenderPartialAsync("_ReservationPartialView", new CreateReservationVM { PlaceId = Model.Id, DayOrMonth = Model.DayOrMonth });
-                                        }
+                                        @Html.Raw(TempData["Reserv"])
+                                        <form class="add-comment custom-form" asp-action="AddReservation" asp-controller="Listing" asp-route-id="@Model.Id" asp-route-dayOrMonth="@Model.DayOrMonth" method="post">
+                                            <fieldset>
+                                                @if (Model.DayOrMonth.Contains(DayOrMonth.Day.ToString()))
+                                                {
+                                                    <div class="quantity fl-wrap">
+                                                        <span><i class="fa fa-user-plus"></i>Persons : </span>
+                                                        <div class="quantity-item">
+                                                            <input type="button" value="-" class="minus">
+                                                            <input type="text" name="persons" title="Qty" class="qty" min="1" max="3" step="1" value="1">
+                                                            <input type="button" value="+" class="plus">
+                                                        </div>
+                                                    </div>
+                                                }
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label for="reservationDate"><i class="fa fa-calendar-check-o"></i>  </label>
+                                                        <input placeholder="Date" type="text" name="reservationDate" class="datepicker" data-large-mode="true" data-large-default="true" />
+                                                    </div>
+                                                    @if (Model.DayOrMonth.Contains(DayOrMonth.Month.ToString()))
+                                                    {
+                                                        <div class="col-md-6">
+                                                            <label for="ReservationDateTo"><i class="fa fa-calendar-check-o"></i>  </label>
+                                                            <input placeholder="Date" type="text" name="reservationDateTo" class="datepicker" data-large-mode="true" data-large-default="true" />
+                                                        </div>
+                                                    }
+                                                </div>
+                                                <textarea cols="40" rows="3" placeholder="Additional Information:" name="about"></textarea>
+                                            </fieldset>
+                                            <button type="submit" class="btn big-btn color-bg flat-btn">Book Now<i class="fa fa-angle-right"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

@@ -24,18 +24,19 @@ namespace CityBookMVCOnionMVC.Controllers
         {
             var res = await _service.GetByIdAsync(id);
             return View(res);
-         
+
         }
-        public async Task<IActionResult> Review(int id ,int rating, string comment)
+        public async Task<IActionResult> Review(int id, int rating, string comment)
         {
             await _service.Review(id, rating, comment, ModelState);
 
             return RedirectToAction("Detail", "Listing", new { Id = id });
         }
-
-        public async Task<IActionResult> AddReservation(int id,CreateReservationVM reservation)
+        [HttpPost]
+        public async Task<IActionResult> AddReservation(int id, string dayOrMonth, int? persons, string reservationDate,
+            string? reservationDateTo, string about)
         {
-            await _service.AddReservation(id, reservation, ModelState);
+            await _service.AddReservation(id, dayOrMonth, persons, reservationDate, reservationDateTo, about, TempData);
 
             return RedirectToAction("Detail", "Listing", new { Id = id });
         }

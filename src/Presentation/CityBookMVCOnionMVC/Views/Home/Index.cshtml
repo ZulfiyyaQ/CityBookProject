@@ -8,7 +8,7 @@
     <div class="content">
         <!--section -->
         <section class="scroll-con-sec hero-section" data-scrollax-parent="true" id="sec1">
-            <div class="bg" data-bg="/images/bg/1.jpg" data-scrollax="properties: { translateY: '200px' }"></div>
+            <div class="bg" data-bg="@Url.Content("~/images/bg/1.jpg")" data-scrollax="properties: { translateY: '200px' }"></div>
             <div class="overlay"></div>
             <div class="hero-section-wrap fl-wrap">
                 <div class="container">
@@ -25,14 +25,15 @@
                             </form>
                             <div class="main-search-input-item">
                                 <form>
-                                    <select data-placeholder="All Categories" class="chosen-select">
-                                        <option>All Categories</option>
-                                        <option>Shops</option>
-                                        <option>Hotels</option>
-                                        <option>Restaurants</option>
-                                        <option>Fitness</option>
-                                        <option>Events</option>
-                                    </select>
+                              @*       asp-route-search="@Model.Search">
+                                    <label for="categoryId" class="form-label">Categories</label>
+                                    <select name="categoryId" class="form-control select-filter">
+                                        <option value="">Any</option>
+                                        @foreach (var category in Model.Item.Categories)
+                                        {
+                                            <option value="@category.Id">@category.Name</option>
+                                        }
+                                    </select> *@
                                 </form>
                             </div>
                             <button class="main-search-button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
@@ -63,11 +64,11 @@
                         <div class="gallery-item">
                             <div class="grid-item-holder">
                                 <div class="listing-item-grid">
-                                    <div class="bg" data-bg="/images/all/@item.Image"></div>
+                                    <div class="bg" data-bg="/images/@item.Image"></div>
                                     <div class="listing-counter"><span>@item.Places.Count </span> Locations</div>
                                     <div class="listing-item-cat">
                                         <h3><a>@item.Name</a></h3>
-                                        <p>@item.Description.Substring(10).LastIndexOf("...") </p>
+                                        <p>@(item.Description.Length > 44 ? item.Description.Substring(0, 44) + " ..." : item.Description) </p>
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +116,7 @@
                                             <span class="avatar-tooltip">Added By  <strong>@item.User.Name @item.User.Surname</strong></span>
                                         </div>
                                         <h3><a asp-action="detail" asp-controller="listing" asp-route-di="@item.Id">@item.Name</a></h3>
-                                        <p>@item.Description.Substring(10).LastIndexOf("...")  </p>
+                                        <p>@(item.Description.Length > 44 ? item.Description.Substring(0, 44) + " ..." : item.Description)  </p>
                                         <div class="geodir-category-options fl-wrap">
                                             <div class="listing-rating card-popup-rainingvis" data-starrating2="@* ortalama review bal *@">
                                                 <span>(@item.Review.Count() reviews)</span>
@@ -191,9 +192,12 @@
                             </li>
                         }
 
-
+                        
+                          
+                       
                     </ul>
-                    <a asp-action="create" asp-controller="addlisting" class="process-end"><i class="fa fa-check"></i></a>
+                   
+                   
                 </div>
                 <!--process-wrap   end-->
             </div>
