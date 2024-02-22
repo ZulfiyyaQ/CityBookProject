@@ -200,26 +200,21 @@
                                         <div class="leave-rating-wrap">
                                             <span class="leave-rating-title">Your rating  for this listing : </span>
                                             <div class="leave-rating">
-                                                <input type="radio" name="rating" id="rating-1" value="1" />
+                                                <input type="radio" name="rating" id="rating-1"  />
                                                 <label for="rating-1" class="fa fa-star-o"></label>
-                                                <input type="radio" name="rating" id="rating-2" value="2" />
+                                                <input type="radio" name="rating" id="rating-2"  />
                                                 <label for="rating-2" class="fa fa-star-o"></label>
-                                                <input type="radio" name="rating" id="rating-3" value="3" />
+                                                <input type="radio" name="rating" id="rating-3"  />
                                                 <label for="rating-3" class="fa fa-star-o"></label>
-                                                <input type="radio" name="rating" id="rating-4" value="4" />
+                                                <input type="radio" name="rating" id="rating-4"  />
                                                 <label for="rating-4" class="fa fa-star-o"></label>
-                                                <input type="radio" name="rating" id="rating-5" value="5" />
+                                                <input type="radio" name="rating" id="rating-5"  />
                                                 <label for="rating-5" class="fa fa-star-o"></label>
                                             </div>
                                         </div>
                                         <!-- Review Comment -->
                                         <div class="add-comment custom-form">
-                                            <div class="comment-user-name">
-                                                @Model.CurrentUser.Name @Model.CurrentUser.Surname
-                                            </div>
-                                            <div class="add-comment-userimg">
-                                                @Model.CurrentUser.Image
-                                            </div>
+                                           
                                             <fieldset>
                                                 <textarea class="textarea" cols="40" rows="3" name="comment" placeholder="Your Review:"></textarea>
                                             </fieldset>
@@ -242,7 +237,7 @@
                                 </div>
                                 <div class="box-widget opening-hours">
                                     <div class="box-widget-content">
-                                        <span class="current-status"><i class="fa fa-clock-o"></i> Now Open</span>
+                                        <span class="current-status"><i class="fa fa-clock-o"></i> </span>
                                         <ul>
                                             <li><span class="opening-hours-day">Monday </span><span class="opening-hours-time">@formattedTime - @formattedTimeto</span></li>
                                             <li><span class="opening-hours-day">Tuesday </span><span class="opening-hours-time">@two - @twoto</span></li>

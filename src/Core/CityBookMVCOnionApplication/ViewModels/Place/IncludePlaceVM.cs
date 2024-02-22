@@ -12,5 +12,8 @@ namespace CityBookMVCOnionApplication.ViewModels
         public string Email { get; init; }
         public string Website { get; init; }
         public List<IncludePlaceImageVM>? PlaceImages { get; init; }
+        public IncludeUserVM? User { get; init; }
+        public IncludeCategoryVM? Category { get; init; }
+        public List<IncludeReviewVM>? Review { get; init; }
     }
 }

@@ -10,6 +10,7 @@ namespace CityBookMVCOnionApplication.MappingProfiles
         {
             CreateMap<EditUserVM, User>().ReverseMap();
             CreateMap<ChangePasswordVM, User>().ReverseMap();
+            CreateMap<ItemUserVM, User>().ReverseMap();
             CreateMap<IncludeUserVM, User>().ReverseMap();
             CreateMap<LoginVM, User>().ReverseMap();
             CreateMap<RegisterVM, User>().ReverseMap();

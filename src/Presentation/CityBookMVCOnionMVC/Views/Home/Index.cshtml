@@ -8,7 +8,7 @@
     <div class="content">
         <!--section -->
         <section class="scroll-con-sec hero-section" data-scrollax-parent="true" id="sec1">
-            <div class="bg" data-bg="@Url.Content("~/images/bg/1.jpg")" data-scrollax="properties: { translateY: '200px' }"></div>
+            <div class="bg" data-bg="@Url.Content("~/images/bg/32.jpg")" data-scrollax="properties: { translateY: '200px' }"></div>
             <div class="overlay"></div>
             <div class="hero-section-wrap fl-wrap">
                 <div class="container">
@@ -18,25 +18,24 @@
                     </div>
                     <div class="main-search-input-wrap">
                         <div class="main-search-input fl-wrap">
-                            <form>
+                            <form asp-action="Index" asp-controller="Listing" asp-route-categoryId="@Model.Pagination.CategoryId">
                                 <div class="main-search-input-item">
-                                    <input type="text" placeholder="What are you looking for?" value="" />
+                                    <input type="text" name="search" placeholder="What are you looking for?" value="@(Model.Pagination.Search == null? "":Model.Pagination.Search)" />
                                 </div>
                             </form>
                             <div class="main-search-input-item">
-                                <form>
-                              @*       asp-route-search="@Model.Search">
-                                    <label for="categoryId" class="form-label">Categories</label>
-                                    <select name="categoryId" class="form-control select-filter">
-                                        <option value="">Any</option>
-                                        @foreach (var category in Model.Item.Categories)
-                                        {
-                                            <option value="@category.Id">@category.Name</option>
-                                        }
-                                    </select> *@
+                                <form asp-action="Index" asp-controller="Listing" asp-route-search="@Model.Pagination.Search">
+
+                                    <select name="categoryId" class="form-control select-filter" style="height:50px;">
+                                          <option style="display:none">Categories</option>
+                                         @foreach (var category in Model.Categories)
+                                         {
+                                             <option value="@category.Id">@category.Name</option>
+                                         }
+                                     </select>
                                 </form>
                             </div>
-                            <button class="main-search-button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
+                            
                         </div>
                     </div>
                 </div>

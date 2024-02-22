@@ -12,8 +12,6 @@ namespace CityBookMVCOnionMVC.Controllers
         private readonly ICategoryService _categoryService;
         private readonly IHomeReviewService _homereviewService;
 
-      
-
         public HomeController(IServiceService serviceService, 
             IBlogService blogService, 
             IPlaceService placeService,
@@ -31,6 +29,7 @@ namespace CityBookMVCOnionMVC.Controllers
         {
             HomeVM home = new HomeVM
             {
+                Pagination = await _placeService.GetAllWhereByOrderFilterAsync(3,1),
                 Services = await _serviceService.GetAllWhereAsync(3, 1),
                 Places = await _placeService.GetAllWhereAsync(8, 1),
                 Categories = await _categoryService.GetAllWhereAsync(8, 1),

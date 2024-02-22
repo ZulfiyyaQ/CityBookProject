@@ -284,7 +284,29 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             return pagination;
         }
+        public async Task<PaginationVM<PlaceFilterVM>> GetAllWhereByOrderFilterAsync(int take, int page, Expression<Func<Place, object>>? orderExpression = null)
+        {
+            string[] includes ={
+                $"{nameof(Place.Category)}",
+                $"{nameof(Place.PlaceImages)}" };
+            ICollection<Place> items = await _repository
+                    .GetAllWhereByOrder(orderException: orderExpression, skip: (page - 1) * take, take: take, IsTracking: false, includes: includes).ToListAsync();
 
+            ICollection<ItemPlaceVM> vMs = _mapper.Map<ICollection<ItemPlaceVM>>(items);
+
+            PlaceFilterVM filtered = new PlaceFilterVM
+            {
+                Places = _mapper.Map<ICollection<ItemPlaceVM>>(items),
+                Categories = _mapper.Map<ICollection<IncludeCategoryVM>>(await _categoryRepository.GetAllWhereByOrder(orderException: x => x.Places.Count).ToListAsync())
+            };
+            PaginationVM<PlaceFilterVM> pagination = new PaginationVM<PlaceFilterVM>
+            {
+                Take = take,
+                Item = filtered
+            };
+
+            return pagination;
+        }
         public async Task<GetPlaceVM> GetByIdAsync(int id)
         {
             if (id <= 0) throw new WrongRequestException("The request sent does not exist");

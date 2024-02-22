@@ -170,6 +170,9 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         {
             if (string.IsNullOrWhiteSpace(id)) throw new WrongRequestException("The request sent does not exist");
             User user = await _userManager.Users
+                .Include(x => x.Places).ThenInclude(a => a.Category)
+                .Include(x => x.Places).ThenInclude(a => a.Reviews)
+                .Include(x => x.Places).ThenInclude(a => a.PlaceImages)
                 .Include(x => x.Blogs).ThenInclude(x => x.BlogImages)
                 .Include(x => x.Reviews).Include(x => x.Places.Where(a => a.IsDeleted == false)).ThenInclude(x => x.PlaceImages)
                 .Include(x => x.Replies).ThenInclude(x => x.Comment).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);

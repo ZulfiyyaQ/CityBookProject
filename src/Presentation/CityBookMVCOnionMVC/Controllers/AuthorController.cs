@@ -1,6 +1,7 @@
 ﻿using CityBookMVCOnionApplication.Abstractions.Services;
 using CityBookMVCOnionDomain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace CityBookMVCOnionMVC.Controllers
 {
@@ -12,13 +13,9 @@ namespace CityBookMVCOnionMVC.Controllers
         {
             _service = service;
         }
-        public async Task<IActionResult> Index(string? search, string? returnUrl, int order = 1, int page = 1)
+        public async Task<IActionResult> Index()
         {
-            if (!string.IsNullOrWhiteSpace(returnUrl))
-            {
-                return Redirect(returnUrl);
-            }
-            return View(model: await _service.GetFilteredAsync(search, 3, page, order));
+            return View(model: await _service.GetByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)));
         }
     }
 }

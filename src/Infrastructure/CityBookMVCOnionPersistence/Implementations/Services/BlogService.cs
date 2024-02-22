@@ -122,8 +122,9 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         {
             string[] includes ={
                 $"{nameof(Blog.User)}",
+                $"{nameof(Blog.Comments)}.{nameof(Comment.Replies)}.{nameof(Reply.User)}",
+                $"{nameof(Blog.Comments)}.{nameof(Comment.User)}",
                 $"{nameof(Blog.BlogTags)}.{nameof(BlogTag.Tag)}",
-                $"{nameof(Blog.Comments)}.{nameof(Comment.Replies)}",
                 $"{nameof(Blog.BlogImages)}" };
             ICollection<Blog> items = await _repository
                     .GetAllWhere(skip: (page - 1) * take, take: take, IsTracking: false, includes: includes).ToListAsync();
@@ -149,7 +150,9 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (page <= 0) throw new WrongRequestException("The request sent does not exist");
             if (order <= 0) throw new WrongRequestException("The request sent does not exist");
 
-            string[] includes = { $"{nameof(Blog.BlogImages)}" };
+            string[] includes = { $"{nameof(Blog.User)}",
+                $"{nameof(Blog.BlogTags)}.{nameof(BlogTag.Tag)}",
+                $"{nameof(Blog.BlogImages)}" };
 
             double count = await _repository.CountAsync();
 
@@ -249,7 +252,8 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (id <= 0) throw new WrongRequestException("The request sent does not exist");
             string[] includes ={
                 $"{nameof(Blog.BlogTags)}.{nameof(BlogTag.Tag)}",
-                $"{nameof(Blog.Comments)}.{nameof(Comment.Replies)}",
+                $"{nameof(Blog.Comments)}.{nameof(Comment.Replies)}.{nameof(Reply.User)}",
+                $"{nameof(Blog.Comments)}.{nameof(Comment.User)}",
                 $"{nameof(Blog.BlogImages)}" };
             Blog item = await _repository.GetByIdAsync(id, IsTracking: false, includes: includes);
             if (item == null) throw new NotFoundException("Your request was not found");
@@ -289,7 +293,6 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (id <= 0) throw new WrongRequestException("The request sent does not exist");
             string[] includes ={
                 $"{nameof(Blog.BlogTags)}.{nameof(BlogTag.Tag)}",
-                $"{nameof(Blog.Comments)}.{nameof(Comment.Replies)}",
                 $"{nameof(Blog.BlogImages)}" };
             Blog item = await _repository.GetByIdAsync(id, includes: includes);
             if (item == null) throw new NotFoundException("Your request was not found");
@@ -381,7 +384,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             if (id <= 0) throw new WrongRequestException("The request sent does not exist");
             string[] includes ={
                 $"{nameof(Blog.BlogTags)}.{nameof(BlogTag.Tag)}",
-                $"{nameof(Blog.Comments)}.{nameof(Comment.Replies)}",
+                 
                 $"{nameof(Blog.BlogImages)}" };
             Blog item = await _repository.GetByIdAsync(id, includes: includes);
             if (item == null) throw new NotFoundException("Your request was not found");

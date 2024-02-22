@@ -26,5 +26,6 @@ namespace CityBookMVCOnionApplication.Abstractions.Services
         Task AcceptReservation(int id);
         Task CanceledReservation(int id);
         Task<bool> Review(int id, int rating, string comment, ModelStateDictionary model);
+        Task<PaginationVM<PlaceFilterVM>> GetAllWhereByOrderFilterAsync(int take, int page, Expression<Func<Place, object>>? orderExpression = null);
     }
 }
