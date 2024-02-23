@@ -10,8 +10,8 @@ namespace CityBookMVCOnionApplication.Abstractions.Services
     {
         Task<ICollection<ItemPlaceVM>> GetAllWhereAsync(int take, int page = 1);
         Task<ICollection<ItemPlaceVM>> GetAllWhereByOrderAsync(int take, Expression<Func<Place, object>>? orderExpression, int page = 1);
-        Task<PaginationVM<ItemPlaceVM>> GetFilteredAsync(string? search, int take, int page, int order, int? categoryId);
-        Task<PaginationVM<ItemPlaceVM>> GetDeleteFilteredAsync(string? search, int take, int page, int order, int? categoryId);
+        Task<PaginationVM<PlaceFilterVM>> GetFilteredAsync(string? search, int take, int page, int order, int? categoryId);
+        Task<PaginationVM<PlaceFilterVM>> GetDeleteFilteredAsync(string? search, int take, int page, int order, int? categoryId);
         Task<GetPlaceVM> GetByIdAsync(int id);
         Task<bool> CreateAsync(CreatePlaceVM create, ModelStateDictionary model, ITempDataDictionary tempData);
         Task<UpdatePlaceVM> UpdateAsync(int id);

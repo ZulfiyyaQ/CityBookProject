@@ -41,6 +41,8 @@
     int sixminutesto = (int)Model.SaturdayTo.Minutes;
     string six = $"{sixhours:D2}:{sixminutes:D2}";
     string sixto = $"{sixhoursto:D2}:{sixminutesto:D2}";
+
+    double averageRating = Model.Review.Any() ? Model.Review.Average(review => review.RatingStar) : 0;
 }
 <!-- wrapper -->
 <div id="wrapper">
@@ -86,6 +88,7 @@
                         <div class="list-single-main-wrapper fl-wrap" id="sec2">
                             <div class="breadcrumbs gradient-bg  fl-wrap"><a asp-action="index" asp-controller="home">Home</a><a href="#">Place</a><span>Place Detail</span></div>
                             <!-- list-single-header -->
+
                             <div class="list-single-header list-single-header-inside fl-wrap">
                                 <div class="container">
                                     <div class="list-single-header-item">
@@ -98,7 +101,11 @@
                                                 </div>
                                                 <h2>@Model.Name <span> - Hosted By </span><a href="author-single.html">@Model.User.Name @Model.User.Surname</a> </h2>
                                                 <span class="section-separator"></span>
-                                                <div class="listing-rating card-popup-rainingvis" data-starrating2="5">
+                                                <div class="listing-rating card-popup-rainingvis" data-starrating2="">
+                                                    @for (int i = 0; i < averageRating; i++)
+                                                    {
+                                                        <i class="fa fa-star"></i>
+                                                    }
                                                     <span>(@Model.Review.Count reviews)</span>
                                                 </div>
 
@@ -327,19 +334,19 @@
                                 </div>
                                 <div class="box-widget list-author-widget">
                                     <div class="list-author-widget-header shapes-bg-small  color-bg fl-wrap">
-                                        <span class="list-author-widget-link"><a asp-action="index" asp-controller="author" asp-route-id="@Model.UserId">@Model.User.Name @Model.User.Surname</a></span>
+                                        <span class="list-author-widget-link"><a asp-action="index" asp-controller="author" asp-route-id="@Model.Id">@Model.User.Name @Model.User.Surname</a></span>
                                         <img src="~/images/@Model.User.Image" alt="">
                                     </div>
                                     <div class="box-widget-content">
                                         <div class="list-author-widget-text">
                                             <div class="list-author-widget-contacts">
                                                 <ul>
-                                                    <li><span><i class="fa fa-phone"></i> Phone :</span> <a href="#">@Model.User.Phone</a></li>
+                                                    <li><span><i class="fa fa-phone"></i> Phone :</span> <a href="#">@Model.User.PhoneNumber</a></li>
                                                     <li><span><i class="fa fa-envelope-o"></i> Mail :</span> <a href="#">@Model.User.Email</a></li>
                                                     <li><span><i class="fa fa-globe"></i> Website :</span> <a href="#">@Model.User.Email</a></li>
                                                 </ul>
                                             </div>
-                                            <a asp-action="index" asp-controller="author" class="btn transparent-btn">View Profile <i class="fa fa-eye"></i></a>
+                                            <a asp-action="index" asp-controller="author" asp-route-id="@Model.UserId" class="btn transparent-btn">View Profile <i class="fa fa-eye"></i></a>
                                         </div>
                                     </div>
                                 </div>

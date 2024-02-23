@@ -1,0 +1,27 @@
+﻿@model  List<ItemBlogVM>
+<div class="col-md-4">
+    <div class="footer-widget fl-wrap">
+        <h3>Our News</h3>
+        <div class="widget-posts fl-wrap">
+            <ul>
+                @foreach (var item in Model.Take(3))
+                {
+                    <li class="clearfix">
+                        <a href="#" class="widget-posts-img"><img src="~/images/@item.BlogImage.FirstOrDefault().Url" class="respimg" alt="@item.Name"></a>
+                        <div class="widget-posts-descr">
+                            <a href="#" title="">@item.Name</a>
+                            <span class="widget-posts-date"> @item.CreateAt.ToString("MMM dd, yyyy") </span>
+                        </div>
+                    </li>
+                }
+                
+                
+            </ul>
+        </div>
+        <div class="footer-menu fl-wrap">
+            <ul>
+                <li><a href="#" style="color:#4DB7FE">Read All News</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -15,5 +15,7 @@ namespace CityBookMVCOnionApplication.ViewModels
         public IncludeUserVM? User { get; init; }
         public IncludeCategoryVM? Category { get; init; }
         public List<IncludeReviewVM>? Review { get; init; }
+        public List<ItemReservationVM> Reservations { get; init; }
+
     }
 }

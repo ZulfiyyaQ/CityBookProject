@@ -25,6 +25,15 @@ namespace CityBookMVCOnionMVC.Controllers
             _homereviewService = homereviewService;
         }
 
+        public IActionResult ErrorPage(string error)
+        {
+            if (error == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            return View(model: error);
+        }
+
         public async Task<IActionResult> Index()
         {
             HomeVM home = new HomeVM

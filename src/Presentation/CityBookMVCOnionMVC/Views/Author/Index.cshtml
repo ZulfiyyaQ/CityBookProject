@@ -45,7 +45,7 @@
                         <div class="list-main-wrap fl-wrap card-listing ">
                             @foreach (var item in Model.Places)
                             {
-                                var averageRating = item.Review.Any() ? item.Review.Average(r => r.RatingStar) : 0;
+                                double averageRating = item.Review.Any() ? item.Review.Average(review => review.RatingStar) : 0;
 
                                 <div class="listing-item">
                                     <article class="geodir-category-listing fl-wrap">
@@ -63,7 +63,11 @@
                                             <h3><a href="listing-single.html">@item.Name</a></h3>
                                             <p>@item.Description</p>
                                             <div class="geodir-category-options fl-wrap">
-                                                <div class="listing-rating card-popup-rainingvis" data-starrating2="@averageRating">
+                                                <div class="listing-rating card-popup-raviningvis" data-starrating2="">
+                                                    @for (int i = 0; i < averageRating; i++)
+                                                    {
+                                                        <i class="fa fa-star"></i>
+                                                    }
                                                     <span>(@item.Review.Count reviews)</span>
                                                 </div>
                                                 <div class="geodir-category-location"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> @item.Address</a></div>
@@ -100,14 +104,14 @@
                                             <ul>
                                                 <li><a href="@Model.Face" target="_blank"><i class="fa fa-facebook"></i></a></li>
                                                 <li><a href="@Model.Tvit" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                               
+
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!--box-widget-item end -->
-                            
+
                         </div>
                     </div>
                     <!--box-widget-wrap end-->

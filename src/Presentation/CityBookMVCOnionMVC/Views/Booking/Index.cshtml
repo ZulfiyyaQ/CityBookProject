@@ -1,0 +1,116 @@
+﻿@model GetUserVM
+
+<div id="wrapper">
+    <!--content -->
+    <div class="content">
+        <!--section -->
+        <section id="sec1">
+            <!-- container -->
+            <div class="container">
+                <!-- profile-edit-wrap -->
+                <div class="profile-edit-wrap">
+                    <div class="profile-edit-page-header">
+                        <h2>Bookings</h2>
+                        <div class="breadcrumbs"><a href="#">Home</a><a href="#">Dasboard</a><span>Bookings</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="fixed-bar fl-wrap">
+                                <div class="user-profile-menu-wrap fl-wrap">
+                                    <!-- user-profile-menu-->
+                                    <div class="user-profile-menu">
+                                        <h3>Main</h3>
+                                        <ul>
+
+                                            <li><a asp-action="edituser" asp-controller="myaccount"><i class="fa fa-user-o"></i> Edit profile</a></li>
+                                            <li><a asp-action="changepassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Change Password</a></li>
+                                            <li><a asp-action="forgotpassword" asp-controller="account" class="user-profile-act"><i class="fa fa-unlock-alt"></i>Forgot Password</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- user-profile-menu end-->
+                                    <!-- user-profile-menu-->
+                                    @if (User.IsInRole(UserRole.BiznesOwner.ToString()))
+                                    {
+                                        <div class="user-profile-menu">
+                                            <h3>Listings</h3>
+
+                                            <ul>
+                                                <li><a asp-action="index" asp-controller="mylistings"><i class="fa fa-th-list"></i> My listings  </a></li>
+                                                <li><a asp-action="index" asp-controller="booking"> <i class="fa fa-calendar-check-o"></i> Bookings</a></li>
+                                                <li><a asp-action="index" asp-controller="review"><i class="fa fa-comments-o"></i> Reviews </a></li>
+                                                <li><a asp-action="create" asp-controller="addlisting"><i class="fa fa-plus-square-o"></i> Add New Place</a></li>
+                                                <li><a asp-action="create" asp-controller="addblog"><i class="fa fa-plus-square-o"></i> Add New Blog</a></li>
+                                            </ul>
+                                        </div>
+                                    }
+
+                                    <!-- user-profile-menu end-->
+                                    <a asp-action="logout" asp-controller="account" class="log-out-btn">Log Out</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="dashboard-list-box fl-wrap">
+                                <div class="dashboard-header fl-wrap">
+                                    <h3>Bookings</h3>
+                                </div>
+                                @foreach (var item in Model.Places)
+                                {
+                                    @foreach (var reserv in item.Reservations)
+                                    {
+                                        <div class="dashboard-list">
+                                            <div class="dashboard-message">
+                                                @if (reserv.IsApproved)
+                                                {
+                                                    <span class="new-dashboard-item">Aproved</span>
+                                                }
+
+                                                <div class="dashboard-message-text">
+
+                                                    <div class="booking-details fl-wrap">
+                                                        <span class="booking-title">Listing Item</span> :
+                                                        <span class="booking-text"><a href="listing-sinle.html">@item.Name</a></span>
+                                                    </div>
+                                                    @if (reserv.Persons != null)
+                                                    {
+                                                        <div class="booking-details fl-wrap">
+                                                            <span class="booking-title">Persons </span> :
+                                                            <span class="booking-text">@reserv.Persons Peoples</span>
+                                                        </div>
+                                                    }
+                                                    <div class="booking-details fl-wrap">
+                                                        <span class="booking-title">Booking Date </span> :
+                                                        <span class="booking-text">@(string.IsNullOrWhiteSpace(reserv.ReservationDateTo) ? $"{reserv.ReservationDate}" : $"{reserv.ReservationDate} - {reserv.ReservationDateTo}")</span>
+                                                    </div>
+
+
+                                                    <p>@reserv.About</p>
+                                                    @if (!reserv.IsApproved)
+                                                    {
+                                                        <a asp-action="AcceptReserv" asp-controller="Booking" asp-route-id="@reserv.Id" class="btn  circle-btn    color-bg flat-btn">Approve<i class="fa fa-check-square-o"></i></a>
+                                                    }
+                                                    <a asp-action="RejectReserv" asp-controller="Booking" asp-route-id="@reserv.Id" class="btn  circle-btn    color-bg flat-btn mx-3">Reject<i class="fa fa-check-square-o"></i></a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--profile-edit-wrap end -->
+            </div>
+            <!--container end -->
+        </section>
+        <!-- section end -->
+        <div class="limit-box fl-wrap"></div>
+        <!--section -->
+        <!-- section end -->
+    </div>
+</div>

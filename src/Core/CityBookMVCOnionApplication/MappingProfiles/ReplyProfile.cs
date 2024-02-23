@@ -13,8 +13,8 @@ namespace CityBookMVCOnionApplication.MappingProfiles
             CreateMap<GetReplyVM, Reply>().ReverseMap()
                 .ForMember(x => x.Comment, opt => opt.MapFrom(src => src.Comment))
                 .ForMember(x => x.User, opt => opt.MapFrom(src => src.User));
-            CreateMap<IncludeReplyVM, Reply>().ReverseMap();
-                
+            CreateMap<IncludeReplyVM, Reply>().ReverseMap()
+                .ForMember(x => x.ReplyUser, opt => opt.MapFrom(src => src.User));
             CreateMap<ItemReplyVM, Reply>().ReverseMap()
                 .ForMember(x => x.User, opt => opt.MapFrom(src => src.User));
         }

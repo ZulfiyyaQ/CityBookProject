@@ -251,6 +251,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         {
             if (id <= 0) throw new WrongRequestException("The request sent does not exist");
             string[] includes ={
+                $"{nameof(Blog.User)}",
                 $"{nameof(Blog.BlogTags)}.{nameof(BlogTag.Tag)}",
                 $"{nameof(Blog.Comments)}.{nameof(Comment.Replies)}.{nameof(Reply.User)}",
                 $"{nameof(Blog.Comments)}.{nameof(Comment.User)}",

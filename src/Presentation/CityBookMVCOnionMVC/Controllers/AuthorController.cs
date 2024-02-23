@@ -13,9 +13,10 @@ namespace CityBookMVCOnionMVC.Controllers
         {
             _service = service;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string id)
         {
-            return View(model: await _service.GetByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)));
+            var res = await _service.GetByIdAsync(id);
+            return View(res);
         }
     }
 }

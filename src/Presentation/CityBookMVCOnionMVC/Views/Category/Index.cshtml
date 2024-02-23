@@ -1,0 +1,86 @@
+﻿@model GetCategoryVM
+<!-- wrapper -->
+<div id="wrapper">
+    <!--  content  -->
+    <div class="content">
+        <!--  section  -->
+        <section class="parallax-section" data-scrollax-parent="true">
+            <div class="bg par-elem " data-bg="/images/bg/8-4.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="section-title center-align">
+                    <h2><span>Listings Without Map</span></h2>
+                    <div class="breadcrumbs fl-wrap"><a href="#">Home</a><a href="#">Listings</a><span>Category</span></div>
+                    <span class="section-separator"></span>
+                </div>
+            </div>
+            <div class="header-sec-link">
+                <div class="container"><a href="#sec1" class="custom-scroll-link">Let's Start</a></div>
+            </div>
+        </section>
+        <!--  section  end-->
+        <!--  section  -->
+        <section class="gray-bg no-pading no-top-padding" id="sec1">
+            <div class="col-list-wrap  center-col-list-wrap left-list">
+                <div class="container">
+                    <div class="listsearch-maiwrap box-inside fl-wrap">
+                        <div class="listsearch-header fl-wrap">
+                            <h3>Results For : @Model.Name <span></span></h3>
+
+                        </div>
+                        <!-- listsearch-input-wrap  -->
+                       
+                        <!-- listsearch-input-wrap end -->
+                    </div>
+                    <!-- list-main-wrap-->
+                    <div class="list-main-wrap fl-wrap card-listing">
+                        
+                        @foreach (var item in Model.Places)
+                        {
+                            double averageRating = item.Review.Any() ? item.Review.Average(review => review.RatingStar) : 0;
+
+                            <div class="listing-item">
+                                <article class="geodir-category-listing fl-wrap">
+                                    <div class="geodir-category-img">
+                                        <img src="~/images/@item.PlaceImages.FirstOrDefault()?.ImageUrl" alt="">
+                                        <div class="overlay"></div>
+
+                                    </div>
+                                    <div class="geodir-category-content fl-wrap">
+                                        <a class="listing-geodir-category" asp-action="detail" asp-controller="category" asp-route-id="@item.Id">@item.Category.Name</a>
+                                       
+                                        <h3><a asp-action="detail" asp-controller="listing" asp-route-id="@item.Id">@item.Name</a></h3>
+                                        <p>@(item.Description.Length > 44 ? item.Description.Substring(0, 44) + " ..." : item.Description) </p>
+                                        <div class="geodir-category-options fl-wrap">
+                                            <div class="listing-rating card-popup-rainingvis" data-starrating2="">
+                                                @for (int i = 0; i < averageRating; i++)
+                                                {
+                                                    <i class="fa fa-star"></i>
+                                                }
+                                                <span>(@item.Review.Count reviews)</span>
+                                            </div>
+                                            <div class="geodir-category-location"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> @item.Address</a></div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        }
+                          
+                         
+
+
+                        <!-- pagination-->
+                        
+                    </div>
+                    <!-- list-main-wrap end-->
+                </div>
+            </div>
+        </section>
+        <!--  section  end-->
+        <div class="limit-box fl-wrap"></div>
+        <!--  section  -->
+        <!--  section  end-->
+    </div>
+    <!--  content  end-->
+</div>
+<!-- wrapper end -->

@@ -7,7 +7,7 @@ namespace CityBookMVCOnionApplication.ViewModels
         public string Name { get; init; }
         public string Surname { get; init; }
         public string Email { get; init; }
-        public string Phone { get; init; }
+        public string PhoneNumber { get; init; }
         public string Address { get; init; }
         public IFormFile? Photo { get; init; }
     }

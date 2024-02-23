@@ -20,6 +20,7 @@ namespace CityBookMVCOnionMVC.Controllers
         {
             return View(await _service.GetByIdAsync(id));
         }
+
         public async Task<IActionResult> Comment(int blogId, string comment)
         {
             await _service.CommentAsync(blogId, comment, ModelState);

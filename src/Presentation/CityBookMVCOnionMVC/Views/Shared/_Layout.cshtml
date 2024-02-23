@@ -73,24 +73,25 @@
                     <nav>
                         <ul>
                             <li>
-                                <a asp-action="index" asp-controller="home" class="act-link">Home <i class="fa fa-caret-down"></i></a>
+                                <a asp-action="index" asp-controller="home" class="act-link">Home</a>
                                 
                             </li>
                             <li>
-                                <a asp-action="index" asp-controller="listing">Places <i class="fa fa-caret-down"></i></a>
+                                <a asp-action="index" asp-controller="listing">Places </a>
                                
                                 
                             </li>
                             <li>
                                 <a asp-action="index" asp-controller="blog">News</a>
                             </li>
-                            <li>
-                                <a href="#">Pages <i class="fa fa-caret-down"></i></a>
-                                
-                                <ul>
-                                    <li><a asp-action="index" asp-controller="about">About</a></li>
-                                    @if (User.Identity.IsAuthenticated)
-                                    {
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>
+                                    <a href="#">Pages <i class="fa fa-caret-down"></i></a>
+
+                                    <ul>
+
+
                                         <li><a asp-action="edituser" asp-controller="myaccount">My Account</a></li>
                                         @if (User.IsInRole(UserRole.BiznesOwner.ToString()))
                                         {
@@ -98,15 +99,17 @@
 
                                         }
 
-                                    }
-                                   
-                                    
-                                   
-                                    <li><a asp-action="detail" asp-controller="blog">Blog Single</a></li>
 
-                                </ul>
-                               
-                            </li>
+
+
+
+
+
+                                    </ul>
+
+                                </li>
+                            }
+                           
                         </ul>
                     </nav>
                 </div>
@@ -123,7 +126,7 @@
                         <div class="footer-widget fl-wrap">
                             <h3>About Us</h3>
                             <div class="footer-contacts-widget fl-wrap">
-                                <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam. </p>
+                                <p>@setting["About"] </p>
                                 <ul class="footer-contacts fl-wrap">
                                     <li><span><i class="@setting["MailLogo"]"></i> Mail :</span><a href="#" target="_blank">@setting["Mail"]</a></li>
                                     <li> <span><i class="@setting["AddressLogo"]"></i> Adress :</span><a href="#" target="_blank">@setting["Address"]</a></li>
@@ -132,34 +135,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="footer-widget fl-wrap">
-                            <h3>Our Last News</h3>
-                            <div class="widget-posts fl-wrap">
-                                <ul>
-                                    <li class="clearfix">
-                                        <a href="#" class="widget-posts-img"><img src="~/images/all/1.jpg" class="respimg" alt=""></a>
-                                        <div class="widget-posts-descr">
-                                            <a href="#" title="">Vivamus dapibus rutrum</a>
-                                            <span class="widget-posts-date"> 21 Mar 09.05 </span>
-                                        </div>
-                                    </li>
-                                    <li class="clearfix">
-                                        <a href="#" class="widget-posts-img"><img src="~/images/all/1.jpg" class="respimg" alt=""></a>
-                                        <div class="widget-posts-descr">
-                                            <a href="#" title=""> In hac habitasse platea</a>
-                                            <span class="widget-posts-date"> 7 Mar 18.21 </span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="footer-menu fl-wrap">
-                                <ul>
-                                    <li><a href="#" style="color:#4DB7FE">Read All News</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    @{
+                        await Html.RenderPartialAsync("BlogFooter/BlogFooterPartialView", await service.GetBlogsAsync());
+                    }
                     <div class="col-md-4">
                         <div class="footer-widget fl-wrap">
                          
@@ -183,7 +161,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="about-widget">
-                                <img src="~/images/logo.png" alt="">
+                                <img src="~/images/@setting["Logo"]" alt="">
                             </div>
                         </div>
                         <div class="col-md-4">

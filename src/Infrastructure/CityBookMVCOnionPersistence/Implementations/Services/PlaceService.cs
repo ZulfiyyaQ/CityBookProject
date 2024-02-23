@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Security.Claims;
 using System.Text.RegularExpressions;
@@ -32,20 +33,21 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         private readonly UserManager<User> _userManager;
 
         public PlaceService(IMapper mapper, IPlaceRepository repository, ITagRepository tagRepository,
-            IFeatureRepository featureRepository, IHttpContextAccessor http, IWebHostEnvironment env,
-            ICategoryRepository categoryRepository, UserManager<User> userManager, IReservationRepository reservationRepository, IEmailService email)
+            IFeatureRepository featureRepository, ICategoryRepository categoryRepository, IHttpContextAccessor http,
+            IWebHostEnvironment env, IReservationRepository reservationRepository, IEmailService email, UserManager<User> userManager)
         {
             _mapper = mapper;
             _repository = repository;
             _tagRepository = tagRepository;
             _featureRepository = featureRepository;
+            _categoryRepository = categoryRepository;
             _http = http;
             _env = env;
-            _categoryRepository = categoryRepository;
-            _userManager = userManager;
             _reservationRepository = reservationRepository;
             _email = email;
+            _userManager = userManager;
         }
+
         public async Task CreatePopulateDropdowns(CreatePlaceVM create)
         {
             create.Categories = _mapper.Map<List<IncludeCategoryVM>>(await _categoryRepository.GetAll().ToListAsync());
@@ -168,6 +170,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             string[] includes ={
                 $"{nameof(Place.Category)}",
                 $"{nameof(Place.User)}",
+                $"{nameof(Place.Reviews)}",
                 $"{nameof(Place.PlaceFeatures)}.{nameof(PlaceFeature.Feature)}",
                 $"{nameof(Place.PlaceTags)}.{nameof(PlaceTag.Tag)}",
                 $"{nameof(Place.PlaceImages)}" };
@@ -178,7 +181,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             return vMs;
         }
-        public async Task<PaginationVM<ItemPlaceVM>> GetFilteredAsync(string? search, int take, int page, int order, int? categoryId)
+        public async Task<PaginationVM<PlaceFilterVM>> GetFilteredAsync(string? search, int take, int page, int order, int? categoryId)
         {
             if (page <= 0) throw new WrongRequestException("The request sent does not exist");
             if (order <= 0) throw new WrongRequestException("The request sent does not exist");
@@ -186,6 +189,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             string[] includes ={
                 $"{nameof(Place.Category)}",
                 $"{nameof(Place.User)}",
+                $"{nameof(Place.Reviews)}",
                 $"{nameof(Place.PlaceFeatures)}.{nameof(PlaceFeature.Feature)}",
                 $"{nameof(Place.PlaceTags)}.{nameof(PlaceTag.Tag)}",
                 $"{nameof(Place.PlaceImages)}" };
@@ -216,7 +220,13 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                     break;
             }
 
-            PaginationVM<ItemPlaceVM> pagination = new PaginationVM<ItemPlaceVM>
+            PlaceFilterVM placeFilter = new PlaceFilterVM
+            {
+                Places = _mapper.Map<ICollection<ItemPlaceVM>>(items),
+                Categories = _mapper.Map<ICollection<IncludeCategoryVM>>(await _categoryRepository.GetAllWhere().ToListAsync())
+            };
+
+            PaginationVM<PlaceFilterVM> pagination = new PaginationVM<PlaceFilterVM>
             {
                 Take = take,
                 Search = search,
@@ -224,13 +234,13 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                 CategoryId = categoryId,
                 CurrentPage = page,
                 TotalPage = Math.Ceiling(count / take),
-                Items = _mapper.Map<List<ItemPlaceVM>>(items)
+                Item = placeFilter
             };
 
             return pagination;
         }
 
-        public async Task<PaginationVM<ItemPlaceVM>> GetDeleteFilteredAsync(string? search, int take, int page, int order, int? categoryId)
+        public async Task<PaginationVM<PlaceFilterVM>> GetDeleteFilteredAsync(string? search, int take, int page, int order, int? categoryId)
         {
             if (page <= 0) throw new WrongRequestException("The request sent does not exist");
             if (order <= 0) throw new WrongRequestException("The request sent does not exist");
@@ -271,7 +281,13 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             }
 
-            PaginationVM<ItemPlaceVM> pagination = new PaginationVM<ItemPlaceVM>
+            PlaceFilterVM placeFilter = new PlaceFilterVM
+            {
+                Places = _mapper.Map<ICollection<ItemPlaceVM>>(items),
+                Categories = _mapper.Map<ICollection<IncludeCategoryVM>>(await _categoryRepository.GetAll().ToListAsync())
+            };
+
+            PaginationVM<PlaceFilterVM> pagination = new PaginationVM<PlaceFilterVM>
             {
                 Take = take,
                 Search = search,
@@ -279,7 +295,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                 CategoryId = categoryId,
                 CurrentPage = page,
                 TotalPage = Math.Ceiling(count / take),
-                Items = _mapper.Map<List<ItemPlaceVM>>(items)
+                Item = placeFilter
             };
 
             return pagination;
@@ -513,7 +529,11 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                 tempData["Reserv"] += $"<p class=\"text-danger\"> You need to choose reservation date </p>";
                 return false;
             }
-
+            if(DateTime.Parse(reservationDate) < DateTime.Parse(reservationDateTo))
+            {
+                tempData["Reserv"] += $"<p class=\"text-danger\">Reservation date cannot be earlier than the last reservation end date</p>";
+                return false;
+            }
             if (dayOrMonth.Contains(DayOrMonth.Month.ToString()) && reservationDateTo == null)
             {
                 tempData["Reserv"] += $"<p class=\"text-danger\"> You need to choose expiration date</p>";
@@ -556,6 +576,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             reserv.IsApproved = true;
             _reservationRepository.Update(reserv);
+            _repository.SaveChanceAsync();
         }
         public async Task CanceledReservation(int id)
         {
@@ -571,6 +592,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
 
             reserv.IsApproved = false;
             _reservationRepository.Update(reserv);
+            _repository.SaveChanceAsync();
         }
         public async Task<bool> Review(int id, int rating, string comment, ModelStateDictionary model)
         {

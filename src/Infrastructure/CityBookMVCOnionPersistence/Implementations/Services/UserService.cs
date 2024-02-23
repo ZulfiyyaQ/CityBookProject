@@ -172,6 +172,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             User user = await _userManager.Users
                 .Include(x => x.Places).ThenInclude(a => a.Category)
                 .Include(x => x.Places).ThenInclude(a => a.Reviews)
+                .Include(x => x.Places).ThenInclude(a => a.Reservations)
                 .Include(x => x.Places).ThenInclude(a => a.PlaceImages)
                 .Include(x => x.Blogs).ThenInclude(x => x.BlogImages)
                 .Include(x => x.Reviews).Include(x => x.Places.Where(a => a.IsDeleted == false)).ThenInclude(x => x.PlaceImages)
@@ -197,16 +198,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             return get;
         }
 
-        public async Task IsSoulOfAgencyAsync(string id)
-        {
-            if (string.IsNullOrWhiteSpace(id)) throw new WrongRequestException("The request sent does not exist");
-            User user = await _userManager.FindByIdAsync(id);
-            if (user == null) throw new NotFoundException("Your request was not found");
-
-            
-
-            await _userManager.UpdateAsync(user);
-        }
+      
 
         public async Task GiveRoleModeratorAsync(string id)
         {

@@ -18,7 +18,7 @@ namespace CityBookMVCOnionApplication.Abstractions.Services
         Task GiveRoleModeratorAsync(string id);
         Task DeleteRoleModeratorAsync(string id);
         Task DeleteRoleAgentAsync(string id);
-        Task IsSoulOfAgencyAsync(string id);
+        
         Task<EditUserVM> EditUser(string id);
         Task<bool> EditUserAsync(string id, EditUserVM update, ModelStateDictionary model);
         Task ForgotPassword(string id, IUrlHelper url);

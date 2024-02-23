@@ -8,6 +8,7 @@ namespace CityBookMVCOnionApplication.Abstractions.Services
     public interface ICategoryService
     {
         Task<ICollection<ItemCategoryVM>> GetAllWhereAsync(int take, int page = 1);
+        Task<ICollection<ItemCategoryVM>> GetAllAsync();
         Task<ICollection<ItemCategoryVM>> GetAllWhereByOrderAsync(int take, Expression<Func<Category, object>>? orderExpression, int page = 1);
         Task<PaginationVM<ItemCategoryVM>> GetFilteredAsync(string? search, int take, int page, int order);
         Task<PaginationVM<ItemCategoryVM>> GetDeleteFilteredAsync(string? search, int take, int page, int order);

@@ -9,6 +9,7 @@ namespace CityBookMVCOnionApplication.MappingProfiles
         public ReservationProfile()
         {
             CreateMap<CreateReservationVM, Reservation>().ReverseMap();
+            CreateMap<ItemReservationVM, Reservation>().ReverseMap();
 
         }
     }

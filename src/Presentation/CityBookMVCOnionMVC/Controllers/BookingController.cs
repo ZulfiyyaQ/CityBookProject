@@ -18,5 +18,17 @@ namespace CityBookMVCOnionMVC.Controllers
         {
             return View(await _Userservice.GetByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)));
         }
+
+        public async Task<IActionResult> AcceptReserv(int id)
+        {
+            await _service.AcceptReservation(id);
+            return RedirectToAction(nameof(Index));
+
+        }
+        public async Task<IActionResult> RejectReserv(int id)
+        {
+            await _service.CanceledReservation(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

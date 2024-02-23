@@ -112,16 +112,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Place/DeletedItems.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGxhY2VcRGVsZXRlZEl0ZW1zLmNzaHRtbA==
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Listing/DeletedItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTGlzdGluZ1xEZWxldGVkSXRlbXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Place/Detail.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGxhY2VcRGV0YWlsLmNzaHRtbA==
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Listing/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTGlzdGluZ1xEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Place/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGxhY2VcSW5kZXguY3NodG1s
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Listing/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTGlzdGluZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Areas/Admin/Views/Position/Create.cshtml]
@@ -256,6 +256,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Views/Booking/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Views/Home/ErrorPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvclBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -278,6 +290,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Views/MyListings/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlMaXN0aW5nc1xVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Views/Review/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Views/Shared/BlogFooter/BlogFooterPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEJsb2dGb290ZXJcQmxvZ0Zvb3RlclBhcnRpYWxWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Asus/Desktop/CityBookMVCOnion/src/Presentation/CityBookMVCOnionMVC/Views/_ViewImports.cshtml]

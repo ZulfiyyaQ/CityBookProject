@@ -54,7 +54,7 @@
                                     @count
                                 </td>
                                 <td>
-                                    <img src="~/images/@Blog.BlogImage" alt="@Blog.Name">
+                                    <img src="~/images/@Blog.BlogImage.FirstOrDefault()?.Url" alt="@Blog.Name">
                                 </td>
                                 <td>
                                     @Blog.Name

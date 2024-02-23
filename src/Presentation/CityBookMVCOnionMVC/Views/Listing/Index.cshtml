@@ -1,4 +1,4 @@
-﻿@model PaginationVM<ItemPlaceVM>
+﻿@model PaginationVM<PlaceFilterVM>
 <!-- wrapper -->
 <div id="wrapper">
     <!--  content  -->
@@ -29,75 +29,39 @@
 
                         </div>
                         <!-- listsearch-input-wrap  -->
-                        <div class="listsearch-input-wrap fl-wrap">
-                            <div class="listsearch-input-item">
-                                <i class="mbri-key single-i"></i>
-                                <input type="text" placeholder="Keywords?" value="" />
-                            </div>
-                            <div class="listsearch-input-item">
-                                <select data-placeholder="Location" class="chosen-select">
-                                    <option>All Locations</option>
-                                    <option>Bronx</option>
-                                    <option>Brooklyn</option>
-                                    <option>Manhattan</option>
-                                    <option>Queens</option>
-                                    <option>Staten Island</option>
-                                </select>
-                            </div>
-                            <div class="listsearch-input-item">
-                                <select data-placeholder="All Categories" class="chosen-select">
-                                    <option>All Categories</option>
-                                    <option>Shops</option>
-                                    <option>Hotels</option>
-                                    <option>Restaurants</option>
-                                    <option>Fitness</option>
-                                    <option>Events</option>
-                                </select>
-                            </div>
-                            <div class="listsearch-input-text" id="autocomplete-container">
-                                <label><i class="mbri-map-pin"></i> Enter Addres </label>
-                                <input type="text" placeholder="Destination , Area , Street" id="autocomplete-input" class="qodef-archive-places-search" value="" />
-                                <a href="#" class="loc-act qodef-archive-current-location"><i class="fa fa-dot-circle-o"></i></a>
-                            </div>
-                            <!-- hidden-listing-filter -->
-                            <div class="hidden-listing-filter fl-wrap">
-
-                                <!-- Checkboxes -->
-                                <div class=" fl-wrap filter-tags">
-                                    <h4>Filter by Tags</h4>
-                                    <div class="filter-tags-wrap">
-                                        <input id="check-a" type="checkbox" name="check" checked>
-                                        <label for="check-a">Elevator in building</label>
-                                    </div>
-                                    <div class="filter-tags-wrap">
-                                        <input id="check-b" type="checkbox" name="check">
-                                        <label for="check-b">Friendly workspace</label>
-                                    </div>
-                                    <div class="filter-tags-wrap">
-                                        <input id="check-c" type="checkbox" name="check">
-                                        <label for="check-c">Instant Book</label>
-                                    </div>
-                                    <div class="filter-tags-wrap">
-                                        <input id="check-d" type="checkbox" name="check">
-                                        <label for="check-d">Wireless Internet</label>
-                                    </div>
+                        <div class="listsearch-input-wrap fl-wrap"> 
+                            <form asp-action="Index" asp-controller="Listing" asp-route-categoryId="@Model.CategoryId">
+                                <div class="listsearch-input-item">
+                                    <i class="mbri-key single-i"></i>
+                                    <input type="text" name="search" placeholder="Keywords?" value="@(Model.Search == null? "":Model.Search)" />
                                 </div>
+                            </form>
+
+                           
+                            <div class="listsearch-input-item">
+                                <form asp-action="Index" asp-controller="Listing" asp-route-search="@Model.Search">
+
+                                    <select name="categoryId" class="form-control select-filter" data-placeholder="All Categories" class="chosen-select">
+                                        <option style="display:none">Categories</option>
+                                        @foreach (var category in Model.Item.Categories)
+                                        {
+                                            <option value="@category.Id">@category.Name</option>
+                                        }
+                                    </select>
+                                </form>
                             </div>
-                            <!-- hidden-listing-filter end -->
-                            <button class="button fs-map-btn">Update</button>
-                            <div class="more-filter-option">More Filters <span></span></div>
+                            
+                            <!-- hidden-listing-filter -->
+                            
+                           
                         </div>
                         <!-- listsearch-input-wrap end -->
                     </div>
                     <!-- list-main-wrap-->
                     <div class="list-main-wrap fl-wrap card-listing">
-                        @foreach (var item in Model.Items)
+                        @foreach (var item in Model.Item.Places)
                         {
-                            int rating = 0;
-                            foreach (var review in item.Review)
-                            {
-                                rating += review.RatingStar;
-                            }
+                            double averageRating = item.Review.Any() ? item.Review.Average(review => review.RatingStar) : 0;
                             
                             <div class="listing-item">
                                 <article class="geodir-category-listing fl-wrap">
@@ -113,10 +77,13 @@
                                             <span class="avatar-tooltip">Added By  <strong>@item.User.Name @item.User.Surname</strong></span>
                                         </div>
                                         <h3><a asp-action="detail" asp-controller="listing" asp-route-id="@item.Id">@item.Name</a></h3>
-                                        <p>@item.Description</p>
+                                        <p>@(item.Description.Length > 44 ? item.Description.Substring(0, 44) + " ..." : item.Description) </p>
                                         <div class="geodir-category-options fl-wrap">
-                                            <div class="listing-rating card-popup-rainingvis" data-starrating2="@rating">
-                                                @* ortalamasi rating yazilmalidi *@
+                                            <div class="listing-rating card-popup-rainingvis" data-starrating2="">
+                                                @for (int i = 0; i < averageRating; i++)
+                                                {
+                                                    <i class="fa fa-star"></i>
+                                                }
                                                 <span>(@item.Review.Count reviews)</span>
                                             </div>
                                             <div class="geodir-category-location"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> @item.Address</a></div>

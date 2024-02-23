@@ -85,97 +85,98 @@
                                 <div class="list-single-main-item-title fl-wrap">
                                     <h3>Comments -  <span> 3 </span></h3>
                                 </div>
-                                <div class="reviews-comments-wrap">
-                                    <!-- reviews-comments-item -->
+                                @Html.Raw(TempData["Reply"])
+
+                                @foreach (var blogComment in Model.Comments)
+                                {
+                                    
                                     <div class="reviews-comments-item">
                                         <div class="review-comments-avatar">
-                                            <img src="~/images/avatar/1.jpg" alt="">
+                                            <img src="~/images/@blogComment.User.Image" alt="@blogComment.User.Name" alt="">
                                         </div>
                                         <div class="reviews-comments-item-text">
-                                            <a href="#" class="new-dashboard-item">Reply</a>
-                                            <h4><a href="#">Jessie Manrty</a></h4>
+                                            @* <a href="#" class="new-dashboard-item">Reply</a> *@
+                                            <h4><a href="#">@blogComment.User.Name</a></h4>
                                             <div class="clearfix"></div>
-                                            <p>" Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris. "</p>
-                                            <span class="reviews-comments-item-date"><i class="fa fa-calendar-check-o"></i>27 May 2018</span>
+                                            <p>@blogComment.Text</p>
+                                            <span class="reviews-comments-item-date"><i class="fa fa-calendar-check-o"></i>@blogComment.CreateAt.ToString("MMM dd, yyyy 'at' h:mm tt")</span>
+                                            <form class="text-left offset-11 row" asp-action="Reply" asp-controller="Blog" asp-route-blogId="@Model.Id" asp-route-blogCommnetId="@blogComment.Id" style="margin-left:300px; margin-top:-90px;">
+                                                <div class="col-xs-9">
+                                                    <div class="form-group">
+                                                        <label name="comment" class="form-label" style="margin-right:100px;">Enter your message</label>
+                                                        <textarea style="margin-right:100px;font-size:13px;" name="comment" class="form-control"  value="comment"
+                                                                  pattern="^[A-Za-z0-9\s,.]+$" title="Comment can only contain letters, numbers, spaces, commas, and periods."></textarea>
+                                                    </div>
+                                                    @if (User.Identity.IsAuthenticated)
+                                                    {
+                                                        
+                                                        <button type="submit" style="border:none;">
+                                                            <div class="new-dashboard-item" style=" ">Reply</div>
+
+                                                        </button>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a asp-action="Login" asp-controller="Account" asp-route-returnurl="@Context.Request.Path.Value" style="border:none;">
+                                                            <span class="new-dashboard-item">Reply</span>
+                                                        </a>
+                                                    }
+                                                   
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
-                                    <!--reviews-comments-item end-->
-                                    <!-- reviews-comments-item -->
-                                    <div class="reviews-comments-item reply-comment-item ">
-                                        <div class="review-comments-avatar">
-                                            <img src="~/images/avatar/1.jpg" alt="">
+                                    foreach (var blogReply in blogComment.Replies)
+                                    {
+                                        <div class="reviews-comments-item reply-comment-item ">
+                                            <div class="review-comments-avatar">
+                                                <img src="~/images/@blogReply.ReplyUser.Image" alt="@blogReply.ReplyUser.Name">
+                                            </div>
+                                            <div class="reviews-comments-item-text">
+                                                <h4><a href="#">@blogReply.ReplyUser.Name</a></h4>
+                                                <div class="clearfix"></div>
+                                                <p>@blogReply.Text</p>
+                                                <span class="reviews-comments-item-date"><i class="fa fa-calendar-check-o">@blogReply.CreateAt.ToString("MMM dd, yyyy 'at' h:mm tt")</i></span>
+                                                
+                                            </div>
                                         </div>
-                                        <div class="reviews-comments-item-text">
-                                            <a href="#" class="new-dashboard-item">Reply</a>
-                                            <h4><a href="#">Mark Rose</a></h4>
-                                            <div class="clearfix"></div>
-                                            <p>" Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. "</p>
-                                            <span class="reviews-comments-item-date"><i class="fa fa-calendar-check-o"></i>12 April 2018</span>
-                                        </div>
-                                    </div>
-                                    <!--reviews-comments-item end-->
-                                    <!-- reviews-comments-item -->
-                                    <div class="reviews-comments-item">
-                                        <div class="review-comments-avatar">
-                                            <img src="~/images/avatar/1.jpg" alt="">
-                                        </div>
-                                        <div class="reviews-comments-item-text">
-                                            <a href="#" class="new-dashboard-item">Reply</a>
-                                            <h4><a href="#">Adam Koncy</a></h4>
-                                            <div class="clearfix"></div>
-                                            <p>" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc posuere convallis purus non cursus. Cras metus neque, gravida sodales massa ut. "</p>
-                                            <span class="reviews-comments-item-date"><i class="fa fa-calendar-check-o"></i>03 December 2017</span>
-                                        </div>
-                                    </div>
-                                    <!--reviews-comments-item end-->
-                                </div>
-                            </div>
-                            <!-- list-single-main-item end -->
-                            <!-- list-single-main-item -->
-                            <div class="list-single-main-item fl-wrap" id="sec5">
+                                       
+                                    }
+                                }
+                               
+                                <div class="list-single-main-item fl-wrap" id="sec5">
                                 <div class="list-single-main-item-title fl-wrap">
                                     <h3>Add Comment</h3>
                                 </div>
-                                <!-- Add Review Box -->
-                                <div id="add-review" class="add-review-box">
-                                    <!-- Review Comment -->
-                                    <form id="add-comment" class="add-comment custom-form">
-                                        <fieldset>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label><i class="fa fa-user-o"></i></label>
-                                                    <input type="text" placeholder="Your Name *" value="" />
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label><i class="fa fa-envelope-o"></i>  </label>
-                                                    <input type="text" placeholder="Email Address*" value="" />
-                                                </div>
+                                            <form id="add-comment" class="add-comment custom-form" asp-action="Comment" asp-controller="Blog" asp-route-blogId="@Model.Id">
+                                                <fieldset>
+
+                                                    <textarea cols="40" rows="3" placeholder="Your Review:" value="comment" name="comment"></textarea>
+                                                </fieldset>
+                                    <div class="col-xs-12">
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <button class="btn  big-btn  color-bg flat-btn">Submit Comment <i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+
+                                        }
+                                        else
+                                        {
+                                            <a asp-action="Login" asp-controller="Account" asp-route-returnurl="@Context.Request.Path.Value" class="btn btn-sushi btn-sm">Comment</a>
+                                        }
+                                    </div>
+                                            </form>
                                             </div>
-                                            <textarea cols="40" rows="3" placeholder="Your Review:"></textarea>
-                                        </fieldset>
-                                        <button class="btn  big-btn  color-bg flat-btn">Submit Comment <i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-                                    </form>
-                                </div>
-                                <!-- Add Review Box / End -->
+                                       
+                                
                             </div>
-                            <!-- list-single-main-item end -->
+                           
                         </div>
                     </div>
                     <!--box-widget-wrap -->
                     <div class="col-md-4">
                         <div class="box-widget-wrap">
                             <!--box-widget-item -->
-                            <div class="box-widget-item fl-wrap">
-                                <div class="box-widget-item-header">
-                                    <h3>Search In blog : </h3>
-                                </div>
-                                <div class="box-widget search-widget">
-                                    <form action="#" class="fl-wrap">
-                                        <input name="se" id="se" type="text" class="search" placeholder="Search.." value="Search..." />
-                                        <button class="search-submit" id="submit_btn"><i class="fa fa-search transition"></i> </button>
-                                    </form>
-                                </div>
-                            </div>
+                            
                             <!--box-widget-item end -->
                             <!--box-widget-item -->
                             <div class="box-widget-item fl-wrap">
@@ -184,18 +185,19 @@
                                 </div>
                                 <div class="box-widget list-author-widget">
                                     <div class="list-author-widget-header shapes-bg-small  color-bg fl-wrap">
-                                        <span class="list-author-widget-link"><a href="author-single.html">Alisa Noory</a></span>
-                                        <img src="~/images/avatar/1.jpg" alt="">
+                                        <span class="list-author-widget-link"><a href="author-single.html">@Model.User.Name @Model.User.Surname</a></span>
+                                        <img src="~/images/@Model.User.Image" alt="@Model.User.Name">
                                     </div>
                                     <div class="box-widget-content">
                                         <div class="list-author-widget-text">
                                             <div class="list-author-widget-contacts">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla.</p>
+                                               <p> Email: @Model.User.Email</p>
+                                               <p> UserName: @Model.User.UserName</p>
                                             </div>
                                             <div class="list-widget-social">
                                                 <ul>
-                                                    <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                                    <li><a href="@Model.User.Face" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                                    <li><a href="@Model.User.Tvit" target="_blank"><i class="fa fa-twitter"></i></a></li>
                                                     <li><a href="#" target="_blank"><i class="fa fa-vk"></i></a></li>
                                                     <li><a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
                                                 </ul>
@@ -206,45 +208,7 @@
                             </div>
                             <!--box-widget-item end -->
                             <!--box-widget-item -->
-                            <div class="box-widget-item fl-wrap">
-                                <div class="box-widget-item-header">
-                                    <h3>Popular posts : </h3>
-                                </div>
-                                <div class="box-widget widget-posts blog-widgets">
-                                    <div class="box-widget-content">
-                                        <ul>
-                                            <li class="clearfix">
-                                                <a href="#" class="widget-posts-img"><img src="~/images/all/1.jpg" alt=""></a>
-                                                <div class="widget-posts-descr">
-                                                    <a href="#" title="">Cafe "Lollipop"</a>
-                                                    <span class="widget-posts-date"><i class="fa fa-calendar-check-o"></i> 21 Mar 2017 </span>
-                                                </div>
-                                            </li>
-                                            <li class="clearfix">
-                                                <a href="#" class="widget-posts-img"><img src="~/images/all/1.jpg" alt=""></a>
-                                                <div class="widget-posts-descr">
-                                                    <a href="#" title=""> Apartment in the Center</a>
-                                                    <span class="widget-posts-date"><i class="fa fa-calendar-check-o"></i> 7 Mar 2017 </span>
-                                                </div>
-                                            </li>
-                                            <li class="clearfix">
-                                                <a href="#" class="widget-posts-img"><img src="~/images/all/1.jpg" alt=""></a>
-                                                <div class="widget-posts-descr">
-                                                    <a href="#" title="">Event in City Mol</a>
-                                                    <span class="widget-posts-date"><i class="fa fa-calendar-check-o"></i> 7 Mar 2017 </span>
-                                                </div>
-                                            </li>
-                                            <li class="clearfix">
-                                                <a href="#" class="widget-posts-img"><img src="~/images/all/1.jpg" alt=""></a>
-                                                <div class="widget-posts-descr">
-                                                    <a href="#" title="">Event in City Mol</a>
-                                                    <span class="widget-posts-date"><i class="fa fa-calendar-check-o"></i> 7 Mar 2017 </span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                           
                             <!--box-widget-item end -->
                             <!--box-widget-item -->
                             <div class="box-widget-item fl-wrap">
@@ -252,12 +216,12 @@
                                     <h3>Tags: </h3>
                                 </div>
                                 <div class="list-single-tags tags-stylwrap">
-                                    <a href="#">Event</a>
-                                    <a href="#">Design</a>
-                                    <a href="#">Photography</a>
-                                    <a href="#">Trends</a>
-                                    <a href="#">Video</a>
-                                    <a href="#">News</a>
+                                    
+                                  @foreach (var item in Model.Tags)
+                                    {
+                                        <a href="#">@item.Name</a>
+
+                                    }
                                 </div>
                             </div>
                             <!--box-widget-item end -->
@@ -270,33 +234,21 @@
                                     <div class="box-widget-content">
                                         <div class="jr-insta-thumb">
                                             <ul>
-                                                <li>
-                                                    <a href="#"><img src="~/images/instagram/1.jpg" alt=""></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="~/images/instagram/1.jpg" alt=""></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="~/images/instagram/1.jpg" alt=""></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="~/images/instagram/1.jpg" alt=""></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="~/images/instagram/1.jpg" alt=""></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="~/images/instagram/1.jpg" alt=""></a>
-                                                </li>
+                                                @foreach (var item in Model.BlogImage.Take(3))
+                                                {
+                                                    <li>
+                                                        <a href="#"><img src="~/images/@item.Url" alt=""></a>
+                                                    </li>
+                                                }
                                             </ul>
                                         </div>
-                                        <a class="widget-posts-link" href="#" target="_blank">Follow us<span><i class="fa fa-angle-right"></i></span></a>
+                                        <a class="widget-posts-link" href="https://www.instagram.com/invites/contact/?i=1dqqagtwclwww&utm_content=tw2zdrc" target="_blank">Follow us<span><i class="fa fa-angle-right"></i></span></a>
                                     </div>
                                 </div>
                             </div>
                             <!--box-widget-item end -->
                             <!--box-widget-item -->
-                            <div class="box-widget-item fl-wrap">
+                            @* <div class="box-widget-item fl-wrap">
                                 <div class="box-widget-item-header">
                                     <h3>Categories : </h3>
                                 </div>
@@ -310,7 +262,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> *@
                             <!--box-widget-item end -->
                         </div>
                     </div>
@@ -332,7 +284,7 @@
                             <h3>Join our online community</h3>
                             <p>Grow your marketing and be happy with your online business</p>
                         </div>
-                        <div class="col-md-4"><a href="#" class="join-wrap-btn modal-open">Sign Up <i class="fa fa-sign-in"></i></a></div>
+                        <div class="col-md-4"><a asp-action="login" asp-controller="account" class="join-wrap-btn modal-open">Sign Up <i class="fa fa-sign-in"></i></a></div>
                     </div>
                 </div>
             </div>

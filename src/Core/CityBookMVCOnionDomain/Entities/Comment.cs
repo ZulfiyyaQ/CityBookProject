@@ -1,6 +1,6 @@
 ﻿namespace CityBookMVCOnionDomain.Entities
 {
-    public class Comment : BaseNameableEntity
+    public class Comment : BaseEntity
     {
         public string Text { get; set; }
         

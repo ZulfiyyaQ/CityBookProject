@@ -75,6 +75,16 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
             await _repository.SaveChanceAsync();
         }
 
+        public async Task<ICollection<ItemCategoryVM>> GetAllAsync()
+        {
+            ICollection<Category> items = await _repository
+                    .GetAll().ToListAsync();
+
+            ICollection<ItemCategoryVM> vMs = _mapper.Map<ICollection<ItemCategoryVM>>(items);
+
+            return vMs;
+        }
+
         public async Task<ICollection<ItemCategoryVM>> GetAllWhereAsync(int take, int page = 1)
         {
             string[] includes = { $"{nameof(Category.Places)}" };
@@ -142,7 +152,8 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                 Order = order,
                 CurrentPage = page,
                 TotalPage = Math.Ceiling(count / take),
-                Items = vMs
+                Items = vMs,
+                
             };
 
             return pagination;
@@ -200,7 +211,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
         public async Task<GetCategoryVM> GetByIdAsync(int id)
         {
             if (id <= 0) throw new WrongRequestException("The request sent does not exist");
-            string[] includes = { $"{nameof(Category.Places)}" };
+            string[] includes = { $"{nameof(Category.Places)}.{nameof(Place.PlaceImages)}" };
 
             Category item = await _repository.GetByIdAsync(id, IsTracking: false, includes: includes);
             if (item == null) throw new NotFoundException("Your request was not found");
@@ -260,7 +271,7 @@ namespace CityBookMVCOnionPersistence.Implementations.Services
                     return false;
                 }
 
-                item.Image.DeleteFile(_env.WebRootPath, "assets", "images");
+                item.Image.DeleteFile(_env.WebRootPath, "images");
                 item.Image = await update.Photo.CreateFileAsync(_env.WebRootPath,  "images");
             }
             var config = new MapperConfiguration(cfg =>
